@@ -1,0 +1,29 @@
+/* Legal / policy pages: readability + mobile */
+.legal-main {
+  min-width: 0;
+}
+
+.legal-body {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.legal-body h2 {
+  scroll-margin-top: 5.5rem;
+}
+
+@media (max-width: 639px) {
+  .legal-body h2 {
+    font-size: 1.125rem;
+    line-height: 1.35;
+  }
+
+  .legal-body p,
+  .legal-body li {
+    font-size: 0.9375rem;
+  }
+
+  .legal-body ul {
+    padding-left: 1rem;
+  }
+}

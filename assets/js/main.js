@@ -65,6 +65,32 @@ document.querySelectorAll('[data-reveal]').forEach((el) => {
   const liveChatDemo = document.getElementById('liveChatDemo');
   if (!liveChatDemo) return;
 
+  const LANG = document.documentElement.lang === 'en' ? 'en' : 'ru';
+
+  const UI = LANG === 'en'
+    ? {
+        newMatch: 'New match',
+        phrase: 'Phrase:',
+        region: 'Region:',
+        message: 'Message:',
+        chat: 'Chat:',
+        author: 'Author',
+        openChat: 'Open chat',
+        thisChat: 'this chat',
+        defaultRegion: 'Kazakhstan',
+      }
+    : {
+        newMatch: 'Новое совпадение',
+        phrase: 'Фраза:',
+        region: 'Регион:',
+        message: 'Сообщение:',
+        chat: 'Чат:',
+        author: 'Автор',
+        openChat: 'Открыть чат',
+        thisChat: 'этот чат',
+        defaultRegion: 'Казахстан',
+      };
+
   const chatListEl    = document.getElementById('chatListItems');
   const chatMsgsEl    = document.getElementById('chatMessages');
   const typingEl      = document.getElementById('typingIndicator');
@@ -80,7 +106,7 @@ document.querySelectorAll('[data-reveal]').forEach((el) => {
   const chatInput     = document.getElementById('chatInput');
   const chatSend      = document.getElementById('chatSend');
 
-  const CHATS = [
+  const CHATS_RU = [
     {
       id: 0, initials: 'DC', color: '#5B49F6', name: 'Дизайн-чат', sub: '23 участника · 10 в сети', online: true, preview: 'Ищу UX дизайнера...',
       msgs: [
@@ -115,7 +141,44 @@ document.querySelectorAll('[data-reveal]').forEach((el) => {
     },
   ];
 
-  const KEYWORD_RULES = [
+  const CHATS_EN = [
+    {
+      id: 0, initials: 'DC', color: '#5B49F6', name: 'Design chat', sub: '23 members · 10 online', online: true, preview: 'Looking for a UX designer…',
+      msgs: [
+        { av: 'JL', c: '#EC4899', n: 'Jasmine L.', t: 'Hey everyone — anyone here doing UI/UX for SaaS?', match: null },
+        { av: 'AH', c: '#3B82F6', n: 'Alex H.', t: 'Looking for a UX designer for fintech — budget flexible.', match: { phrase:'looking for designer', flag:'fi-kz', region:'Kazakhstan', chat:'public group', msg:'Looking for a UX designer for fintech — budget flexible.', time:'09:41' } },
+        { av: 'OC', c: '#10B981', n: 'Osmond C.', t: 'I’ve worked with several fintech startups — happy to help.', match: null },
+        { av: 'JC', c: '#F59E0B', n: 'Jayden C.', t: 'Who can redesign a mobile app?', match: null },
+      ]
+    },
+    {
+      id: 1, initials: 'FG', color: '#3B82F6', name: 'Founders circle', sub: '41 members · 8 online', online: true, preview: 'Need a B2B marketer',
+      msgs: [
+        { av: 'ZM', c: '#6366F1', n: 'Zaid M.', t: 'Any B2B marketers here?', match: null },
+        { av: 'AC', c: '#F59E0B', n: 'Anton C.', t: 'Need a B2B marketer — Series A startup.', match: { phrase:'need marketer', flag:'fi-de', region:'Germany', chat:'Telegram chat', msg:'Need a B2B marketer — Series A startup.', time:'09:43' } },
+        { av: 'CG', c: '#EC4899', n: 'Connor G.', t: 'DM me — I have a few contacts.', match: null },
+      ]
+    },
+    {
+      id: 2, initials: 'DH', color: '#10B981', name: 'Developer hub', sub: '89 members · 22 online', online: false, preview: 'Hiring React dev',
+      msgs: [
+        { av: 'VC', c: '#8B5CF6', n: 'Vanessa C.', t: 'Looking for a React developer remotely — urgent.', match: { phrase:'looking for React developer', flag:'fi-us', region:'United States', chat:'startup group', msg:'Looking for a React developer remotely — urgent.', time:'09:45' } },
+        { av: 'JM', c: '#3B82F6', n: 'Jacob M.', t: '4 years with React — what’s your stack?', match: null },
+        { av: 'VC', c: '#8B5CF6', n: 'Vanessa C.', t: 'Next.js, TypeScript, Supabase — ping me.', match: null },
+      ]
+    },
+    {
+      id: 3, initials: 'SK', color: '#F59E0B', name: 'Startups KZ', sub: '18 members · 5 online', online: false, preview: 'Need CRM integrator', badge: 3,
+      msgs: [
+        { av: 'NK', c: '#F59E0B', n: 'Nurgul K.', t: 'Looking for a Bitrix24 CRM integrator in Almaty.', match: { phrase:'CRM integrator', flag:'fi-kz', region:'Kazakhstan', chat:'business chat', msg:'Looking for a Bitrix24 CRM integrator in Almaty.', time:'09:50' } },
+        { av: 'BK', c: '#10B981', n: 'Bekzat K.', t: 'We’ve shipped Bitrix projects in KZ — DM me.', match: null },
+      ]
+    },
+  ];
+
+  const CHATS = LANG === 'en' ? CHATS_EN : CHATS_RU;
+
+  const KEYWORD_RULES_RU = [
     { words: ['дизайнер', 'designer', 'ux', 'ui', 'figma', 'дизайн'],     label: 'дизайнер',    score: 96, flag: 'fi-kz', region: 'Казахстан' },
     { words: ['маркетолог', 'маркетинг', 'marketing', 'smm', 'таргет'],   label: 'маркетолог',  score: 88, flag: 'fi-de', region: 'Германия' },
     { words: ['разработчик', 'developer', 'react', 'backend', 'frontend'], label: 'разработчик', score: 92, flag: 'fi-us', region: 'США' },
@@ -123,7 +186,18 @@ document.querySelectorAll('[data-reveal]').forEach((el) => {
     { words: ['квартира', 'аренда', 'сниму', 'недвижимость', 'rent'],     label: 'квартира',     score: 84, flag: 'fi-kz', region: 'Казахстан' },
     { words: ['crm', 'интегратор', 'битрикс', 'bitrix', 'amocRM'],        label: 'CRM интегратор', score: 79, flag: 'fi-kz', region: 'Казахстан' },
   ];
-  const KEYWORDS = ['ищу', 'нужен', 'нужна', 'looking for', 'wanted', 'search', 'требуется', 'find', 'хочу', 'подберите'];
+
+  const KEYWORD_RULES_EN = [
+    { words: ['дизайнер', 'designer', 'ux', 'ui', 'figma', 'дизайн'],     label: 'designer',    score: 96, flag: 'fi-kz', region: 'Kazakhstan' },
+    { words: ['маркетолог', 'маркетинг', 'marketing', 'smm', 'таргет'],   label: 'marketer',  score: 88, flag: 'fi-de', region: 'Germany' },
+    { words: ['разработчик', 'developer', 'react', 'backend', 'frontend'], label: 'developer', score: 92, flag: 'fi-us', region: 'United States' },
+    { words: ['юрист', 'адвокат', 'lawyer', 'договор', 'legal'],          label: 'lawyer',        score: 81, flag: 'fi-ru', region: 'Russia' },
+    { words: ['квартира', 'аренда', 'сниму', 'недвижимость', 'rent', 'apartment'], label: 'apartment', score: 84, flag: 'fi-kz', region: 'Kazakhstan' },
+    { words: ['crm', 'интегратор', 'битрикс', 'bitrix', 'amocRM', 'integrator'], label: 'CRM integrator', score: 79, flag: 'fi-kz', region: 'Kazakhstan' },
+  ];
+
+  const KEYWORD_RULES = LANG === 'en' ? KEYWORD_RULES_EN : KEYWORD_RULES_RU;
+  const KEYWORDS = ['ищу', 'нужен', 'нужна', 'looking for', 'wanted', 'search', 'требуется', 'find', 'хочу', 'подберите', 'need', 'hire', 'hiring'];
 
   let matchCount = 0;
 
@@ -138,18 +212,18 @@ document.querySelectorAll('[data-reveal]').forEach((el) => {
     card.style.cssText = 'opacity:0;transform:translateY(10px);transition:opacity .55s ease,transform .55s ease';
     card.innerHTML = `
           <div class="flex items-center justify-between">
-            <div class="flex items-center gap-[5px] text-[12px] font-extrabold text-violet"><span>🔥</span> Новое совпадение</div>
+            <div class="flex items-center gap-[5px] text-[12px] font-extrabold text-violet"><span>🔥</span> ${UI.newMatch}</div>
             <div class="text-[11px] text-[#8A90A2]">${m.time}</div>
           </div>
           <div class="mt-2 space-y-1 text-[11.5px] leading-[1.4] text-[#141926]">
-            <p><b>Фраза:</b> ${m.phrase}</p>
-            <p><b>Регион:</b> <span class="fi ${m.flag} mr-1"></span>${m.region}</p>
-            ${msgText ? `<p><b>Сообщение:</b> ${msgText}</p>` : ''}
-            <p class="text-[#737A8D]"><b class="text-[#555C70]">Чат:</b> ${chatLabel}</p>
+            <p><b>${UI.phrase}</b> ${m.phrase}</p>
+            <p><b>${UI.region}</b> <span class="fi ${m.flag} mr-1"></span>${m.region}</p>
+            ${msgText ? `<p><b>${UI.message}</b> ${msgText}</p>` : ''}
+            <p class="text-[#737A8D]"><b class="text-[#555C70]">${UI.chat}</b> ${chatLabel}</p>
           </div>
           <div class="mt-3 grid grid-cols-2 gap-2">
-            <button type="button" class="rounded-[10px] border border-[#E2E5F0] bg-white py-2 text-[11px] font-semibold text-[#374151]">Автор</button>
-            <button type="button" class="rounded-[10px] bg-violet py-2 text-[11px] font-semibold text-white">Открыть чат</button>
+            <button type="button" class="rounded-[10px] border border-[#E2E5F0] bg-white py-2 text-[11px] font-semibold text-[#374151]">${UI.author}</button>
+            <button type="button" class="rounded-[10px] bg-violet py-2 text-[11px] font-semibold text-white">${UI.openChat}</button>
           </div>`;
     matchCardsEl.prepend(card);
     requestAnimationFrame(() => { card.style.opacity = '1'; card.style.transform = 'translateY(0)'; });
@@ -281,18 +355,18 @@ document.querySelectorAll('[data-reveal]').forEach((el) => {
     card.style.cssText = 'opacity:0;transform:translateY(10px);transition:opacity .55s ease,transform .55s ease';
     card.innerHTML = `
           <div class="flex items-center justify-between">
-            <div class="flex items-center gap-[5px] text-[12px] font-extrabold text-violet"><span>🔥</span> Новое совпадение</div>
+            <div class="flex items-center gap-[5px] text-[12px] font-extrabold text-violet"><span>🔥</span> ${UI.newMatch}</div>
             <div class="text-[11px] text-[#8A90A2]">${time}</div>
           </div>
           <div class="mt-2 space-y-1 text-[11.5px] leading-[1.4] text-[#141926]">
-            <p><b>Фраза:</b> ${rule ? rule.label : val.slice(0, 28)}</p>
-            <p><b>Регион:</b> <span class="fi ${rule ? rule.flag : 'fi-kz'} mr-1"></span>${rule ? rule.region : 'Казахстан'}</p>
-            <p><b>Сообщение:</b> ${val.slice(0, 120)}${val.length > 120 ? '…' : ''}</p>
-            <p class="text-[#737A8D]"><b class="text-[#555C70]">Чат:</b> этот чат</p>
+            <p><b>${UI.phrase}</b> ${rule ? rule.label : val.slice(0, 28)}</p>
+            <p><b>${UI.region}</b> <span class="fi ${rule ? rule.flag : 'fi-kz'} mr-1"></span>${rule ? rule.region : UI.defaultRegion}</p>
+            <p><b>${UI.message}</b> ${val.slice(0, 120)}${val.length > 120 ? '…' : ''}</p>
+            <p class="text-[#737A8D]"><b class="text-[#555C70]">${UI.chat}</b> ${UI.thisChat}</p>
           </div>
           <div class="mt-3 grid grid-cols-2 gap-2">
-            <button type="button" class="rounded-[10px] border border-[#E2E5F0] bg-white py-2 text-[11px] font-semibold text-[#374151]">Автор</button>
-            <button type="button" class="rounded-[10px] bg-violet py-2 text-[11px] font-semibold text-white">Открыть чат</button>
+            <button type="button" class="rounded-[10px] border border-[#E2E5F0] bg-white py-2 text-[11px] font-semibold text-[#374151]">${UI.author}</button>
+            <button type="button" class="rounded-[10px] bg-violet py-2 text-[11px] font-semibold text-white">${UI.openChat}</button>
           </div>`;
     matchCardsEl.prepend(card);
     requestAnimationFrame(() => { card.style.opacity = '1'; card.style.transform = 'translateY(0)'; });
