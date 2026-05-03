@@ -3,3 +3,7 @@
 .gitignore
 Dockerfile
 .dockerignore
+
+# Dev-only (not needed in static image)
+*.py
+legal-bodies/
