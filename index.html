@@ -1,25 +1,25 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sendy — мониторинг запросов клиентов в Telegram в реальном времени</title>
-  <meta name="description" content="Sendy находит клиентов и запросы клиентов в Telegram-чатах выбранного региона и присылает релевантные совпадения в бот в реальном времени." />
+  <title>Sendy — detect high-intent leads in Telegram in real time</title>
+  <meta name="description" content="Sendy tracks search phrases in your selected region and delivers intent signals and relevant leads in Telegram in real time." />
   <link rel="canonical" href="https://sendy.direct/" />
-  <link rel="alternate" hreflang="ru" href="https://sendy.direct/" />
-  <link rel="alternate" hreflang="en" href="https://sendy.direct/en/" />
+  <link rel="alternate" hreflang="ru" href="https://sendy.direct/ru/" />
+  <link rel="alternate" hreflang="en" href="https://sendy.direct/" />
   <link rel="alternate" hreflang="x-default" href="https://sendy.direct/" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://sendy.direct/" />
-  <meta property="og:title" content="Sendy — мониторинг запросов клиентов в Telegram в реальном времени" />
-  <meta property="og:description" content="Sendy находит клиентов и запросы клиентов в Telegram-чатах выбранного региона и присылает релевантные совпадения в бот в реальном времени." />
+  <meta property="og:title" content="Sendy — detect high-intent leads in Telegram in real time" />
+  <meta property="og:description" content="Sendy tracks search phrases in your selected region and delivers intent signals and relevant leads in Telegram in real time." />
   <meta property="og:image" content="https://sendy.direct/og-image.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
-  <meta property="og:locale" content="ru_RU" />
+  <meta property="og:locale" content="en_US" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Sendy — мониторинг запросов клиентов в Telegram в реальном времени" />
-  <meta name="twitter:description" content="Sendy находит клиентов и запросы клиентов в Telegram-чатах выбранного региона и присылает релевантные совпадения в бот в реальном времени." />
+  <meta name="twitter:title" content="Sendy — detect high-intent leads in Telegram in real time" />
+  <meta name="twitter:description" content="Sendy tracks search phrases in your selected region and delivers intent signals and relevant leads in Telegram in real time." />
   <meta name="twitter:image" content="https://sendy.direct/og-image.png" />
   <link rel="icon" type="image/png" href="/media/logo.png" />
   <link rel="apple-touch-icon" href="/media/logo.png" />
@@ -38,26 +38,26 @@
       <a href="#" class="text-[32px] font-black tracking-[-.055em] text-[#0F172A]" aria-label="Sendy">sendy</a>
 
       <nav class="hidden items-center gap-[46px] text-[15px] font-medium text-[#0F172A] lg:flex">
-        <a class="transition hover:text-violet" href="#how">Как это работает</a>
-        <a class="transition hover:text-violet" href="#pricing">Тарифы</a>
-        <a class="transition hover:text-violet" href="#audience">Для кого</a>
-        <a class="transition hover:text-violet" href="#private">Private-режим</a>
-        <a class="transition hover:text-violet" href="#faq">Вопросы</a>
+        <a class="transition hover:text-violet" href="#how">How it works</a>
+        <a class="transition hover:text-violet" href="#pricing">Pricing</a>
+        <a class="transition hover:text-violet" href="#audience">Audience</a>
+        <a class="transition hover:text-violet" href="#private">Private mode</a>
+        <a class="transition hover:text-violet" href="#faq">FAQ</a>
       </nav>
 
       <div class="flex items-center gap-3">
         <div class="hidden items-center gap-1 rounded-[10px] bg-[#F8F9FB] px-2 py-1 text-[13px] font-bold text-[#0F172A] ring-1 ring-[#E9EBF3] sm:flex">
-          <a href="/ru/" class="rounded-md px-2 py-0.5 text-violet" hreflang="ru">RU</a>
+          <a href="/ru/" class="rounded-md px-2 py-0.5 text-[#6E7380] transition hover:text-violet" hreflang="ru">RU</a>
           <span class="text-[#CBD5E1]" aria-hidden="true">/</span>
-          <a href="/en/" class="rounded-md px-2 py-0.5 text-[#6E7380] transition hover:text-violet" hreflang="en">EN</a>
+          <a href="/" class="rounded-md px-2 py-0.5 text-violet" hreflang="en">EN</a>
         </div>
         <a href="https://t.me/sendybotio" class="hidden items-center gap-[10px] rounded-[12px] bg-violet px-[22px] py-[14px] text-[15px] font-semibold text-white shadow-button transition hover:bg-[#4F3DEC] sm:flex">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
             <path d="M21.75 3.8 18.4 20.12c-.25 1.15-.93 1.43-1.88.89l-5.22-3.84-2.52 2.42c-.28.28-.51.51-1.05.51l.38-5.31 9.67-8.73c.42-.38-.09-.59-.65-.21L5.2 13.37.05 11.76c-1.12-.35-1.14-1.12.23-1.65L20.43 2.35c.93-.35 1.75.21 1.32 1.45Z" fill="white"/>
           </svg>
-          Запустить в Telegram
+          Start in Telegram
         </a>
-        <button id="menuBtn" class="grid h-11 w-11 place-items-center rounded-xl bg-white shadow-soft ring-1 ring-black/5 lg:hidden" aria-label="Открыть меню">
+        <button id="menuBtn" class="grid h-11 w-11 place-items-center rounded-xl bg-white shadow-soft ring-1 ring-black/5 lg:hidden" aria-label="Open menu">
           <span class="relative block h-[2px] w-5 bg-ink before:absolute before:-top-2 before:left-0 before:h-[2px] before:w-5 before:bg-ink before:content-[''] after:absolute after:left-0 after:top-2 after:h-[2px] after:w-5 after:bg-ink after:content-['']"></span>
         </button>
       </div>
@@ -65,17 +65,17 @@
 
     <div id="mobileMenu" class="fixed left-4 right-4 top-20 z-50 hidden rounded-3xl border border-violet/10 bg-white/90 p-5 shadow-soft backdrop-blur-xl lg:hidden">
       <div class="mb-3 flex items-center justify-center gap-2 rounded-2xl bg-[#F8F9FB] p-2 text-[14px] font-bold">
-        <a class="rounded-xl px-4 py-2 text-violet" href="/ru/">RU</a>
+        <a class="rounded-xl px-4 py-2 text-[#6E7380]" href="/ru/">RU</a>
         <span class="text-[#CBD5E1]">/</span>
-        <a class="rounded-xl px-4 py-2 text-[#6E7380]" href="/en/">EN</a>
+        <a class="rounded-xl px-4 py-2 text-violet" href="/">EN</a>
       </div>
       <div class="grid gap-3 text-[15px] font-semibold">
-        <a class="rounded-2xl px-3 py-2 hover:bg-violet/5" href="#how">Как это работает</a>
-        <a class="rounded-2xl px-3 py-2 hover:bg-violet/5" href="#pricing">Тарифы</a>
-        <a class="rounded-2xl px-3 py-2 hover:bg-violet/5" href="#audience">Для кого</a>
-        <a class="rounded-2xl px-3 py-2 hover:bg-violet/5" href="#private">Private-режим</a>
-        <a class="rounded-2xl px-3 py-2 hover:bg-violet/5" href="#faq">Вопросы</a>
-        <a href="https://t.me/sendybotio" class="mt-2 flex items-center justify-center gap-2 rounded-2xl bg-violet px-4 py-3 text-white">Запустить в Telegram</a>
+        <a class="rounded-2xl px-3 py-2 hover:bg-violet/5" href="#how">How it works</a>
+        <a class="rounded-2xl px-3 py-2 hover:bg-violet/5" href="#pricing">Pricing</a>
+        <a class="rounded-2xl px-3 py-2 hover:bg-violet/5" href="#audience">Audience</a>
+        <a class="rounded-2xl px-3 py-2 hover:bg-violet/5" href="#private">Private mode</a>
+        <a class="rounded-2xl px-3 py-2 hover:bg-violet/5" href="#faq">FAQ</a>
+        <a href="https://t.me/sendybotio" class="mt-2 flex items-center justify-center gap-2 rounded-2xl bg-violet px-4 py-3 text-white">Start in Telegram</a>
       </div>
     </div>
 
@@ -90,17 +90,17 @@
             </svg>
           </span>
 
-          Мониторинг запросов клиентов в Telegram
+          Telegram intent monitoring by region
         </div>
 
         <h1 class="mt-[22px] max-w-[560px] text-[38px] font-black leading-[1.05] tracking-[-.045em] text-[#0B1220] sm:text-[50px] lg:text-[64px]">
-          Находите клиентов<br />
-          в Telegram<br />
-          <span class="grad-text">раньше конкурентов</span>
+          Find clients in Telegram<br />
+          before your<br />
+          <span class="grad-text">competitors do</span>
         </h1>
 
         <p class="mt-[18px] max-w-[510px] text-[16px] font-normal leading-[1.65] tracking-[-.01em] text-[#6E7380] sm:text-[18px]">
-          Sendy отслеживает ключевые фразы в выбранном регионе и присылает релевантные запросы клиентов прямо в Telegram в реальном времени.
+          Sendy tracks search phrases across your selected region and delivers relevant intent signals in Telegram in real time.
         </p>
 
         <div class="mt-[30px] flex flex-col gap-4 sm:flex-row">
@@ -109,8 +109,8 @@
               <path d="M35.71 7.33 30.5 32.75c-.39 1.79-1.45 2.23-2.93 1.39l-8.13-5.99-3.93 3.77c-.43.43-.8.8-1.64.8l.59-8.28 15.06-13.6c.65-.59-.14-.92-1.01-.33L9.92 21.89 1.9 19.38C.16 18.83.12 17.64 2.25 16.81L33.63 4.72c1.45-.55 2.72.33 2.08 2.61Z" fill="white"/>
             </svg>
             <span class="flex min-w-0 flex-col justify-center gap-1 text-left">
-              <span class="text-[17px] font-bold leading-snug tracking-[-.01em]">Попробовать Sendy</span>
-              <span class="text-[12px] font-medium leading-snug text-white/85 sm:text-[13px]">Пробный доступ на 3 дня — без обязательств · Настройка занимает около минуты</span>
+              <span class="text-[17px] font-bold leading-snug tracking-[-.01em]">Try Sendy free</span>
+              <span class="text-[12px] font-medium leading-snug text-white/85 sm:text-[13px]">Start a 3-day free trial — no commitment · Setup takes less than a minute</span>
             </span>
           </a>
 
@@ -120,23 +120,23 @@
                 <path d="M4.6 2.42c0-.76.84-1.21 1.47-.8l8 5.2c.58.38.58 1.22 0 1.6l-8 5.2c-.63.41-1.47-.04-1.47-.8V2.42Z"/>
               </svg>
             </span>
-            <span class="text-[16px] font-semibold tracking-[-.01em]">Как это работает</span>
+            <span class="text-[16px] font-semibold tracking-[-.01em]">How it works</span>
           </button>
         </div>
 
         <div class="mt-[24px] flex flex-wrap items-center gap-x-[18px] gap-y-3 text-[13px] font-medium text-[#6E7380] sm:mt-[30px] sm:gap-x-[26px] sm:text-[14px]">
           <span class="flex shrink-0 items-center gap-[8px]">
             <svg width="17" height="17" viewBox="0 0 18 18" fill="none" aria-hidden="true"><circle cx="9" cy="9" r="7.3" stroke="#6254FF" stroke-width="1.5"/><path d="m5.5 9.1 2.1 2.1 4.9-5" stroke="#6254FF" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Пробный доступ 3 дня
+            3-day trial
           </span>
           <div class="flex min-w-0 flex-nowrap items-center gap-x-[18px] sm:gap-x-[26px]">
             <span class="flex shrink-0 items-center gap-[8px] whitespace-nowrap">
               <svg width="17" height="17" viewBox="0 0 18 18" fill="none" aria-hidden="true"><circle cx="9" cy="9" r="7.3" stroke="#6254FF" stroke-width="1.5"/><path d="M9 4.8v4.6l3 1.8" stroke="#6254FF" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              Настройка за ~1 минуту
+              Setup in under a minute
             </span>
             <span class="flex shrink-0 items-center gap-[8px] whitespace-nowrap">
               <svg width="17" height="17" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M9 2.2 14.5 4v4.2c0 3.45-2.34 6.02-5.5 7.6-3.16-1.58-5.5-4.15-5.5-7.6V4L9 2.2Z" stroke="#6254FF" stroke-width="1.5"/><path d="m6.4 8.7 1.7 1.8 3.6-3.8" stroke="#6254FF" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              Без обязательств
+              No commitment
             </span>
           </div>
         </div>
@@ -148,7 +148,7 @@
         <img
           id="phone"
           src="/media/phone.png"
-          alt="Интерфейс Sendy в телефоне"
+          alt="Sendy interface on a phone"
           class="relative w-full max-w-[280px] rounded-[40px] transition-transform duration-300 will-change-transform sm:max-w-[310px] lg:max-w-[343px]"
         />
   
@@ -169,72 +169,72 @@
         
         <article class="match-card relative glass rounded-[14px] p-4 shadow-card animate-fadeUp" style="animation-delay:.12s">
           <div class="flex items-start justify-between">
-            <div class="flex items-center gap-[6px] text-[13px] font-extrabold text-violet"><span>🔥</span> Новое совпадение</div>
+            <div class="flex items-center gap-[6px] text-[13px] font-extrabold text-violet"><span>🔥</span> New match</div>
             <div class="text-[12px] font-medium text-[#8A90A2]">09:41</div>
           </div>
           <div class="mt-[10px] space-y-[6px] text-[12px] leading-[1.4] text-[#141926]">
-            <p><b class="font-bold">Фраза:</b> ищу квартиру</p>
-            <p><b class="font-bold">Регион:</b> <span class="fi fi-kz mr-1 rounded-[2px]"></span>Казахстан</p>
-            <p><b class="font-bold">Запрос:</b> Ищу квартиру в Алматы<br>на длительный срок...</p>
-            <p class="text-[#737A8D]"><b class="font-semibold text-[#555C70]">Источник:</b> публичная группа</p>
+            <p><b class="font-bold">Phrase:</b> looking for an apartment</p>
+            <p><b class="font-bold">Region:</b> <span class="fi fi-kz mr-1 rounded-[2px]"></span>Kazakhstan</p>
+            <p><b class="font-bold">Snippet:</b> Looking for an apartment in Almaty<br>long-term lease...</p>
+            <p class="text-[#737A8D]"><b class="font-semibold text-[#555C70]">Source:</b> public group</p>
           </div>
           <div class="mt-3 grid grid-cols-2 gap-2">
-            <button type="button" class="rounded-[10px] border border-[#E2E5F0] bg-white py-2 text-[11px] font-semibold text-[#374151]">Автор</button>
-            <button type="button" class="rounded-[10px] bg-violet py-2 text-[11px] font-semibold text-white">Открыть чат</button>
+            <button type="button" class="rounded-[10px] border border-[#E2E5F0] bg-white py-2 text-[11px] font-semibold text-[#374151]">Author</button>
+            <button type="button" class="rounded-[10px] bg-violet py-2 text-[11px] font-semibold text-white">Open chat</button>
           </div>
         </article>
 
         
         <article class="match-card relative glass rounded-[14px] p-4 shadow-card animate-fadeUp" style="animation-delay:.22s">
           <div class="flex items-start justify-between">
-            <div class="flex items-center gap-[6px] text-[13px] font-extrabold text-violet"><span>🔥</span> Новое совпадение</div>
+            <div class="flex items-center gap-[6px] text-[13px] font-extrabold text-violet"><span>🔥</span> New match</div>
             <div class="text-[12px] font-medium text-[#8A90A2]">09:42</div>
           </div>
           <div class="mt-[10px] space-y-[6px] text-[12px] leading-[1.4] text-[#141926]">
-            <p><b class="font-bold">Фраза:</b> нужен дизайнер</p>
-            <p><b class="font-bold">Регион:</b> <span class="fi fi-ua mr-1 rounded-[2px]"></span>Украина</p>
-            <p><b class="font-bold">Запрос:</b> Нужен дизайнер для<br>лендинга. Бюджет обсуждаем.</p>
-            <p class="text-[#737A8D]"><b class="font-semibold text-[#555C70]">Источник:</b> Telegram-чат</p>
+            <p><b class="font-bold">Phrase:</b> need a designer</p>
+            <p><b class="font-bold">Region:</b> <span class="fi fi-ua mr-1 rounded-[2px]"></span>Ukraine</p>
+            <p><b class="font-bold">Snippet:</b> Need a designer for<br>a landing page. Budget TBD.</p>
+            <p class="text-[#737A8D]"><b class="font-semibold text-[#555C70]">Source:</b> Telegram chat</p>
           </div>
           <div class="mt-3 grid grid-cols-2 gap-2">
-            <button type="button" class="rounded-[10px] border border-[#E2E5F0] bg-white py-2 text-[11px] font-semibold text-[#374151]">Автор</button>
-            <button type="button" class="rounded-[10px] bg-violet py-2 text-[11px] font-semibold text-white">Открыть чат</button>
+            <button type="button" class="rounded-[10px] border border-[#E2E5F0] bg-white py-2 text-[11px] font-semibold text-[#374151]">Author</button>
+            <button type="button" class="rounded-[10px] bg-violet py-2 text-[11px] font-semibold text-white">Open chat</button>
           </div>
         </article>
 
         
         <article class="match-card relative glass rounded-[14px] p-4 shadow-card animate-fadeUp" style="animation-delay:.32s">
           <div class="flex items-start justify-between">
-            <div class="flex items-center gap-[6px] text-[13px] font-extrabold text-violet"><span>🔥</span> Новое совпадение</div>
+            <div class="flex items-center gap-[6px] text-[13px] font-extrabold text-violet"><span>🔥</span> New match</div>
             <div class="text-[12px] font-medium text-[#8A90A2]">09:43</div>
           </div>
           <div class="mt-[10px] space-y-[6px] text-[12px] leading-[1.4] text-[#141926]">
-            <p><b class="font-bold">Фраза:</b> ищу разработчика React</p>
-            <p><b class="font-bold">Регион:</b> <span class="fi fi-us mr-1 rounded-[2px]"></span>США</p>
-            <p><b class="font-bold">Запрос:</b> Ищу разработчика React<br>на удалёнку, срочно.</p>
-            <p class="text-[#737A8D]"><b class="font-semibold text-[#555C70]">Источник:</b> группа стартапов</p>
+            <p><b class="font-bold">Phrase:</b> looking for a React developer</p>
+            <p><b class="font-bold">Region:</b> <span class="fi fi-us mr-1 rounded-[2px]"></span>United States</p>
+            <p><b class="font-bold">Snippet:</b> Looking for a React developer<br>remote, urgent.</p>
+            <p class="text-[#737A8D]"><b class="font-semibold text-[#555C70]">Source:</b> startup group</p>
           </div>
           <div class="mt-3 grid grid-cols-2 gap-2">
-            <button type="button" class="rounded-[10px] border border-[#E2E5F0] bg-white py-2 text-[11px] font-semibold text-[#374151]">Автор</button>
-            <button type="button" class="rounded-[10px] bg-violet py-2 text-[11px] font-semibold text-white">Открыть чат</button>
+            <button type="button" class="rounded-[10px] border border-[#E2E5F0] bg-white py-2 text-[11px] font-semibold text-[#374151]">Author</button>
+            <button type="button" class="rounded-[10px] bg-violet py-2 text-[11px] font-semibold text-white">Open chat</button>
           </div>
         </article>
 
         
         <article class="match-card relative glass rounded-[14px] p-4 shadow-card animate-fadeUp" style="animation-delay:.42s">
           <div class="flex items-start justify-between">
-            <div class="flex items-center gap-[6px] text-[13px] font-extrabold text-violet"><span>🔥</span> Новое совпадение</div>
+            <div class="flex items-center gap-[6px] text-[13px] font-extrabold text-violet"><span>🔥</span> New match</div>
             <div class="text-[12px] font-medium text-[#8A90A2]">09:44</div>
           </div>
           <div class="mt-[10px] space-y-[6px] text-[12px] leading-[1.4] text-[#141926]">
-            <p><b class="font-bold">Фраза:</b> нужен юрист</p>
-            <p><b class="font-bold">Регион:</b> <span class="fi fi-ru mr-1 rounded-[2px]"></span>Россия</p>
-            <p><b class="font-bold">Запрос:</b> Нужен юрист для консультации<br>по договору. Москва.</p>
-            <p class="text-[#737A8D]"><b class="font-semibold text-[#555C70]">Источник:</b> публичная группа</p>
+            <p><b class="font-bold">Phrase:</b> need a lawyer</p>
+            <p><b class="font-bold">Region:</b> <span class="fi fi-ru mr-1 rounded-[2px]"></span>Russia</p>
+            <p><b class="font-bold">Snippet:</b> Need a lawyer for contract<br>advice. Moscow.</p>
+            <p class="text-[#737A8D]"><b class="font-semibold text-[#555C70]">Source:</b> public group</p>
           </div>
           <div class="mt-3 grid grid-cols-2 gap-2">
-            <button type="button" class="rounded-[10px] border border-[#E2E5F0] bg-white py-2 text-[11px] font-semibold text-[#374151]">Автор</button>
-            <button type="button" class="rounded-[10px] bg-violet py-2 text-[11px] font-semibold text-white">Открыть чат</button>
+            <button type="button" class="rounded-[10px] border border-[#E2E5F0] bg-white py-2 text-[11px] font-semibold text-[#374151]">Author</button>
+            <button type="button" class="rounded-[10px] bg-violet py-2 text-[11px] font-semibold text-white">Open chat</button>
           </div>
         </article>
       </div>
@@ -246,8 +246,8 @@
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M13.15 2.2 5.8 12.5h5.05l-.9 9.3 8.25-12.1h-5.35l.3-7.5Z" fill="currentColor"/></svg>
             </div>
             <div>
-              <h3 class="text-[13px] font-extrabold leading-[1.25] tracking-[-.02em] lg:text-[14.5px]">Реальные совпадения<br>сразу после появления</h3>
-              <p class="mt-[4px] text-[11.5px] font-medium text-[#6E7380] lg:mt-[6px] lg:text-[12.5px]">Не нужно искать вручную — Sendy присылает новые релевантные совпадения по вашим ключевым фразам.</p>
+              <h3 class="text-[13px] font-extrabold leading-[1.25] tracking-[-.02em] lg:text-[14.5px]">Real matches<br>the moment they appear</h3>
+              <p class="mt-[4px] text-[11.5px] font-medium text-[#6E7380] lg:mt-[6px] lg:text-[12.5px]">No manual digging — Sendy delivers new relevant matches for your search phrases.</p>
             </div>
           </div>
           <div class="feature-divider relative flex items-center gap-[12px] px-[8px] py-[6px] sm:px-[14px] lg:gap-[16px] lg:px-[20px] lg:py-[7px]">
@@ -255,8 +255,8 @@
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M3.6 12h16.8M12 3c2.55 2.45 3.7 5.45 3.7 9s-1.15 6.55-3.7 9c-2.55-2.45-3.7-5.45-3.7-9S9.45 5.45 12 3Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
             </div>
             <div>
-              <h3 class="text-[13px] font-extrabold leading-[1.25] tracking-[-.02em] lg:text-[14.5px]">Регионы</h3>
-              <p class="mt-[4px] text-[11.5px] font-medium leading-[1.35] text-[#6E7380] lg:mt-[6px] lg:text-[12.5px] lg:leading-[1.4]">Доступ активируется для одного выбранного региона. Дополнительные регионы подключаются отдельно.</p>
+              <h3 class="text-[13px] font-extrabold leading-[1.25] tracking-[-.02em] lg:text-[14.5px]">Regions</h3>
+              <p class="mt-[4px] text-[11.5px] font-medium leading-[1.35] text-[#6E7380] lg:mt-[6px] lg:text-[12.5px] lg:leading-[1.4]">Access is activated for one selected region. Additional regions are connected separately.</p>
             </div>
           </div>
           <div class="relative flex items-center gap-[12px] px-[8px] py-[6px] sm:px-[14px] lg:gap-[16px] lg:px-[20px] lg:py-[7px]">
@@ -264,8 +264,8 @@
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M5.4 16.4h-.2A2.2 2.2 0 0 1 3 14.2V6.6a2.2 2.2 0 0 1 2.2-2.2h13.6A2.2 2.2 0 0 1 21 6.6v7.6a2.2 2.2 0 0 1-2.2 2.2h-7.2L6.2 20v-3.6h-.8Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M8 10.4h.02M12 10.4h.02M16 10.4h.02" stroke="currentColor" stroke-width="2.8" stroke-linecap="round"/></svg>
             </div>
             <div>
-              <h3 class="text-[13px] font-extrabold leading-[1.25] tracking-[-.02em] lg:text-[14.5px]">Публичные и приватные чаты</h3>
-              <p class="mt-[4px] text-[11.5px] font-medium leading-[1.35] text-[#6E7380] lg:mt-[6px] lg:text-[12.5px] lg:leading-[1.4]">Публичные Telegram-чаты на основных тарифах. В Private — свои приватные группы и отдельная выдача для вас или команды.</p>
+              <h3 class="text-[13px] font-extrabold leading-[1.25] tracking-[-.02em] lg:text-[14.5px]">Public and private chats</h3>
+              <p class="mt-[4px] text-[11.5px] font-medium leading-[1.35] text-[#6E7380] lg:mt-[6px] lg:text-[12.5px] lg:leading-[1.4]">Public Telegram communities on core plans. On Private, connect your own private groups/chats with a separate feed for you or your team.</p>
             </div>
           </div>
         </div>
@@ -277,37 +277,37 @@
       <div class="glass reveal-up mx-auto max-w-[1180px] overflow-hidden rounded-[22px] p-5 sm:p-7 lg:p-8" data-reveal style="--reveal-delay: 0ms;">
         <div class="mb-5 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
           <div>
-            <p class="text-[11px] font-extrabold uppercase tracking-[.14em] text-violet/80">Фокус на Telegram</p>
-            <h2 class="mt-1 text-[24px] font-black tracking-[-.03em] text-[#0B1220] sm:text-[28px]">Что вы получаете с Sendy</h2>
+            <p class="text-[11px] font-extrabold uppercase tracking-[.14em] text-violet/80">Telegram-first</p>
+            <h2 class="mt-1 text-[24px] font-black tracking-[-.03em] text-[#0B1220] sm:text-[28px]">What you get with Sendy</h2>
           </div>
           <p class="max-w-[520px] text-[13px] leading-[1.5] text-[#6E7380] sm:text-right sm:text-[14px]">
-            Добавьте ключевые фразы, подключайте чаты при необходимости — релевантные совпадения приходят в Telegram-бот в выбранном регионе в реальном времени.
+            Add search phrases, connect chats if needed — relevant matches arrive in the Telegram bot in your selected region in real time.
           </p>
         </div>
 
         <div class="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-5 lg:gap-3">
           <div class="reveal-up flex min-h-[88px] items-center gap-3 rounded-[14px] border border-violet/10 bg-white px-4 py-3" data-reveal style="--reveal-delay: 40ms;">
             <span class="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-[#EEEBFF] text-violet"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M13.15 2.2 5.8 12.5h5.05l-.9 9.3 8.25-12.1h-5.35l.3-7.5Z" fill="currentColor"/></svg></span>
-            <p class="text-[14px] font-bold leading-snug text-[#121826]">Поиск в Telegram в реальном времени</p>
+            <p class="text-[14px] font-bold leading-snug text-[#121826]">Real-time Telegram search</p>
           </div>
           <div class="reveal-up flex min-h-[88px] items-center gap-3 rounded-[14px] border border-violet/10 bg-white px-4 py-3" data-reveal style="--reveal-delay: 80ms;">
             <span class="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-[#EEEBFF] text-violet"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M3.6 12h16.8M12 3c2.55 2.45 3.7 5.45 3.7 9s-1.15 6.55-3.7 9c-2.55-2.45-3.7-5.45-3.7-9S9.45 5.45 12 3Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>
-            <p class="text-[14px] font-bold leading-snug text-[#121826]">Поиск по регионам</p>
+            <p class="text-[14px] font-bold leading-snug text-[#121826]">Search by region</p>
           </div>
           <div class="reveal-up flex min-h-[88px] items-center gap-3 rounded-[14px] border border-violet/10 bg-white px-4 py-3" data-reveal style="--reveal-delay: 120ms;">
             <span class="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-[#EEEBFF] text-violet"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="4" y="10" width="16" height="10" rx="2" stroke="currentColor" stroke-width="1.7"/><path d="M8 10V8a4 4 0 1 1 8 0v2" stroke="currentColor" stroke-width="1.7"/></svg></span>
-            <p class="text-[14px] font-bold leading-snug text-[#121826]">Private-чаты</p>
+            <p class="text-[14px] font-bold leading-snug text-[#121826]">Private chats</p>
           </div>
           <div class="reveal-up flex min-h-[88px] items-center gap-3 rounded-[14px] border border-violet/10 bg-white px-4 py-3" data-reveal style="--reveal-delay: 160ms;">
             <span class="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-[#EEEBFF] text-violet"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3l8 3v5c0 5.25-3.44 10.13-8 11C7.44 21.13 4 16.25 4 11V6l8-3z" stroke="currentColor" stroke-width="1.7"/><path d="M9.5 12.5 11.2 14l3.3-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-            <p class="text-[14px] font-bold leading-snug text-[#121826]">Мгновенные совпадения</p>
+            <p class="text-[14px] font-bold leading-snug text-[#121826]">Instant matches</p>
           </div>
           <div class="reveal-up flex min-h-[88px] items-center gap-3 rounded-[14px] border border-violet/10 bg-white px-4 py-3 sm:col-span-2 lg:col-span-1" data-reveal style="--reveal-delay: 200ms;">
             <span class="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-[#EEEBFF] text-violet"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M8 4h10v16H8V4Z" stroke="currentColor" stroke-width="1.7"/><path d="M6 8h4M6 12h8M6 16h6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
-            <p class="text-[14px] font-bold leading-snug text-[#121826]">Лиды, бренды и конкуренты</p>
+            <p class="text-[14px] font-bold leading-snug text-[#121826]">Leads, brands and competitors</p>
           </div>
         </div>
-        <p class="mt-4 text-center text-[11px] leading-[1.55] text-[#9CA3AF] sm:text-[12px]">Поиск в Telegram в реальном времени · Поиск по регионам · Private-чаты · Мгновенная доставка · Лиды, бренды и конкуренты</p>
+        <p class="mt-4 text-center text-[11px] leading-[1.55] text-[#9CA3AF] sm:text-[12px]">Real-time Telegram search · Regional coverage · Private chats · Instant delivery · Leads, brands and competitors</p>
       </div>
     </section>
 
@@ -317,9 +317,9 @@
         <div class="grid gap-10 lg:grid-cols-[minmax(0,260px)_minmax(0,1fr)] lg:items-start lg:gap-12">
           <div class="lg:pt-6">
             <img src="/media/logo.png" alt="" class="mb-4 h-12 w-auto max-w-[160px] object-contain object-left sm:h-14" width="160" height="64" loading="lazy" />
-            <p class="text-[11px] font-extrabold uppercase tracking-[.14em] text-violet/80">Что делает Sendy</p>
-            <h2 class="mt-2 text-[40px] font-black leading-[1.05] tracking-[-.04em] text-[#0B1220] xl:text-[52px]">Что<br />делает<br />Sendy</h2>
-            <p class="mt-4 max-w-[280px] text-[14px] leading-[1.55] text-[#6E7380]">От мониторинга чатов до карточки совпадения в боте — один непрерывный поток.</p>
+            <p class="text-[11px] font-extrabold uppercase tracking-[.14em] text-violet/80">What Sendy does</p>
+            <h2 class="mt-2 text-[40px] font-black leading-[1.05] tracking-[-.04em] text-[#0B1220] xl:text-[52px]">What<br />Sendy<br />does</h2>
+            <p class="mt-4 max-w-[280px] text-[14px] leading-[1.55] text-[#6E7380]">From chat monitoring to a match card in the bot — one continuous flow.</p>
           </div>
 
           <div class="relative rounded-[22px] border border-violet/10 bg-white/80 p-5 shadow-soft backdrop-blur-sm sm:p-6 lg:p-8">
@@ -330,8 +330,8 @@
                 <div class="mb-4 flex items-start gap-3">
                   <span class="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-violet text-[13px] font-bold text-white shadow-[0_8px_20px_rgba(91,73,246,.35)]">1</span>
                   <div>
-                    <h3 class="text-[17px] font-extrabold leading-snug text-[#121826]">Мониторим Telegram-чаты</h3>
-                    <p class="mt-1 text-[12px] leading-[1.45] text-[#6E7380]">Sendy отслеживает поток публичных чатов в выбранном регионе по вашим настройкам и ключевым фразам.</p>
+                    <h3 class="text-[17px] font-extrabold leading-snug text-[#121826]">Monitor Telegram chats</h3>
+                    <p class="mt-1 text-[12px] leading-[1.45] text-[#6E7380]">Sendy monitors public chat traffic in your selected region according to your settings and search phrases.</p>
                   </div>
                 </div>
                 <div class="flex flex-1 flex-col rounded-[16px] border border-[#E7E9F3] bg-[#F8F9FB] p-3 shadow-[0_12px_32px_rgba(23,29,53,.06)]">
@@ -342,28 +342,28 @@
                     </div>
                     <span class="text-[10px] text-[#9CA3AF]">⋯</span>
                   </div>
-                  <p class="mt-2 text-[11px] font-bold text-[#1E2537]">Источник: NYC Apartments</p>
-                  <p class="text-[10px] text-[#9CA3AF]">18&nbsp;732 участников</p>
+                  <p class="mt-2 text-[11px] font-bold text-[#1E2537]">Source: NYC Apartments</p>
+                  <p class="text-[10px] text-[#9CA3AF]">18,732 members</p>
                   <div class="mt-3 space-y-2">
                     <div class="flex gap-2">
                       <span class="grid h-7 w-7 shrink-0 place-items-center rounded-full bg-pink-400 text-[9px] font-bold text-white">M</span>
                       <div class="rounded-[10px] bg-white px-2.5 py-1.5 text-[10px] text-[#374151] shadow-sm">Anyone seen a broker?</div>
                     </div>
                     <div class="flex gap-2">
-                      <span class="grid h-7 w-7 shrink-0 place-items-center rounded-full bg-blue-500 text-[9px] font-bold text-white">И</span>
+                      <span class="grid h-7 w-7 shrink-0 place-items-center rounded-full bg-blue-500 text-[9px] font-bold text-white">I</span>
                       <div class="rounded-[10px] border-2 border-emerald-400 bg-white px-2.5 py-1.5 text-[10px] font-medium text-[#374151] shadow-sm">
-                        Ищу квартиру в Нью Йорке на долгий срок
+                        Looking for an apartment in NYC long-term
                         <span class="mt-0.5 block text-[9px] text-[#9CA3AF]">12:46</span>
                       </div>
                     </div>
                     <div class="flex gap-2 opacity-60">
                       <span class="grid h-7 w-7 shrink-0 place-items-center rounded-full bg-violet text-[9px] font-bold text-white">A</span>
-                      <div class="rounded-[10px] bg-white px-2.5 py-1.5 text-[10px] text-[#374151]">Добрый день…</div>
+                      <div class="rounded-[10px] bg-white px-2.5 py-1.5 text-[10px] text-[#374151]">Good morning…</div>
                     </div>
                   </div>
                   <div class="mt-auto flex items-center gap-1.5 pt-3 text-[10px] font-medium text-emerald-600">
                     <span class="h-2 w-2 animate-pulse rounded-full bg-emerald-500"></span>
-                    Идёт поиск совпадений…
+                    Searching for matches…
                   </div>
                 </div>
               </div>
@@ -381,21 +381,21 @@
                 <div class="mb-4 flex w-full items-start gap-3 lg:flex-col lg:items-center lg:text-center">
                   <span class="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-violet text-[13px] font-bold text-white shadow-[0_8px_20px_rgba(91,73,246,.35)] lg:mx-auto">2</span>
                   <div class="lg:px-1">
-                    <h3 class="text-[17px] font-extrabold leading-snug text-[#121826] lg:text-center">Находим запросы клиентов</h3>
-                    <p class="mt-1 text-[12px] leading-[1.45] text-[#6E7380] lg:text-center">Отбираем релевантные запросы клиентов по ключевым фразам в регионе.</p>
+                    <h3 class="text-[17px] font-extrabold leading-snug text-[#121826] lg:text-center">Detect customer intent</h3>
+                    <p class="mt-1 text-[12px] leading-[1.45] text-[#6E7380] lg:text-center">Match search phrases and surface relevant intent signals in your region.</p>
                   </div>
                 </div>
                 <div class="flex w-full flex-1 flex-col items-center justify-center rounded-[16px] border border-violet/15 bg-gradient-to-b from-[#F4F3FF] to-white px-4 py-6 shadow-[0_12px_32px_rgba(91,73,246,.08)]">
                   <span class="mb-3 inline-flex items-center gap-1 rounded-full border border-violet/20 bg-white px-2.5 py-1 text-[10px] font-semibold text-violet shadow-sm">
                     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" stroke="currentColor" stroke-width="1.6"/><path d="m16 16 4.2 4.2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-                    Поиск совпадений…
+                    Searching for matches…
                   </span>
                   <div class="relative flex h-[120px] w-[120px] shrink-0 items-center justify-center rounded-full bg-[#FAF8FF] shadow-[0_10px_28px_rgba(91,73,246,.14),0_2px_8px_rgba(24,39,75,.04),0_0_48px_-14px_rgba(91,73,246,.28)] ring-1 ring-white ring-inset">
                     <img src="/media/logo2.png" alt="" class="h-[82px] w-[82px] object-contain" width="128" height="128" loading="lazy" />
                   </div>
                   <span class="mt-3 inline-flex items-center gap-1 rounded-full border border-emerald-200 bg-emerald-50 px-2.5 py-1 text-[10px] font-semibold text-emerald-700">
                     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    Совпадение найдено!
+                    Match found!
                   </span>
                 </div>
               </div>
@@ -413,8 +413,8 @@
                 <div class="mb-4 flex items-start gap-3">
                   <span class="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-violet text-[13px] font-bold text-white shadow-[0_8px_20px_rgba(91,73,246,.35)]">3</span>
                   <div>
-                    <h3 class="text-[17px] font-extrabold leading-snug text-[#121826]">Отправляем релевантные совпадения</h3>
-                    <p class="mt-1 text-[12px] leading-[1.45] text-[#6E7380]">Мгновенно присылаем карточки совпадений в Telegram-бот в реальном времени.</p>
+                    <h3 class="text-[17px] font-extrabold leading-snug text-[#121826]">Deliver relevant matches</h3>
+                    <p class="mt-1 text-[12px] leading-[1.45] text-[#6E7380]">Instant match cards are delivered to your Telegram bot in real time.</p>
                   </div>
                 </div>
                 <div class="rounded-[16px] border border-[#E7E9F3] bg-white p-4 shadow-[0_12px_36px_rgba(23,29,53,.08)]">
@@ -423,22 +423,22 @@
                       <span class="grid h-8 w-8 place-items-center overflow-hidden rounded-full bg-white ring-1 ring-violet/20"><img src="/media/logo.png" alt="" class="h-6 w-6 object-contain" width="24" height="24" /></span>
                       <span class="text-[13px] font-bold text-[#1E2537]">Sendy</span>
                     </div>
-                    <span class="text-[10px] font-semibold uppercase tracking-wider text-[#9CA3AF]">Сейчас</span>
+                    <span class="text-[10px] font-semibold uppercase tracking-wider text-[#9CA3AF]">Now</span>
                   </div>
-                  <div class="mt-3 text-[12px] font-extrabold text-violet"><span aria-hidden="true">🔥</span> Новое совпадение</div>
-                  <div class="mt-2 rounded-[10px] bg-[#F4F3FF] px-3 py-2 text-[11px] font-semibold leading-snug text-violet">Ищу квартиру в Нью Йорке на долгий срок</div>
+                  <div class="mt-3 text-[12px] font-extrabold text-violet"><span aria-hidden="true">🔥</span> New match</div>
+                  <div class="mt-2 rounded-[10px] bg-[#F4F3FF] px-3 py-2 text-[11px] font-semibold leading-snug text-violet">Looking for an apartment in NYC long-term</div>
                   <ul class="mt-3 space-y-1.5 text-[10px] text-[#6E7380]">
-                    <li class="flex gap-1.5"><span class="font-semibold text-[#374151]">Источник:</span> NYC Apartments</li>
-                    <li class="flex gap-1.5"><span class="font-semibold text-[#374151]">Время:</span> 12:46</li>
+                    <li class="flex gap-1.5"><span class="font-semibold text-[#374151]">Source:</span> NYC Apartments</li>
+                    <li class="flex gap-1.5"><span class="font-semibold text-[#374151]">Time:</span> 12:46</li>
                   </ul>
                   <div class="mt-4 grid grid-cols-2 gap-2">
                     <button type="button" class="inline-flex h-9 items-center justify-center gap-1 rounded-[10px] border border-[#E2E5F0] bg-white text-[11px] font-semibold text-[#374151] transition hover:border-violet/30 hover:text-violet">
                       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 12a4 4 0 1 0-4-4 4 4 0 0 0 4 4Z" stroke="currentColor" stroke-width="1.5"/><path d="M4 20a8 8 0 0 1 16 0" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-                      Автор
+                      Author
                     </button>
                     <button type="button" class="inline-flex h-9 items-center justify-center gap-1 rounded-[10px] bg-violet text-[11px] font-semibold text-white shadow-[0_8px_20px_rgba(91,73,246,.28)] transition hover:bg-[#4F3DEC]">
                       <svg width="13" height="13" viewBox="0 0 24 24" fill="white" aria-hidden="true"><path d="M21.75 3.8 18.4 20.12c-.25 1.15-.93 1.43-1.88.89l-5.22-3.84-2.52 2.42c-.28.28-.51.51-1.05.51l.38-5.31 9.67-8.73c.42-.38-.09-.59-.65-.21L5.2 13.37.05 11.76c-1.12-.35-1.14-1.12.23-1.65L20.43 2.35c.93-.35 1.75.21 1.32 1.45Z"/></svg>
-                      Открыть чат
+                      Open chat
                     </button>
                   </div>
                 </div>
@@ -454,28 +454,28 @@
     <section class="relative z-20 mt-10 scroll-mt-24 lg:hidden">
       <div class="mx-auto max-w-[1180px] px-4">
         <img src="/media/logo.png" alt="" class="mb-3 h-10 w-auto max-w-[140px] object-contain object-left" width="140" height="56" loading="lazy" />
-        <p class="text-[11px] font-extrabold uppercase tracking-[.14em] text-violet/80">Что делает Sendy</p>
-        <h2 class="mt-1 text-[26px] font-black tracking-[-.03em] text-[#0B1220]">Что делает Sendy</h2>
-        <p class="mt-2 max-w-[520px] text-[13px] text-[#6E7380]">От мониторинга чатов до карточки в боте — один поток.</p>
+        <p class="text-[11px] font-extrabold uppercase tracking-[.14em] text-violet/80">What Sendy does</p>
+        <h2 class="mt-1 text-[26px] font-black tracking-[-.03em] text-[#0B1220]">What Sendy does</h2>
+        <p class="mt-2 max-w-[520px] text-[13px] text-[#6E7380]">From chat monitoring to a bot card — one flow.</p>
 
         <div class="mt-6 space-y-8">
           
           <div>
             <div class="mb-3 flex items-center gap-2">
               <span class="grid h-8 w-8 place-items-center rounded-full bg-violet text-[12px] font-bold text-white">1</span>
-              <h3 class="text-[16px] font-extrabold text-[#121826]">Мониторим Telegram-чаты</h3>
+              <h3 class="text-[16px] font-extrabold text-[#121826]">Monitor Telegram chats</h3>
             </div>
-            <p class="mb-3 text-[13px] text-[#6E7380]">Sendy отслеживает поток публичных чатов в выбранном регионе по вашим настройкам и ключевым фразам.</p>
+            <p class="mb-3 text-[13px] text-[#6E7380]">Sendy monitors public chat traffic in your selected region according to your settings and search phrases.</p>
             <div class="rounded-[16px] border border-[#E7E9F3] bg-[#F8F9FB] p-3 shadow-[0_12px_28px_rgba(23,29,53,.06)]">
               <div class="flex items-center justify-between border-b border-[#E8EBF0] pb-2 text-[11px] font-semibold text-[#1E2537]">
                 <span class="flex items-center gap-1"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M21.75 3.8 18.4 20.12c-.25 1.15-.93 1.43-1.88.89l-5.22-3.84-2.52 2.42c-.28.28-.51.51-1.05.51l.38-5.31 9.67-8.73c.42-.38-.09-.59-.65-.21L5.2 13.37.05 11.76c-1.12-.35-1.14-1.12.23-1.65L20.43 2.35c.93-.35 1.75.21 1.32 1.45Z" fill="#45AEEF"/></svg>Telegram</span>
               </div>
-              <p class="mt-2 text-[12px] font-bold">Источник: NYC Apartments</p>
+              <p class="mt-2 text-[12px] font-bold">Source: NYC Apartments</p>
               <div class="mt-2 flex gap-2">
-                <span class="grid h-7 w-7 shrink-0 place-items-center rounded-full bg-blue-500 text-[9px] font-bold text-white">И</span>
-                <div class="rounded-[10px] border-2 border-emerald-400 bg-white px-2.5 py-1.5 text-[11px] text-[#374151]">Ищу квартиру в Нью Йорке на долгий срок</div>
+                <span class="grid h-7 w-7 shrink-0 place-items-center rounded-full bg-blue-500 text-[9px] font-bold text-white">I</span>
+                <div class="rounded-[10px] border-2 border-emerald-400 bg-white px-2.5 py-1.5 text-[11px] text-[#374151]">Looking for an apartment in NYC long-term</div>
               </div>
-              <p class="mt-3 flex items-center gap-1.5 text-[11px] font-medium text-emerald-600"><span class="h-2 w-2 rounded-full bg-emerald-500"></span>Идёт поиск совпадений…</p>
+              <p class="mt-3 flex items-center gap-1.5 text-[11px] font-medium text-emerald-600"><span class="h-2 w-2 rounded-full bg-emerald-500"></span>Searching for matches…</p>
             </div>
           </div>
           <div class="flex justify-center py-1" aria-hidden="true">
@@ -485,15 +485,15 @@
           <div>
             <div class="mb-3 flex items-center gap-2">
               <span class="grid h-8 w-8 place-items-center rounded-full bg-violet text-[12px] font-bold text-white">2</span>
-              <h3 class="text-[16px] font-extrabold text-[#121826]">Находим запросы клиентов</h3>
+              <h3 class="text-[16px] font-extrabold text-[#121826]">Detect customer intent</h3>
             </div>
-            <p class="mb-3 text-[13px] text-[#6E7380]">Отбираем релевантные запросы клиентов по ключевым фразам в регионе.</p>
+            <p class="mb-3 text-[13px] text-[#6E7380]">Match search phrases and surface relevant intent signals in your region.</p>
             <div class="flex flex-col items-center rounded-[16px] border border-violet/15 bg-gradient-to-b from-[#F4F3FF] to-white px-4 py-6">
-              <span class="mb-2 rounded-full border border-violet/20 bg-white px-2.5 py-1 text-[10px] font-semibold text-violet">Поиск совпадений…</span>
+              <span class="mb-2 rounded-full border border-violet/20 bg-white px-2.5 py-1 text-[10px] font-semibold text-violet">Searching for matches…</span>
               <div class="relative flex h-[104px] w-[104px] shrink-0 items-center justify-center rounded-full bg-[#FAF8FF] shadow-[0_8px_24px_rgba(91,73,246,.13),0_2px_8px_rgba(24,39,75,.04),0_0_40px_-12px_rgba(91,73,246,.26)] ring-1 ring-white ring-inset">
                 <img src="/media/logo2.png" alt="" class="h-[74px] w-[74px] object-contain" width="112" height="112" loading="lazy" />
               </div>
-              <span class="mt-2 rounded-full border border-emerald-200 bg-emerald-50 px-2.5 py-1 text-[10px] font-semibold text-emerald-700">Совпадение найдено!</span>
+              <span class="mt-2 rounded-full border border-emerald-200 bg-emerald-50 px-2.5 py-1 text-[10px] font-semibold text-emerald-700">Match found!</span>
             </div>
           </div>
           <div class="flex justify-center py-1" aria-hidden="true">
@@ -503,27 +503,27 @@
           <div>
             <div class="mb-3 flex items-center gap-2">
               <span class="grid h-8 w-8 place-items-center rounded-full bg-violet text-[12px] font-bold text-white">3</span>
-              <h3 class="text-[16px] font-extrabold text-[#121826]">Отправляем релевантные совпадения</h3>
+              <h3 class="text-[16px] font-extrabold text-[#121826]">Deliver relevant matches</h3>
             </div>
-            <p class="mb-3 text-[13px] text-[#6E7380]">Мгновенно присылаем карточки совпадений в Telegram-бот в реальном времени.</p>
+            <p class="mb-3 text-[13px] text-[#6E7380]">Instant match cards are delivered to your Telegram bot in real time.</p>
             <div class="rounded-[16px] border border-[#E7E9F3] bg-white p-4 shadow-[0_12px_36px_rgba(23,29,53,.08)]">
               <div class="flex items-center justify-between">
                 <div class="flex items-center gap-2">
                   <span class="grid h-8 w-8 place-items-center overflow-hidden rounded-full bg-white ring-1 ring-violet/20"><img src="/media/logo.png" alt="" class="h-6 w-6 object-contain" width="24" height="24" /></span>
                   <span class="text-[13px] font-bold">Sendy</span>
                 </div>
-                <span class="text-[10px] font-semibold uppercase text-[#9CA3AF]">Сейчас</span>
+                <span class="text-[10px] font-semibold uppercase text-[#9CA3AF]">Now</span>
               </div>
-              <div class="mt-2 text-[12px] font-extrabold text-violet">🔥 Новое совпадение</div>
-              <div class="mt-2 rounded-[10px] bg-[#F4F3FF] px-3 py-2 text-[11px] font-semibold text-violet">Ищу квартиру в Нью Йорке на долгий срок</div>
+              <div class="mt-2 text-[12px] font-extrabold text-violet">🔥 New match</div>
+              <div class="mt-2 rounded-[10px] bg-[#F4F3FF] px-3 py-2 text-[11px] font-semibold text-violet">Looking for an apartment in NYC long-term</div>
               <div class="mt-4 grid grid-cols-2 gap-2">
                 <button type="button" class="inline-flex h-9 items-center justify-center gap-1 rounded-[10px] border border-[#E2E5F0] bg-white text-[11px] font-semibold text-[#374151] transition hover:border-violet/30 hover:text-violet">
                   <svg width="13" height="13" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 12a4 4 0 1 0-4-4 4 4 0 0 0 4 4Z" stroke="currentColor" stroke-width="1.5"/><path d="M4 20a8 8 0 0 1 16 0" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-                  Автор
+                  Author
                 </button>
                 <button type="button" class="inline-flex h-9 items-center justify-center gap-1 rounded-[10px] bg-violet text-[11px] font-semibold text-white shadow-[0_8px_20px_rgba(91,73,246,.28)] transition hover:bg-[#4F3DEC]">
                   <svg width="13" height="13" viewBox="0 0 24 24" fill="white" aria-hidden="true"><path d="M21.75 3.8 18.4 20.12c-.25 1.15-.93 1.43-1.88.89l-5.22-3.84-2.52 2.42c-.28.28-.51.51-1.05.51l.38-5.31 9.67-8.73c.42-.38-.09-.59-.65-.21L5.2 13.37.05 11.76c-1.12-.35-1.14-1.12.23-1.65L20.43 2.35c.93-.35 1.75.21 1.32 1.45Z"/></svg>
-                  Открыть чат
+                  Open chat
                 </button>
               </div>
             </div>
@@ -541,11 +541,11 @@
           <div class="mx-auto mb-4 h-[3px] w-8 rounded-full bg-[#4f8df7]"></div>
     
           <h2 class="text-[28px] font-bold tracking-tight text-[#2f3342]">
-            Как это работает
+            How it works
           </h2>
     
           <p class="mx-auto mt-4 max-w-[520px] text-[13px] leading-[1.45] text-[#9a9ca5]">
-            После запуска бота вы выбираете язык и один регион, добавляете ключевые фразы и получаете совпадения в Telegram в реальном времени.
+            After you start the bot, choose language and one region, add search phrases, and receive matches in Telegram in real time.
           </p>
         </div>
     
@@ -639,7 +639,7 @@
               </div>
     
               <p class="mt-1 text-[12px] font-medium text-[#3b3d48]">
-                Запустите Sendy
+                Launch Sendy
               </p>
             </div>
     
@@ -669,7 +669,7 @@
               </div>
     
               <p class="mt-1 text-[12px] font-medium text-[#3b3d48]">
-                Добавьте ключевые фразы
+                Add search phrases
               </p>
             </div>
     
@@ -708,7 +708,7 @@
               </div>
     
               <p class="mt-1 text-[12px] font-medium text-[#3b3d48]">
-                Выберите регион
+                Pick one region
               </p>
             </div>
     
@@ -747,8 +747,8 @@
               </div>
     
               <p class="mt-1 text-right text-[12px] font-medium leading-[1.2] text-[#3b3d48]">
-                Получайте<br />
-                совпадения
+                Get<br />
+                matches
               </p>
             </div>
     
@@ -762,38 +762,38 @@
       <div class="mx-auto max-w-[1180px] px-6">
         <div class="text-center">
           <div class="mx-auto mb-4 h-[3px] w-8 rounded-full bg-[#4f8df7]"></div>
-          <h2 class="text-[42px] font-bold tracking-tight text-[#2f3342]">Как это работает</h2>
+          <h2 class="text-[42px] font-bold tracking-tight text-[#2f3342]">How it works</h2>
           <p class="mx-auto mt-4 max-w-[620px] text-[15px] leading-[1.6] text-[#9a9ca5]">
-            Тот же порядок, что в Telegram-боте: запуск → язык → один выбранный регион → ключевые фразы → совпадения в реальном времени → при необходимости свои чаты в Private.
+            Same flow as in the Telegram bot: launch → language → one selected region → search phrases → real-time matches → your own chats in Private when needed.
           </p>
         </div>
 
         <div class="relative mt-14">
           <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-5 xl:gap-4">
             <article class="relative z-10 rounded-[12px] border border-[#E7ECF3] bg-white p-5 shadow-[0_8px_24px_rgba(24,39,75,.06)]">
-              <p class="text-[12px] font-bold tracking-[.12em] text-[#4F8DF8]">ШАГ 01</p>
-              <h3 class="mt-2 text-[20px] font-semibold text-[#323849]">Запустите Telegram-бота Sendy</h3>
-              <p class="mt-2 text-[14px] leading-[1.5] text-[#7d8598]">Откройте бота в Telegram и начните настройку.</p>
+              <p class="text-[12px] font-bold tracking-[.12em] text-[#4F8DF8]">STEP 01</p>
+              <h3 class="mt-2 text-[20px] font-semibold text-[#323849]">Start the Sendy Telegram bot</h3>
+              <p class="mt-2 text-[14px] leading-[1.5] text-[#7d8598]">Open the bot in Telegram and begin setup.</p>
             </article>
             <article class="relative z-10 rounded-[12px] border border-[#E7ECF3] bg-white p-5 shadow-[0_8px_24px_rgba(24,39,75,.06)]">
-              <p class="text-[12px] font-bold tracking-[.12em] text-[#4F8DF8]">ШАГ 02</p>
-              <h3 class="mt-2 text-[20px] font-semibold text-[#323849]">Выберите язык</h3>
-              <p class="mt-2 text-[14px] leading-[1.5] text-[#7d8598]">Интерфейс и подсказки на удобном для вас языке.</p>
+              <p class="text-[12px] font-bold tracking-[.12em] text-[#4F8DF8]">STEP 02</p>
+              <h3 class="mt-2 text-[20px] font-semibold text-[#323849]">Choose your language</h3>
+              <p class="mt-2 text-[14px] leading-[1.5] text-[#7d8598]">Interface and hints in the language you prefer.</p>
             </article>
             <article class="relative z-10 rounded-[12px] border border-[#E7ECF3] bg-white p-5 shadow-[0_8px_24px_rgba(24,39,75,.06)]">
-              <p class="text-[12px] font-bold tracking-[.12em] text-[#4F8DF8]">ШАГ 03</p>
-              <h3 class="mt-2 text-[20px] font-semibold text-[#323849]">Активируйте доступ к одному региону</h3>
-              <p class="mt-2 text-[14px] leading-[1.5] text-[#7d8598]">Один активный доступ действует для одного выбранного региона. Дополнительные регионы подключаются отдельно.</p>
+              <p class="text-[12px] font-bold tracking-[.12em] text-[#4F8DF8]">STEP 03</p>
+              <h3 class="mt-2 text-[20px] font-semibold text-[#323849]">Activate one region</h3>
+              <p class="mt-2 text-[14px] leading-[1.5] text-[#7d8598]">One active access covers one selected region. Additional regions are added separately.</p>
             </article>
             <article class="relative z-10 rounded-[12px] border border-[#E7ECF3] bg-white p-5 shadow-[0_8px_24px_rgba(24,39,75,.06)]">
-              <p class="text-[12px] font-bold tracking-[.12em] text-[#4F8DF8]">ШАГ 04</p>
-              <h3 class="mt-2 text-[20px] font-semibold text-[#323849]">Добавьте ключевые фразы</h3>
-              <p class="mt-2 text-[14px] leading-[1.5] text-[#7d8598]">Например: «ищу квартиру», «нужен дизайнер», «looking for developer». Доступен фильтр по длине сообщения (минимум и максимум символов).</p>
+              <p class="text-[12px] font-bold tracking-[.12em] text-[#4F8DF8]">STEP 04</p>
+              <h3 class="mt-2 text-[20px] font-semibold text-[#323849]">Add search phrases</h3>
+              <p class="mt-2 text-[14px] leading-[1.5] text-[#7d8598]">For example: “looking for a developer”, “need a designer”, “rent apartment”. Message length filters (min/max characters) are available.</p>
             </article>
             <article class="relative z-10 rounded-[12px] border border-[#E7ECF3] bg-white p-5 shadow-[0_8px_24px_rgba(24,39,75,.06)] sm:col-span-2 xl:col-span-1">
-              <p class="text-[12px] font-bold tracking-[.12em] text-[#4F8DF8]">ШАГ 05</p>
-              <h3 class="mt-2 text-[20px] font-semibold text-[#323849]">Получайте совпадения в реальном времени</h3>
-              <p class="mt-2 text-[14px] leading-[1.5] text-[#7d8598]">Релевантные совпадения приходят в Telegram-бот сразу после обнаружения. В тарифе Private подключайте свои публичные и приватные чаты.</p>
+              <p class="text-[12px] font-bold tracking-[.12em] text-[#4F8DF8]">STEP 05</p>
+              <h3 class="mt-2 text-[20px] font-semibold text-[#323849]">Get matches in real time</h3>
+              <p class="mt-2 text-[14px] leading-[1.5] text-[#7d8598]">Relevant matches are delivered to your Telegram bot as soon as they are detected. On Private, connect your public and private chats.</p>
             </article>
           </div>
         </div>
@@ -805,8 +805,8 @@
       <div class="mx-auto max-w-[980px] rounded-[20px] bg-[#F9F7FF] px-6 py-10 sm:px-10">
         <div class="text-center">
           <h2 class="text-[44px] font-black leading-[1.1] tracking-[-.03em] text-[#151B2E] sm:text-[52px]">
-            Используется<br />
-            в любых <span class="grad-text">нишах</span>
+            Used<br />
+            in any <span class="grad-text">niche</span>
 
           </h2>
         </div>
@@ -821,8 +821,8 @@
                   <path d="M14 3v5h5M10 12h6M10 16h5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
                 </svg>
               </div>
-              <h3 class="text-[30px] font-bold leading-[1.15] text-[#1D2438]">Поиск клиентов</h3>
-              <p class="mx-auto mt-3 max-w-[300px] text-[15px] leading-[1.55] text-[#6E7380]">Находите клиентов, которые уже ищут специалиста или услугу в Telegram-чатах выбранного региона.</p>
+              <h3 class="text-[30px] font-bold leading-[1.15] text-[#1D2438]">Customer acquisition</h3>
+              <p class="mx-auto mt-3 max-w-[300px] text-[15px] leading-[1.55] text-[#6E7380]">Find clients who are already looking for help in Telegram communities within your selected region.</p>
             </article>
             <article class="px-6 py-8 text-center">
               <div class="mx-auto mb-3 grid h-10 w-10 place-items-center rounded-full bg-violet/10 text-violet">
@@ -831,8 +831,8 @@
                   <path d="M9 8h6M9 12h6M9 16h4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
                 </svg>
               </div>
-              <h3 class="text-[30px] font-bold leading-[1.15] text-[#1D2438]">Мониторинг рынка</h3>
-              <p class="mx-auto mt-3 max-w-[300px] text-[15px] leading-[1.55] text-[#6E7380]">Следите за спросом, сделками и сигналами (включая crypto), обсуждениями и трендами в нише.</p>
+              <h3 class="text-[30px] font-bold leading-[1.15] text-[#1D2438]">Market monitoring</h3>
+              <p class="mx-auto mt-3 max-w-[300px] text-[15px] leading-[1.55] text-[#6E7380]">Track demand, deals and signals (including crypto), discussions and trends in your niche.</p>
             </article>
             <article class="px-6 py-8 text-center">
               <div class="mx-auto mb-3 grid h-10 w-10 place-items-center rounded-full bg-violet/10 text-violet">
@@ -842,8 +842,8 @@
                   <path d="M10 20v-5h4v5" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
                 </svg>
               </div>
-              <h3 class="text-[30px] font-bold leading-[1.15] text-[#1D2438]">Найм специалистов</h3>
-              <p class="mx-auto mt-3 max-w-[300px] text-[15px] leading-[1.55] text-[#6E7380]">Находите специалистов и кандидатов по релевантным запросам в Telegram.</p>
+              <h3 class="text-[30px] font-bold leading-[1.15] text-[#1D2438]">Hiring signals</h3>
+              <p class="mx-auto mt-3 max-w-[300px] text-[15px] leading-[1.55] text-[#6E7380]">Find specialists, contractors and candidates through relevant Telegram signals.</p>
             </article>
             <article class="px-6 py-8 text-center">
               <div class="mx-auto mb-3 grid h-10 w-10 place-items-center rounded-full bg-violet/10 text-violet">
@@ -852,8 +852,8 @@
                   <path d="M8 12h8M8 15.5h5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
                 </svg>
               </div>
-              <h3 class="text-[30px] font-bold leading-[1.15] text-[#1D2438]">B2B-продажи</h3>
-              <p class="mx-auto mt-3 max-w-[300px] text-[15px] leading-[1.55] text-[#6E7380]">Находите запросы на поставщиков, подрядчиков, интеграторов и услуги.</p>
+              <h3 class="text-[30px] font-bold leading-[1.15] text-[#1D2438]">B2B sales</h3>
+              <p class="mx-auto mt-3 max-w-[300px] text-[15px] leading-[1.55] text-[#6E7380]">Surface requests for vendors, contractors, integrators and services.</p>
             </article>
           </div>
         </div>
@@ -864,28 +864,28 @@
     <section class="relative z-20 mt-14">
       <div class="mx-auto max-w-[980px] px-4">
         <div class="text-center">
-          <p class="text-[11px] font-extrabold uppercase tracking-[.14em] text-violet/80">Мониторинг и сигналы</p>
-          <h2 class="mt-2 text-[32px] font-black leading-[1.12] tracking-[-.03em] text-[#0B1220] sm:text-[40px]">Не только лиды</h2>
+          <p class="text-[11px] font-extrabold uppercase tracking-[.14em] text-violet/80">Monitoring and signals</p>
+          <h2 class="mt-2 text-[32px] font-black leading-[1.12] tracking-[-.03em] text-[#0B1220] sm:text-[40px]">Not just leads</h2>
           <p class="mx-auto mt-4 max-w-[720px] text-[15px] leading-[1.65] text-[#6E7380]">
-            Sendy можно использовать не только для поиска клиентов, но и для мониторинга брендов, отзывов, конкурентов и рыночных сигналов в Telegram.
+            Sendy is not only for lead generation — use it for brand monitoring, reviews, competitor analysis and market signals in Telegram communities within your selected region.
           </p>
         </div>
         <div class="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2">
           <article class="glass rounded-[18px] border border-violet/10 p-6 text-center sm:text-left">
-            <h3 class="text-[20px] font-extrabold text-[#0B1220]">Лиды и спрос</h3>
-            <p class="mt-2 text-[14px] leading-[1.55] text-[#6E7380]">Ловите запросы вроде «ищу», «нужен», «кто может», «looking for» в момент появления.</p>
+            <h3 class="text-[20px] font-extrabold text-[#0B1220]">Leads and demand</h3>
+            <p class="mt-2 text-[14px] leading-[1.55] text-[#6E7380]">Catch prompts like “looking for”, “need”, “who can”, “wanted” as soon as they appear.</p>
           </article>
           <article class="glass rounded-[18px] border border-violet/10 p-6 text-center sm:text-left">
-            <h3 class="text-[20px] font-extrabold text-[#0B1220]">Упоминания бренда</h3>
-            <p class="mt-2 text-[14px] leading-[1.55] text-[#6E7380]">Следите за обсуждениями компании, продуктов и кампаний в чатах и группах.</p>
+            <h3 class="text-[20px] font-extrabold text-[#0B1220]">Brand mentions</h3>
+            <p class="mt-2 text-[14px] leading-[1.55] text-[#6E7380]">Follow conversations about your company, products and campaigns in chats and groups.</p>
           </article>
           <article class="glass rounded-[18px] border border-violet/10 p-6 text-center sm:text-left">
-            <h3 class="text-[20px] font-extrabold text-[#0B1220]">Отзывы и жалобы</h3>
-            <p class="mt-2 text-[14px] leading-[1.55] text-[#6E7380]">Видите негатив и вопросы пользователей раньше, чем они разрастутся в публичный скандал.</p>
+            <h3 class="text-[20px] font-extrabold text-[#0B1220]">Reviews and complaints</h3>
+            <p class="mt-2 text-[14px] leading-[1.55] text-[#6E7380]">See friction and user questions before they escalate.</p>
           </article>
           <article class="glass rounded-[18px] border border-violet/10 p-6 text-center sm:text-left">
-            <h3 class="text-[20px] font-extrabold text-[#0B1220]">Конкуренты и рынок</h3>
-            <p class="mt-2 text-[14px] leading-[1.55] text-[#6E7380]">Отслеживайте активность конкурентов, цены, найм и тренды в вашей нише.</p>
+            <h3 class="text-[20px] font-extrabold text-[#0B1220]">Competitors and market</h3>
+            <p class="mt-2 text-[14px] leading-[1.55] text-[#6E7380]">Track competitor activity, pricing, hiring and trends in your space.</p>
           </article>
         </div>
       </div>
@@ -895,36 +895,36 @@
     <section id="liveChatDemo" class="relative z-20 mt-12">
       <div class="mx-auto max-w-[1250px]">
         <div class="mb-6 text-center">
-          <p class="text-[11px] font-extrabold uppercase tracking-[.14em] text-violet/80">Пример совпадения</p>
-          <h2 class="mt-1 text-[26px] font-black tracking-[-.03em] text-[#0B1220] sm:text-[32px]">Пример выдачи Sendy</h2>
-          <p class="mx-auto mt-3 max-w-[640px] text-[14px] leading-[1.6] text-[#6E7380]">В уведомлении видно фразу, регион, фрагмент запроса и действия — профиль автора или открыть чат.</p>
+          <p class="text-[11px] font-extrabold uppercase tracking-[.14em] text-violet/80">Sample match</p>
+          <h2 class="mt-1 text-[26px] font-black tracking-[-.03em] text-[#0B1220] sm:text-[32px]">Example Sendy notification</h2>
+          <p class="mx-auto mt-3 max-w-[640px] text-[14px] leading-[1.6] text-[#6E7380]">The notification shows phrase, region, a short snippet and actions — author profile or open chat.</p>
         </div>
 
         
         <div class="mx-auto mb-8 max-w-[420px]">
           <article class="match-card rounded-[18px] border border-[#E7E9F3] bg-white p-5 shadow-[0_12px_36px_rgba(23,29,53,.08)]">
             <div class="flex items-start justify-between gap-2">
-              <div class="text-[12px] font-extrabold text-violet"><span>🔥</span> Новое совпадение</div>
+              <div class="text-[12px] font-extrabold text-violet"><span>🔥</span> New match</div>
               <div class="text-[11px] text-[#8A90A2]">09:40</div>
             </div>
             <div class="mt-3 space-y-1.5 text-[13px] leading-[1.45] text-[#141926]">
-              <p><b class="font-bold">Фраза:</b> ищу квартиру</p>
-              <p><b class="font-bold">Регион:</b> <span class="fi fi-kz mr-1 rounded-[2px]"></span>Казахстан</p>
-              <p><b class="font-bold">Запрос:</b> «Ищу квартиру в Алматы на длительный срок…»</p>
-              <p class="text-[#737A8D]"><b class="font-semibold text-[#555C70]">Источник:</b> публичная группа</p>
+              <p><b class="font-bold">Phrase:</b> looking for an apartment</p>
+              <p><b class="font-bold">Region:</b> <span class="fi fi-kz mr-1 rounded-[2px]"></span>Kazakhstan</p>
+              <p><b class="font-bold">Snippet:</b> “Looking for an apartment in Almaty long-term…”</p>
+              <p class="text-[#737A8D]"><b class="font-semibold text-[#555C70]">Source:</b> public group</p>
             </div>
             <div class="mt-4 grid grid-cols-2 gap-2">
-              <button type="button" class="rounded-[10px] border border-[#E2E5F0] bg-white py-2.5 text-[12px] font-semibold text-[#374151]">Автор</button>
-              <button type="button" class="rounded-[10px] bg-violet py-2.5 text-[12px] font-semibold text-white">Открыть чат</button>
+              <button type="button" class="rounded-[10px] border border-[#E2E5F0] bg-white py-2.5 text-[12px] font-semibold text-[#374151]">Author</button>
+              <button type="button" class="rounded-[10px] bg-violet py-2.5 text-[12px] font-semibold text-white">Open chat</button>
             </div>
           </article>
         </div>
         <div class="mb-6 text-center">
-          <p class="text-[11px] font-extrabold uppercase tracking-[.14em] text-violet/80">Иллюстрация интерфейса</p>
-          <h2 class="mt-2 text-[22px] font-black tracking-[-.03em] text-[#0B1220] sm:text-[28px]">Как выглядит работа Sendy</h2>
-          <p class="mx-auto mt-2 max-w-[640px] text-[13px] leading-[1.55] text-[#6E7380]">Ниже — демонстрация процесса (меню бота, ключевые фразы, чаты, совпадения). Это визуальная иллюстрация: вы работаете через Telegram-бота Sendy.</p>
+          <p class="text-[11px] font-extrabold uppercase tracking-[.14em] text-violet/80">Interface illustration</p>
+          <h2 class="mt-2 text-[22px] font-black tracking-[-.03em] text-[#0B1220] sm:text-[28px]">How Sendy looks in practice</h2>
+          <p class="mx-auto mt-2 max-w-[640px] text-[13px] leading-[1.55] text-[#6E7380]">Below is a walkthrough (bot menu, search phrases, chats, matches). Visual illustration — you work in the Sendy Telegram bot.</p>
         </div>
-        <p class="mb-4 text-center text-[13px] text-[#6E7380]">Интерактивный пример: запросы в чате превращаются в карточки совпадений справа.</p>
+        <p class="mb-4 text-center text-[13px] text-[#6E7380]">Interactive demo: chat posts surface as match cards on the right.</p>
 
         
         <div class="relative mx-auto w-full max-w-[1160px]">
@@ -946,7 +946,7 @@
               <div class="shrink-0 border-b border-[#E2E5F0] px-4 py-[14px]">
                 <div class="flex items-center gap-2 rounded-[12px] bg-[#F2F3F8] px-3 py-[8px]">
                   <svg width="13" height="13" viewBox="0 0 18 18" fill="none"><circle cx="8" cy="8" r="6" stroke="#8A91A6" stroke-width="1.5"/><path d="m13 13 3 3" stroke="#8A91A6" stroke-width="1.5" stroke-linecap="round"/></svg>
-                  <span class="text-[12.5px] text-[#8A91A6]">Поиск</span>
+                  <span class="text-[12.5px] text-[#8A91A6]">Search</span>
                 </div>
               </div>
               <div class="flex-1 divide-y divide-[#F0F2F8] overflow-y-auto" id="chatListItems"></div>
@@ -963,8 +963,8 @@
                 <div class="flex items-center gap-3">
                   <div id="chatHeaderAvatar" class="grid h-9 w-9 place-items-center rounded-full text-[13px] font-bold text-white" style="background:#5B49F6">DC</div>
                   <div>
-                    <p id="chatHeaderName" class="text-[14px] font-bold text-[#1E2537]">Дизайн-чат</p>
-                    <p id="chatHeaderSub" class="text-[11px] text-[#A0A5B4]">23 участника · 10 в сети</p>
+                    <p id="chatHeaderName" class="text-[14px] font-bold text-[#1E2537]">Design chat</p>
+                    <p id="chatHeaderSub" class="text-[11px] text-[#A0A5B4]">23 members · 10 online</p>
                   </div>
                 </div>
                 <svg class="text-[#A0A5B4]" width="15" height="15" viewBox="0 0 20 20" fill="none"><circle cx="4" cy="10" r="1.5" fill="currentColor"/><circle cx="10" cy="10" r="1.5" fill="currentColor"/><circle cx="16" cy="10" r="1.5" fill="currentColor"/></svg>
@@ -986,7 +986,7 @@
               
               <div class="shrink-0 border-t border-[#E2E5F0] bg-white px-4 py-3">
                 <div class="flex items-center gap-2 rounded-[14px] border border-[#E2E5F0] bg-[#F7F8FD] px-3 py-[8px]">
-                  <input id="chatInput" class="flex-1 bg-transparent text-[13px] text-[#1E2537] outline-none placeholder:text-[#B2B8CC]" placeholder="Напишите сообщение…" autocomplete="off"/>
+                  <input id="chatInput" class="flex-1 bg-transparent text-[13px] text-[#1E2537] outline-none placeholder:text-[#B2B8CC]" placeholder="Type a message…" autocomplete="off"/>
                   <button id="chatSend" class="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-violet text-white transition hover:bg-[#4F3DEC]">
                     <svg width="13" height="13" viewBox="0 0 18 18" fill="none"><path d="M2 9h14M9 2l7 7-7 7" stroke="white" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>
                   </button>
@@ -997,7 +997,7 @@
             
             <aside class="hidden border-l border-[#E2E5F0] bg-[#FAFBFF] lg:flex lg:flex-col" style="min-width:0">
               <div class="shrink-0 flex items-center justify-between border-b border-[#E2E5F0] px-4 py-[14px]">
-                <p class="text-[13px] font-extrabold text-[#1E2537]">Новые совпадения</p>
+                <p class="text-[13px] font-extrabold text-[#1E2537]">New matches</p>
                 <span id="matchBadge" class="rounded-full bg-violet px-2 py-0.5 text-[11px] font-bold text-white">0</span>
               </div>
               <div class="flex-1 space-y-3 overflow-y-auto p-4" id="matchCards"></div>
@@ -1015,12 +1015,12 @@
           
           <div class="mx-auto h-3 w-[85%] rounded-b-[40px] bg-gradient-to-b from-[#d0d0d8] to-transparent opacity-40"></div>
         </div>
-        <p class="mx-auto mt-4 max-w-[720px] text-center text-[12px] leading-[1.5] text-[#9CA3AF]">Макет экрана показывает логику работы для презентации; основной продукт — Telegram-бот Sendy.</p>
+        <p class="mx-auto mt-4 max-w-[720px] text-center text-[12px] leading-[1.5] text-[#9CA3AF]">This mock explains the flow for presentation; the live product is the Sendy Telegram bot.</p>
 
         
         <div class="mt-4 lg:hidden">
           <div class="flex items-center justify-between px-1 pb-2">
-            <p class="text-[13px] font-extrabold text-[#1E2537]">Новые совпадения</p>
+            <p class="text-[13px] font-extrabold text-[#1E2537]">New matches</p>
             <span id="matchBadgeMob" class="rounded-full bg-violet px-2 py-0.5 text-[11px] font-bold text-white">0</span>
           </div>
           <div class="space-y-3" id="matchCardsMob"></div>
@@ -1032,23 +1032,23 @@
     <section class="relative z-20 mt-12">
       <div class="mx-auto grid max-w-[1180px] grid-cols-1 gap-4 lg:grid-cols-2">
         <article class="rounded-[18px] border border-red-200 bg-red-50/70 p-5">
-          <p class="text-[11px] font-extrabold uppercase tracking-[.14em] text-red-500">Без Sendy</p>
-          <h3 class="mt-2 text-[22px] font-black text-[#121826]">Ручной поиск</h3>
+          <p class="text-[11px] font-extrabold uppercase tracking-[.14em] text-red-500">Without Sendy</p>
+          <h3 class="mt-2 text-[22px] font-black text-[#121826]">Manual search</h3>
           <ul class="mt-3 space-y-2 text-[14px] text-[#374151]">
-            <li>❌ Нужно вручную проверять десятки чатов</li>
-            <li>❌ Легко пропустить запрос клиента в потоке чата</li>
-            <li>❌ Нет фильтрации по региону и ключевым фразам</li>
-            <li>❌ Новые запросы приходится искать самому</li>
+            <li>❌ Manually checking dozens of chats</li>
+            <li>❌ Easy to miss a customer request in busy chats</li>
+            <li>❌ No filtering by region and search phrases</li>
+            <li>❌ You chase every new request yourself</li>
           </ul>
         </article>
         <article class="rounded-[18px] border border-violet/20 bg-violet/5 p-5">
-          <p class="text-[11px] font-extrabold uppercase tracking-[.14em] text-violet">С Sendy</p>
-          <h3 class="mt-2 text-[22px] font-black text-[#121826]">Авто-совпадения</h3>
+          <p class="text-[11px] font-extrabold uppercase tracking-[.14em] text-violet">With Sendy</p>
+          <h3 class="mt-2 text-[22px] font-black text-[#121826]">Auto matches</h3>
           <ul class="mt-3 space-y-2 text-[14px] text-[#374151]">
-            <li>✅ Sendy находит запросы клиентов по вашим ключевым фразам в выбранном регионе</li>
-            <li>✅ Вы получаете совпадения прямо в Telegram в реальном времени</li>
-            <li>✅ Ключевые фразы, фильтр длины сообщений и регион помогают убрать шум</li>
-            <li>✅ Public и Private чаты в одном инструменте</li>
+            <li>✅ Sendy surfaces customer intent for your search phrases in the selected region</li>
+            <li>✅ You get matches in Telegram in real time</li>
+            <li>✅ Search phrases, message length filters and region reduce noise</li>
+            <li>✅ Public and private chats in one workflow</li>
           </ul>
         </article>
       </div>
@@ -1057,18 +1057,18 @@
     
     <section id="private" class="relative z-20 mt-12">
       <div class="mx-auto max-w-[1180px] rounded-[22px] border border-violet/10 bg-gradient-to-r from-[#f3f0ff] via-[#faf9ff] to-[#eef3ff] p-6 sm:p-8">
-        <p class="text-[11px] font-extrabold uppercase tracking-[.14em] text-violet/80">Private-режим</p>
-        <h2 class="mt-2 text-[28px] font-black tracking-[-.03em] text-[#0B1220]">Private — для своих чатов</h2>
-        <p class="mt-2 max-w-[640px] text-[14px] text-[#5f6675]">Подключайте собственные публичные и приватные Telegram-чаты как источники и получайте отдельную приватную выдачу только для себя или своей команды.</p>
+        <p class="text-[11px] font-extrabold uppercase tracking-[.14em] text-violet/80">Private mode</p>
+        <h2 class="mt-2 text-[28px] font-black tracking-[-.03em] text-[#0B1220]">Private — for your own chats</h2>
+        <p class="mt-2 max-w-[640px] text-[14px] text-[#5f6675]">Connect your own public and private chats as sources and receive a private lead feed for you or your team.</p>
         <ul class="mt-4 space-y-2 text-[15px] text-[#1f2937]">
-          <li>• свои чаты как источники, включая приватные Telegram-группы и чаты</li>
-          <li>• приватная выдача только вам или команде</li>
-          <li>• мониторинг в реальном времени</li>
-          <li>• отправка совпадений в личный бот или рабочий чат</li>
-          <li>• подходит для команд, агентств и компаний</li>
-          <li>• новые чаты проходят проверку перед добавлением в систему</li>
+          <li>• your chats as sources, including private Telegram groups/chats</li>
+          <li>• private lead feed for you or your team</li>
+          <li>• real-time monitoring</li>
+          <li>• deliver matches to DM bot or team chat</li>
+          <li>• built for teams, agencies and companies</li>
+          <li>• new chats are reviewed before onboarding</li>
         </ul>
-        <a href="#pricing" class="mt-6 inline-flex h-12 items-center justify-center rounded-[12px] bg-violet px-5 text-[14px] font-semibold text-white transition hover:bg-[#4F3DEC]">Смотреть тариф Private</a>
+        <a href="#pricing" class="mt-6 inline-flex h-12 items-center justify-center rounded-[12px] bg-violet px-5 text-[14px] font-semibold text-white transition hover:bg-[#4F3DEC]">See Private plan</a>
       </div>
     </section>
 
@@ -1080,14 +1080,14 @@
         <div class="mx-auto max-w-[780px] text-center">
           <div class="inline-flex items-center gap-2 rounded-full bg-[#EEEBFF] px-4 py-2 text-[12px] font-bold uppercase tracking-[.08em] text-violet">
             <svg width="14" height="14" viewBox="0 0 18 18" fill="none"><path d="M9 2.2 14.5 4v4.2c0 3.45-2.34 6.02-5.5 7.6-3.16-1.58-5.5-4.15-5.5-7.6V4L9 2.2Z" stroke="currentColor" stroke-width="1.5"/><path d="m6.4 8.7 1.7 1.8 3.6-3.8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Для владельцев чатов
+            For chat owners
           </div>
           <h2 class="mt-4 text-[36px] font-black leading-[1.08] tracking-[-.03em] text-[#0B1220] sm:text-[44px]">
-            Подключайте чаты и получайте<br/>
-            <span class="grad-text">релевантную аудиторию</span>
+            Connect chats and reach<br/>
+            <span class="grad-text">a relevant audience</span>
           </h2>
           <p class="mx-auto mt-4 max-w-[640px] text-[16px] leading-[1.65] text-[#6E7380]">
-            Если публичный чат подключён к Sendy, релевантные запросы из него могут попадать в выдачу. Пользователи видят источник совпадения и могут перейти в чат, если запрос им полезен.
+            When a public chat is connected to Sendy, relevant requests from it may surface in results. Users see the source of the match and can open the chat when it is useful.
           </p>
         </div>
 
@@ -1096,36 +1096,36 @@
             <div class="mb-3 grid h-10 w-10 place-items-center rounded-full bg-violet/10 text-violet">
               <svg width="19" height="19" viewBox="0 0 24 24" fill="none"><path d="M5.4 16.4h-.2A2.2 2.2 0 0 1 3 14.2V6.6a2.2 2.2 0 0 1 2.2-2.2h13.6A2.2 2.2 0 0 1 21 6.6v7.6a2.2 2.2 0 0 1-2.2 2.2h-7.2L6.2 20v-3.6h-.8Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
             </div>
-            <h3 class="text-[17px] font-extrabold text-[#0B1220]">Добавьте Sendy в чат</h3>
-            <p class="mt-2 text-[13px] leading-[1.55] text-[#6E7380]">Добавьте Sendy в свой Telegram-чат. Если у вас есть право добавлять ботов или участников, этого достаточно. После проверки чат сможет использоваться как источник совпадений.</p>
+            <h3 class="text-[17px] font-extrabold text-[#0B1220]">Add Sendy to your chat</h3>
+            <p class="mt-2 text-[13px] leading-[1.55] text-[#6E7380]">Add Sendy to your Telegram chat. If you can add bots or members, that is enough. After review the chat can be used as a match source.</p>
           </article>
           <article class="glass rounded-[18px] border border-violet/10 p-5" data-reveal style="--reveal-delay:60ms">
             <div class="mb-3 grid h-10 w-10 place-items-center rounded-full bg-violet/10 text-violet">
               <svg width="19" height="19" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.7"/><path d="M3.6 12h16.8M12 3c2.55 2.45 3.7 5.45 3.7 9s-1.15 6.55-3.7 9c-2.55-2.45-3.7-5.45-3.7-9S9.45 5.45 12 3Z" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
             </div>
-            <h3 class="text-[17px] font-extrabold text-[#0B1220]">Чат становится источником совпадений</h3>
-            <p class="mt-2 text-[13px] leading-[1.55] text-[#6E7380]">После проверки запросы из чата могут участвовать в мониторинге Sendy по правилам пользователей.</p>
+            <h3 class="text-[17px] font-extrabold text-[#0B1220]">Your chat becomes a match source</h3>
+            <p class="mt-2 text-[13px] leading-[1.55] text-[#6E7380]">After approval, posts from the chat can participate in Sendy monitoring according to user rules.</p>
           </article>
           <article class="glass rounded-[18px] border border-violet/10 p-5" data-reveal style="--reveal-delay:120ms">
             <div class="mb-3 grid h-10 w-10 place-items-center rounded-full bg-violet/10 text-violet">
               <svg width="19" height="19" viewBox="0 0 24 24" fill="none"><path d="M13.15 2.2 5.8 12.5h5.05l-.9 9.3 8.25-12.1h-5.35l.3-7.5Z" fill="currentColor"/></svg>
             </div>
-            <h3 class="text-[17px] font-extrabold text-[#0B1220]">Получайте целевой трафик</h3>
-            <p class="mt-2 text-[13px] leading-[1.55] text-[#6E7380]">Пользователи видят релевантные совпадения и могут перейти в чат-источник.</p>
+            <h3 class="text-[17px] font-extrabold text-[#0B1220]">Get targeted traffic</h3>
+            <p class="mt-2 text-[13px] leading-[1.55] text-[#6E7380]">Users see relevant matches and can open the source chat.</p>
           </article>
           <article class="glass rounded-[18px] border border-violet/10 p-5" data-reveal style="--reveal-delay:180ms">
             <div class="mb-3 grid h-10 w-10 place-items-center rounded-full bg-violet/10 text-violet">
               <svg width="19" height="19" viewBox="0 0 24 24" fill="none"><path d="M12 3l8 3v5c0 5.25-3.44 10.13-8 11C7.44 21.13 4 16.25 4 11V6l8-3z" stroke="currentColor" stroke-width="1.7"/><path d="M9.5 12.5 11.2 14l3.3-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </div>
-            <h3 class="text-[17px] font-extrabold text-[#0B1220]">Проверка перед добавлением</h3>
-            <p class="mt-2 text-[13px] leading-[1.55] text-[#6E7380]">Новые чаты проходят модерацию, чтобы поддерживать качество системы. Владельцы и администраторы, у которых есть вопросы о присутствии своего сообщества в Sendy, могут написать на legal@sendy.direct.</p>
+            <h3 class="text-[17px] font-extrabold text-[#0B1220]">Review before onboarding</h3>
+            <p class="mt-2 text-[13px] leading-[1.55] text-[#6E7380]">New chats are moderated to keep the network quality high. Owners or administrators with questions about their community’s presence in Sendy may contact legal@sendy.direct.</p>
           </article>
         </div>
 
         <div class="mt-8 flex flex-col items-center justify-center gap-4 rounded-[16px] border border-violet/15 bg-violet/5 px-6 py-6">
           <a href="https://t.me/sendybotio" class="inline-flex h-11 items-center gap-2 rounded-[10px] bg-violet px-6 text-[14px] font-semibold text-white transition hover:bg-[#4F3DEC]">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M21.75 3.8 18.4 20.12c-.25 1.15-.93 1.43-1.88.89l-5.22-3.84-2.52 2.42c-.28.28-.51.51-1.05.51l.38-5.31 9.67-8.73c.42-.38-.09-.59-.65-.21L5.2 13.37.05 11.76c-1.12-.35-1.14-1.12.23-1.65L20.43 2.35c.93-.35 1.75.21 1.32 1.45Z" fill="white"/></svg>
-            Подключить чат
+            Connect your chat
           </a>
         </div>
 
@@ -1139,13 +1139,16 @@
         
         <div class="flex flex-col items-start justify-between gap-4 lg:flex-row lg:items-end">
           <h2 class="max-w-[520px] text-[38px] font-extrabold leading-[1.1] tracking-[-.02em] text-[#101828] sm:text-[46px]">
-            Выберите тариф,<br/>
-            <span style="font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-weight:400">который <span class="text-violet">подходит вам</span></span>
+            Choose a plan,<br/>
+            <span style="font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-weight:400">that <span class="text-violet">fits you</span></span>
           </h2>
-          <p class="text-[14px] font-medium text-[#6E7380]">Пробный доступ: <span class="font-semibold text-[#101828]">3 дня</span> · без обязательств</p>
+          <p class="text-[14px] font-medium text-[#6E7380]">Trial: <span class="font-semibold text-[#101828]">3 days</span> · no commitment</p>
         </div>
         <div class="mt-4">
-            <p class="text-[13px] font-medium leading-snug text-[#6E7380] sm:text-[14px]">Один активный тариф = один выбранный регион · дополнительные регионы подключаются отдельно</p>
+            <p class="text-[13px] font-medium leading-snug text-[#6E7380] sm:text-[14px]">One active plan = one selected region · additional regions are purchased separately</p>
+        </div>
+        <div class="mt-2">
+          <p class="text-[12px] font-medium leading-snug text-[#6E7380] sm:text-[13px]">Prices shown per subscription period.</p>
         </div>
 
 
@@ -1156,18 +1159,18 @@
           <article class="rounded-[16px] border border-[#E4E7EC] p-6">
             <h3 class="text-[16px] font-semibold text-[#101828]">Trial</h3>
             <div class="mt-3 flex flex-wrap items-end gap-2">
-              <span class="text-[36px] font-extrabold leading-none tracking-[-2px] text-[#101828]">Бесплатно</span>
-              <div class="mb-1 text-[12px] leading-[1.4] text-[#6E7380]">3 дня</div>
+              <span class="text-[36px] font-extrabold leading-none tracking-[-2px] text-[#101828]">Free</span>
+              <div class="mb-1 text-[12px] leading-[1.4] text-[#6E7380]">3 days</div>
             </div>
-            <p class="mt-3 text-[13px] text-[#6E7380]">Попробуйте Sendy без ввода платёжных данных.</p>
-            <a href="https://t.me/sendybotio" class="mt-5 flex min-h-[38px] w-full items-center justify-center rounded-[10px] border border-[#101828] bg-white px-2.5 py-2 text-center text-[11px] font-semibold leading-snug text-[#101828] transition hover:bg-[#f8fafc] sm:min-h-10 sm:px-3 sm:text-[12px] md:min-h-[42px] md:px-4 md:text-[13px]">Активировать пробный доступ</a>
+            <p class="mt-3 text-[13px] text-[#6E7380]">Try Sendy without entering payment details.</p>
+            <a href="https://t.me/sendybotio" class="mt-5 flex min-h-[38px] w-full items-center justify-center rounded-[10px] border border-[#101828] bg-white px-2.5 py-2 text-center text-[11px] font-semibold leading-snug text-[#101828] transition hover:bg-[#f8fafc] sm:min-h-10 sm:px-3 sm:text-[12px] md:min-h-[42px] md:px-4 md:text-[13px]">Activate trial access</a>
             <div class="mt-6 border-t border-[#E4E7EC] pt-5">
-              <p class="text-[11px] font-bold uppercase tracking-[.1em] text-[#101828]">Включено</p>
+              <p class="text-[11px] font-bold uppercase tracking-[.1em] text-[#101828]">Included</p>
               <ul class="mt-4 space-y-3 text-[13px] text-[#374151]">
-                <li class="flex items-center gap-2"><span class="flex h-5 w-5 items-center justify-center rounded-full bg-[#ECFDF3] text-[10px] text-[#027A48]">✓</span>1 регион</li>
-                <li class="flex items-center gap-2"><span class="flex h-5 w-5 items-center justify-center rounded-full bg-[#ECFDF3] text-[10px] text-[#027A48]">✓</span>Публичные Telegram-чаты</li>
-                <li class="flex items-center gap-2"><span class="flex h-5 w-5 items-center justify-center rounded-full bg-[#ECFDF3] text-[10px] text-[#027A48]">✓</span>Пробный доступ без ввода платёжных данных</li>
-                <li class="flex items-center gap-2"><span class="flex h-5 w-5 items-center justify-center rounded-full bg-[#ECFDF3] text-[10px] text-[#027A48]">✓</span>Доступен один раз</li>
+                <li class="flex items-center gap-2"><span class="flex h-5 w-5 items-center justify-center rounded-full bg-[#ECFDF3] text-[10px] text-[#027A48]">✓</span>1 region</li>
+                <li class="flex items-center gap-2"><span class="flex h-5 w-5 items-center justify-center rounded-full bg-[#ECFDF3] text-[10px] text-[#027A48]">✓</span>Public Telegram communities</li>
+                <li class="flex items-center gap-2"><span class="flex h-5 w-5 items-center justify-center rounded-full bg-[#ECFDF3] text-[10px] text-[#027A48]">✓</span>Trial access without entering payment details</li>
+                <li class="flex items-center gap-2"><span class="flex h-5 w-5 items-center justify-center rounded-full bg-[#ECFDF3] text-[10px] text-[#027A48]">✓</span>Available once</li>
               </ul>
             </div>
           </article>
@@ -1177,41 +1180,41 @@
             <h3 class="text-[16px] font-semibold text-[#101828]">Starter</h3>
             <div class="mt-3 flex items-end gap-1">
               <span class="text-[44px] font-extrabold leading-none tracking-[-2px] text-[#101828]">$29</span>
-              <div class="mb-1 text-[12px] leading-[1.4] text-[#6E7380]">на 14 дней</div>
+              <div class="mb-1 text-[12px] leading-[1.4] text-[#6E7380]">for 14 days</div>
             </div>
-            <p class="mt-3 text-[13px] text-[#6E7380]">Для быстрого старта и проверки региона.</p>
-            <a href="https://t.me/sendybotio" class="mt-5 flex h-[42px] w-full items-center justify-center rounded-[10px] bg-[#101828] text-[14px] font-semibold text-white transition hover:bg-[#1e293b]">Начать</a>
+            <p class="mt-3 text-[13px] text-[#6E7380]">For testing a region and getting started quickly.</p>
+            <a href="https://t.me/sendybotio" class="mt-5 flex h-[42px] w-full items-center justify-center rounded-[10px] bg-[#101828] text-[14px] font-semibold text-white transition hover:bg-[#1e293b]">Get started</a>
             <div class="mt-6 border-t border-[#E4E7EC] pt-5">
-              <p class="text-[11px] font-bold uppercase tracking-[.1em] text-[#101828]">Включено</p>
+              <p class="text-[11px] font-bold uppercase tracking-[.1em] text-[#101828]">Included</p>
               <ul class="mt-4 space-y-3 text-[13px] text-[#374151]">
-                <li class="flex items-center gap-2"><span class="flex h-5 w-5 items-center justify-center rounded-full bg-[#ECFDF3] text-[10px] text-[#027A48]">✓</span>1 регион</li>
-                <li class="flex items-center gap-2"><span class="flex h-5 w-5 items-center justify-center rounded-full bg-[#ECFDF3] text-[10px] text-[#027A48]">✓</span>Публичные Telegram-чаты</li>
-                <li class="flex items-center gap-2"><span class="flex h-5 w-5 items-center justify-center rounded-full bg-[#ECFDF3] text-[10px] text-[#027A48]">✓</span>Ключевые фразы для мониторинга</li>
-                <li class="flex items-center gap-2"><span class="flex h-5 w-5 items-center justify-center rounded-full bg-[#ECFDF3] text-[10px] text-[#027A48]">✓</span>Фильтр по длине сообщений</li>
-                <li class="flex items-center gap-2"><span class="flex h-5 w-5 items-center justify-center rounded-full bg-[#ECFDF3] text-[10px] text-[#027A48]">✓</span>Релевантные совпадения в реальном времени</li>
+                <li class="flex items-center gap-2"><span class="flex h-5 w-5 items-center justify-center rounded-full bg-[#ECFDF3] text-[10px] text-[#027A48]">✓</span>1 region</li>
+                <li class="flex items-center gap-2"><span class="flex h-5 w-5 items-center justify-center rounded-full bg-[#ECFDF3] text-[10px] text-[#027A48]">✓</span>Public Telegram communities</li>
+                <li class="flex items-center gap-2"><span class="flex h-5 w-5 items-center justify-center rounded-full bg-[#ECFDF3] text-[10px] text-[#027A48]">✓</span>Search phrases for monitoring</li>
+                <li class="flex items-center gap-2"><span class="flex h-5 w-5 items-center justify-center rounded-full bg-[#ECFDF3] text-[10px] text-[#027A48]">✓</span>Message length filters</li>
+                <li class="flex items-center gap-2"><span class="flex h-5 w-5 items-center justify-center rounded-full bg-[#ECFDF3] text-[10px] text-[#027A48]">✓</span>Real-time relevant matches</li>
               </ul>
             </div>
           </article>
 
           
           <article class="relative rounded-[16px] border border-[#E4E7EC] p-6">
-            <div class="absolute right-5 top-5 rounded-full bg-[#101828] px-3 py-[3px] text-[11px] font-semibold text-white">Популярный</div>
+            <div class="absolute right-5 top-5 rounded-full bg-[#101828] px-3 py-[3px] text-[11px] font-semibold text-white">Popular</div>
             <h3 class="text-[16px] font-semibold text-[#101828]">Pro</h3>
             <div class="mt-3 flex items-end gap-1">
               <span class="text-[44px] font-extrabold leading-none tracking-[-2px] text-[#101828]">$49</span>
-              <div class="mb-1 text-[12px] leading-[1.4] text-[#6E7380]">на 30 дней</div>
+              <div class="mb-1 text-[12px] leading-[1.4] text-[#6E7380]">for 30 days</div>
             </div>
-            <p class="mt-3 text-[13px] text-[#6E7380]">Для постоянной работы и ежедневного потока лидов.</p>
-            <a href="https://t.me/sendybotio" class="mt-5 flex h-[42px] w-full items-center justify-center rounded-[10px] bg-[#101828] text-[14px] font-semibold text-white transition hover:bg-[#1e293b]">Начать</a>
+            <p class="mt-3 text-[13px] text-[#6E7380]">For ongoing work and a steady lead flow.</p>
+            <a href="https://t.me/sendybotio" class="mt-5 flex h-[42px] w-full items-center justify-center rounded-[10px] bg-[#101828] text-[14px] font-semibold text-white transition hover:bg-[#1e293b]">Get started</a>
             <div class="mt-6 border-t border-[#E4E7EC] pt-5">
-              <p class="text-[11px] font-bold uppercase tracking-[.1em] text-[#101828]">Включено</p>
+              <p class="text-[11px] font-bold uppercase tracking-[.1em] text-[#101828]">Included</p>
               <ul class="mt-4 space-y-3 text-[13px] text-[#374151]">
-                <li class="flex items-center gap-2"><span class="flex h-5 w-5 items-center justify-center rounded-full bg-[#ECFDF3] text-[10px] text-[#027A48]">✓</span>1 регион</li>
-                <li class="flex items-center gap-2"><span class="flex h-5 w-5 items-center justify-center rounded-full bg-[#ECFDF3] text-[10px] text-[#027A48]">✓</span>Публичные Telegram-чаты</li>
-                <li class="flex items-center gap-2"><span class="flex h-5 w-5 items-center justify-center rounded-full bg-[#ECFDF3] text-[10px] text-[#027A48]">✓</span>Ключевые фразы для мониторинга</li>
-                <li class="flex items-center gap-2"><span class="flex h-5 w-5 items-center justify-center rounded-full bg-[#ECFDF3] text-[10px] text-[#027A48]">✓</span>Фильтр по длине сообщений</li>
-                <li class="flex items-center gap-2"><span class="flex h-5 w-5 items-center justify-center rounded-full bg-[#ECFDF3] text-[10px] text-[#027A48]">✓</span>Релевантные совпадения в реальном времени</li>
-                <li class="flex items-center gap-2"><span class="flex h-5 w-5 items-center justify-center rounded-full bg-[#ECFDF3] text-[10px] text-[#027A48]">✓</span>Больше срок доступа по сравнению со Starter</li>
+                <li class="flex items-center gap-2"><span class="flex h-5 w-5 items-center justify-center rounded-full bg-[#ECFDF3] text-[10px] text-[#027A48]">✓</span>1 region</li>
+                <li class="flex items-center gap-2"><span class="flex h-5 w-5 items-center justify-center rounded-full bg-[#ECFDF3] text-[10px] text-[#027A48]">✓</span>Public Telegram communities</li>
+                <li class="flex items-center gap-2"><span class="flex h-5 w-5 items-center justify-center rounded-full bg-[#ECFDF3] text-[10px] text-[#027A48]">✓</span>Search phrases for monitoring</li>
+                <li class="flex items-center gap-2"><span class="flex h-5 w-5 items-center justify-center rounded-full bg-[#ECFDF3] text-[10px] text-[#027A48]">✓</span>Message length filters</li>
+                <li class="flex items-center gap-2"><span class="flex h-5 w-5 items-center justify-center rounded-full bg-[#ECFDF3] text-[10px] text-[#027A48]">✓</span>Real-time relevant matches</li>
+                <li class="flex items-center gap-2"><span class="flex h-5 w-5 items-center justify-center rounded-full bg-[#ECFDF3] text-[10px] text-[#027A48]">✓</span>Longer access period compared to Starter</li>
               </ul>
             </div>
           </article>
@@ -1221,20 +1224,20 @@
             <h3 class="text-[16px] font-semibold text-[#101828]">Private</h3>
             <div class="mt-3 flex items-end gap-1">
               <span class="text-[44px] font-extrabold leading-none tracking-[-2px] text-[#101828]">$89</span>
-              <div class="mb-1 text-[12px] leading-[1.4] text-[#6E7380]">на 30 дней</div>
+              <div class="mb-1 text-[12px] leading-[1.4] text-[#6E7380]">for 30 days</div>
             </div>
-            <p class="mt-3 text-[13px] text-[#6E7380]">Для своих публичных и приватных чатов и отдельной выдачи для команды.</p>
-            <a href="https://t.me/sendybotio" class="mt-5 flex h-[42px] w-full items-center justify-center rounded-[10px] bg-[#101828] text-[14px] font-semibold text-white transition hover:bg-[#1e293b]">Начать</a>
+            <p class="mt-3 text-[13px] text-[#6E7380]">For your own public and private chats with a separate team feed.</p>
+            <a href="https://t.me/sendybotio" class="mt-5 flex h-[42px] w-full items-center justify-center rounded-[10px] bg-[#101828] text-[14px] font-semibold text-white transition hover:bg-[#1e293b]">Get started</a>
             <div class="mt-6 border-t border-[#E4E7EC] pt-5">
-              <p class="text-[11px] font-bold uppercase tracking-[.1em] text-[#101828]">Включено</p>
+              <p class="text-[11px] font-bold uppercase tracking-[.1em] text-[#101828]">Included</p>
               <ul class="mt-4 space-y-3 text-[13px] text-[#374151]">
-                <li class="flex items-center gap-2"><span class="flex h-5 w-5 items-center justify-center rounded-full bg-[#ECFDF3] text-[10px] text-[#027A48]">✓</span>1 регион</li>
-                <li class="flex items-center gap-2"><span class="flex h-5 w-5 items-center justify-center rounded-full bg-[#ECFDF3] text-[10px] text-[#027A48]">✓</span>Публичные Telegram-чаты</li>
-                <li class="flex items-center gap-2"><span class="flex h-5 w-5 items-center justify-center rounded-full bg-[#ECFDF3] text-[10px] text-[#027A48]">✓</span>Подключение своих приватных Telegram-групп и чатов</li>
-                <li class="flex items-center gap-2"><span class="flex h-5 w-5 items-center justify-center rounded-full bg-[#ECFDF3] text-[10px] text-[#027A48]">✓</span>Отдельная выдача только для вас или вашей команды</li>
-                <li class="flex items-center gap-2"><span class="flex h-5 w-5 items-center justify-center rounded-full bg-[#ECFDF3] text-[10px] text-[#027A48]">✓</span>Ключевые фразы для мониторинга</li>
-                <li class="flex items-center gap-2"><span class="flex h-5 w-5 items-center justify-center rounded-full bg-[#ECFDF3] text-[10px] text-[#027A48]">✓</span>Фильтр по длине сообщений</li>
-                <li class="flex items-center gap-2"><span class="flex h-5 w-5 items-center justify-center rounded-full bg-[#ECFDF3] text-[10px] text-[#027A48]">✓</span>Релевантные совпадения в реальном времени</li>
+                <li class="flex items-center gap-2"><span class="flex h-5 w-5 items-center justify-center rounded-full bg-[#ECFDF3] text-[10px] text-[#027A48]">✓</span>1 region</li>
+                <li class="flex items-center gap-2"><span class="flex h-5 w-5 items-center justify-center rounded-full bg-[#ECFDF3] text-[10px] text-[#027A48]">✓</span>Public Telegram communities</li>
+                <li class="flex items-center gap-2"><span class="flex h-5 w-5 items-center justify-center rounded-full bg-[#ECFDF3] text-[10px] text-[#027A48]">✓</span>Connect your own private Telegram groups/chats</li>
+                <li class="flex items-center gap-2"><span class="flex h-5 w-5 items-center justify-center rounded-full bg-[#ECFDF3] text-[10px] text-[#027A48]">✓</span>Separate match feed for you or your team</li>
+                <li class="flex items-center gap-2"><span class="flex h-5 w-5 items-center justify-center rounded-full bg-[#ECFDF3] text-[10px] text-[#027A48]">✓</span>Search phrases for monitoring</li>
+                <li class="flex items-center gap-2"><span class="flex h-5 w-5 items-center justify-center rounded-full bg-[#ECFDF3] text-[10px] text-[#027A48]">✓</span>Message length filters</li>
+                <li class="flex items-center gap-2"><span class="flex h-5 w-5 items-center justify-center rounded-full bg-[#ECFDF3] text-[10px] text-[#027A48]">✓</span>Real-time relevant matches</li>
               </ul>
             </div>
           </article>
@@ -1242,8 +1245,8 @@
         </div>
 
         <div class="mt-8 rounded-[14px] border border-[#E4E7EC] bg-[#FAFBFC] p-5 sm:p-6">
-          <p class="text-[11px] font-bold uppercase tracking-[.12em] text-[#101828]">Оплата</p>
-          <p class="mt-2 max-w-[920px] text-[13px] leading-[1.55] text-[#374151]">На текущем этапе Sendy принимает оплату в USDT TRC20 через NOWPayments. Платёжные данные банковских карт не хранятся и не обрабатываются Sendy.</p>
+          <p class="text-[11px] font-bold uppercase tracking-[.12em] text-[#101828]">Payments</p>
+          <p class="mt-2 max-w-[920px] text-[13px] leading-[1.55] text-[#374151]">At this stage, Sendy accepts payments in USDT TRC20 via NOWPayments. Bank card details are not stored or processed by Sendy.</p>
         </div>
 
       </div>
@@ -1253,93 +1256,93 @@
     <section id="faq" class="relative z-20 mt-12">
       <div class="mx-auto max-w-[980px]">
         <div class="mb-5 text-center">
-          <p class="text-[11px] font-extrabold uppercase tracking-[.14em] text-violet/80">Вопросы и ответы</p>
-          <h2 class="mt-1 text-[26px] font-black tracking-[-.03em] text-[#0B1220] sm:text-[32px]">Частые вопросы</h2>
+          <p class="text-[11px] font-extrabold uppercase tracking-[.14em] text-violet/80">Q&amp;A</p>
+          <h2 class="mt-1 text-[26px] font-black tracking-[-.03em] text-[#0B1220] sm:text-[32px]">FAQ</h2>
         </div>
-        <div class="space-y-3">
+                <div class="space-y-3">
           <article class="faq-item glass overflow-hidden rounded-[14px]">
-            <button class="faq-trigger flex w-full items-center justify-between p-4 text-left font-bold">Что такое Sendy?<span>+</span></button>
-            <div class="faq-content hidden px-4 pb-4 text-[14px] text-[#6E7380]">Sendy находит клиентов, запросы клиентов и релевантные совпадения в Telegram-чатах выбранного региона и доставляет их в вашего бота в реальном времени по заданным ключевым фразам.</div>
+            <button class="faq-trigger flex w-full items-center justify-between p-4 text-left font-bold">What is Sendy?<span>+</span></button>
+            <div class="faq-content hidden px-4 pb-4 text-[14px] text-[#6E7380]">Sendy detects high-intent leads, intent signals and relevant opportunities in Telegram communities within your selected region and delivers them to your bot in real time based on your search phrases.</div>
           </article>
           <article class="faq-item glass overflow-hidden rounded-[14px]">
-            <button class="faq-trigger flex w-full items-center justify-between p-4 text-left font-bold">Где я получаю совпадения?<span>+</span></button>
-            <div class="faq-content hidden px-4 pb-4 text-[14px] text-[#6E7380]">В Telegram: в личном боте Sendy. В отдельных режимах совпадения также могут отправляться в рабочий чат.</div>
+            <button class="faq-trigger flex w-full items-center justify-between p-4 text-left font-bold">Where do I receive matches?<span>+</span></button>
+            <div class="faq-content hidden px-4 pb-4 text-[14px] text-[#6E7380]">In Telegram — in your Sendy bot DM. In some setups matches can also go to a team chat.</div>
           </article>
           <article class="faq-item glass overflow-hidden rounded-[14px]">
-            <button class="faq-trigger flex w-full items-center justify-between p-4 text-left font-bold">Можно ли мониторить собственные чаты?<span>+</span></button>
-            <div class="faq-content hidden px-4 pb-4 text-[14px] text-[#6E7380]">Да. В Private-режиме можно подключать свои публичные и приватные Telegram-чаты.</div>
+            <button class="faq-trigger flex w-full items-center justify-between p-4 text-left font-bold">Can I monitor my own chats?<span>+</span></button>
+            <div class="faq-content hidden px-4 pb-4 text-[14px] text-[#6E7380]">Yes. Private mode lets you connect your public and private Telegram chats.</div>
           </article>
           <article class="faq-item glass overflow-hidden rounded-[14px]">
-            <button class="faq-trigger flex w-full items-center justify-between p-4 text-left font-bold">Чем публичный режим отличается от приватного?<span>+</span></button>
-            <div class="faq-content hidden px-4 pb-4 text-[14px] text-[#6E7380]">В публичном режиме чат может использоваться как источник для общей системы. В приватном режиме совпадения из чата доступны только вам.</div>
+            <button class="faq-trigger flex w-full items-center justify-between p-4 text-left font-bold">How is public mode different from private?<span>+</span></button>
+            <div class="faq-content hidden px-4 pb-4 text-[14px] text-[#6E7380]">In public mode a chat may feed the shared matching pool. In private mode matches from that chat are only for you.</div>
           </article>
           <article class="faq-item glass overflow-hidden rounded-[14px]">
-            <button class="faq-trigger flex w-full items-center justify-between p-4 text-left font-bold">Можно ли отслеживать бренд, отзывы и конкурентов?<span>+</span></button>
-            <div class="faq-content hidden px-4 pb-4 text-[14px] text-[#6E7380]">Да. Можно добавить название бренда, продукта, конкурента или нужную фразу.</div>
+            <button class="faq-trigger flex w-full items-center justify-between p-4 text-left font-bold">Can I track brands, reviews and competitors?<span>+</span></button>
+            <div class="faq-content hidden px-4 pb-4 text-[14px] text-[#6E7380]">Yes — add a brand, product, competitor name or any phrase you need.</div>
           </article>
           <article class="faq-item glass overflow-hidden rounded-[14px]">
-            <button class="faq-trigger flex w-full items-center justify-between p-4 text-left font-bold">Как устроена оплата?<span>+</span></button>
-            <div class="faq-content hidden px-4 pb-4 text-[14px] text-[#6E7380]">Пользователь выбирает тариф и один регион, оплачивает подписку (USDT TRC20 через NOWPayments), после чего доступ активируется автоматически. Дополнительные регионы подключаются отдельно.</div>
+            <button class="faq-trigger flex w-full items-center justify-between p-4 text-left font-bold">How does billing work?<span>+</span></button>
+            <div class="faq-content hidden px-4 pb-4 text-[14px] text-[#6E7380]">You choose a plan and one region, pay for the subscription (USDT TRC20 via NOWPayments), and access activates automatically. Additional regions are added as separate access.</div>
           </article>
           <article class="faq-item glass overflow-hidden rounded-[14px]">
-            <button class="faq-trigger flex w-full items-center justify-between p-4 text-left font-bold">Нужна ли оплата для пробного периода?<span>+</span></button>
-            <div class="faq-content hidden px-4 pb-4 text-[14px] text-[#6E7380]">Нет. Пробный доступ активируется без ввода платёжных данных.</div>
+            <button class="faq-trigger flex w-full items-center justify-between p-4 text-left font-bold">Do I pay for the trial?<span>+</span></button>
+            <div class="faq-content hidden px-4 pb-4 text-[14px] text-[#6E7380]">No — trial access does not require entering payment details.</div>
           </article>
           <article class="faq-item glass overflow-hidden rounded-[14px]">
-            <button class="faq-trigger flex w-full items-center justify-between p-4 text-left font-bold">Как быстро настраивается Sendy?<span>+</span></button>
-            <div class="faq-content hidden px-4 pb-4 text-[14px] text-[#6E7380]">Обычно достаточно выбрать регион и добавить первую фразу. Настройка занимает около минуты.</div>
+            <button class="faq-trigger flex w-full items-center justify-between p-4 text-left font-bold">How fast is setup?<span>+</span></button>
+            <div class="faq-content hidden px-4 pb-4 text-[14px] text-[#6E7380]">Usually pick a region and add your first phrase — about a minute.</div>
           </article>
           <article class="faq-item glass overflow-hidden rounded-[14px]">
-            <button class="faq-trigger flex w-full items-center justify-between p-4 text-left font-bold">Какие источники поддерживает Sendy?<span>+</span></button>
-            <div class="faq-content hidden px-4 pb-4 text-[14px] text-[#6E7380]">Sendy работает с Telegram-чатами и группами. В Private-режиме можно подключать свои публичные и приватные чаты.</div>
+            <button class="faq-trigger flex w-full items-center justify-between p-4 text-left font-bold">Which sources does Sendy support?<span>+</span></button>
+            <div class="faq-content hidden px-4 pb-4 text-[14px] text-[#6E7380]">Telegram chats and groups. Private mode supports your public and private chats.</div>
           </article>
           <article class="faq-item glass overflow-hidden rounded-[14px]">
-            <button class="faq-trigger flex w-full items-center justify-between p-4 text-left font-bold">Сколько регионов входит в один тариф?<span>+</span></button>
-            <div class="faq-content hidden px-4 pb-4 text-[14px] text-[#6E7380]">Один активный доступ соответствует одному выбранному региону. Дополнительные регионы подключаются отдельными доступами.</div>
+            <button class="faq-trigger flex w-full items-center justify-between p-4 text-left font-bold">How many regions are included in one plan?<span>+</span></button>
+            <div class="faq-content hidden px-4 pb-4 text-[14px] text-[#6E7380]">One active access covers one selected region. Additional regions require separate access purchases.</div>
           </article>
           <article class="faq-item glass overflow-hidden rounded-[14px]">
-            <button class="faq-trigger flex w-full items-center justify-between p-4 text-left font-bold">Есть ли фильтр по длине сообщения?<span>+</span></button>
-            <div class="faq-content hidden px-4 pb-4 text-[14px] text-[#6E7380]">Да. Можно задать минимальную и максимальную длину текста в символах, чтобы отсечь слишком короткий шум или слишком длинные сообщения.</div>
+            <button class="faq-trigger flex w-full items-center justify-between p-4 text-left font-bold">Is there a message length filter?<span>+</span></button>
+            <div class="faq-content hidden px-4 pb-4 text-[14px] text-[#6E7380]">Yes. You can set minimum and maximum character length to filter out very short noise or overly long posts.</div>
           </article>
           <article class="faq-item glass overflow-hidden rounded-[14px]">
-            <button class="faq-trigger flex w-full items-center justify-between p-4 text-left font-bold">Сколько ключевых фраз можно добавить?<span>+</span></button>
-            <div class="faq-content hidden px-4 pb-4 text-[14px] text-[#6E7380]">Количество ключевых фраз задаётся тарифом и актуальными лимитами в боте — перед запуском вы увидите текущие значения.</div>
+            <button class="faq-trigger flex w-full items-center justify-between p-4 text-left font-bold">How many keywords can I add?<span>+</span></button>
+            <div class="faq-content hidden px-4 pb-4 text-[14px] text-[#6E7380]">Search phrase limits depend on your plan — current limits are shown in the bot before you subscribe.</div>
           </article>
           <article class="faq-item glass overflow-hidden rounded-[14px]">
-            <button class="faq-trigger flex w-full items-center justify-between p-4 text-left font-bold">Соответствует ли Sendy GDPR?<span>+</span></button>
-            <div class="faq-content hidden px-4 pb-4 text-[14px] text-[#6E7380]">Sendy разработан с учётом требований GDPR: минимизация данных, конфигурация под контролем пользователя, ограниченный доступ и временная техническая обработка. Для контента групп, который обрабатывается по вашим инструкциям, Sendy обычно действует как обработчик (processor), а вы как контролёр (controller).</div>
+            <button class="faq-trigger flex w-full items-center justify-between p-4 text-left font-bold">Is Sendy GDPR-aligned?<span>+</span></button>
+            <div class="faq-content hidden px-4 pb-4 text-[14px] text-[#6E7380]">Sendy is designed with GDPR requirements in mind: data minimisation, user-controlled configuration, restricted access and ephemeral technical processing. For group content processed under your instructions, Sendy typically acts as processor and you act as controller.</div>
           </article>
           <article class="faq-item glass overflow-hidden rounded-[14px]">
-            <button class="faq-trigger flex w-full items-center justify-between p-4 text-left font-bold">Хранит ли Sendy сообщения Telegram постоянно?<span>+</span></button>
-            <div class="faq-content hidden px-4 pb-4 text-[14px] text-[#6E7380]">Нет. Содержимое сообщений обрабатывается в реальном времени и не хранится постоянно как архив полных переписок.</div>
+            <button class="faq-trigger flex w-full items-center justify-between p-4 text-left font-bold">Does Sendy store Telegram messages forever?<span>+</span></button>
+            <div class="faq-content hidden px-4 pb-4 text-[14px] text-[#6E7380]">No. Message content is processed in real time and is not permanently stored as a full chat archive.</div>
           </article>
           <article class="faq-item glass overflow-hidden rounded-[14px]">
-            <button class="faq-trigger flex w-full items-center justify-between p-4 text-left font-bold">Мой Telegram-чат появился в Sendy. Что делать?<span>+</span></button>
-            <div class="faq-content hidden px-4 pb-4 text-[14px] text-[#6E7380]">Если вы владелец или администратор Telegram-сообщества и у вас есть вопросы о том, как оно отображается в Sendy — напишите на legal@sendy.direct со ссылкой на чат. Мы стараемся рассматривать корректные запросы в течение 48 часов.</div>
+            <button class="faq-trigger flex w-full items-center justify-between p-4 text-left font-bold">My Telegram community appeared in Sendy. What can I do?<span>+</span></button>
+            <div class="faq-content hidden px-4 pb-4 text-[14px] text-[#6E7380]">If you are an owner or administrator of a Telegram community and have questions about how it appears in Sendy, please email legal@sendy.direct with your community link. We aim to review valid requests within 48 hours.</div>
           </article>
           <article class="faq-item glass overflow-hidden rounded-[14px]">
-            <button class="faq-trigger flex w-full items-center justify-between p-4 text-left font-bold">Кто отвечает за подключённые чаты?<span>+</span></button>
-            <div class="faq-content hidden px-4 pb-4 text-[14px] text-[#6E7380]">Пользователь несёт ответственность за наличие прав на подключение и мониторинг выбранных чатов и за соблюдение применимого закона.</div>
+            <button class="faq-trigger flex w-full items-center justify-between p-4 text-left font-bold">Who is responsible for connected chats?<span>+</span></button>
+            <div class="faq-content hidden px-4 pb-4 text-[14px] text-[#6E7380]">You are responsible for ensuring you have the right to connect and monitor selected chats and for complying with applicable law.</div>
           </article>
           <article class="faq-item glass overflow-hidden rounded-[14px]">
-            <button class="faq-trigger flex w-full items-center justify-between p-4 text-left font-bold">Можно ли запросить удаление моих данных?<span>+</span></button>
-            <div class="faq-content hidden px-4 pb-4 text-[14px] text-[#6E7380]">Да. Напишите на <a href="mailto:legal@sendy.direct" class="font-medium text-violet hover:underline">legal@sendy.direct</a> или <a href="mailto:support@sendy.direct" class="font-medium text-violet hover:underline">support@sendy.direct</a> с запросом на удаление данных аккаунта или конфигурации мониторинга — с учётом требований закона, налогового и платёжного учёта и безопасности.</div>
+            <button class="faq-trigger flex w-full items-center justify-between p-4 text-left font-bold">Can I request deletion of my data?<span>+</span></button>
+            <div class="faq-content hidden px-4 pb-4 text-[14px] text-[#6E7380]">Yes — email <a href="mailto:legal@sendy.direct" class="font-medium text-violet hover:underline">legal@sendy.direct</a> or <a href="mailto:support@sendy.direct" class="font-medium text-violet hover:underline">support@sendy.direct</a> to ask for account or monitoring data deletion, subject to legal, tax, billing and security requirements.</div>
           </article>
           <article class="faq-item glass overflow-hidden rounded-[14px]">
-            <button class="faq-trigger flex w-full items-center justify-between p-4 text-left font-bold">Зависит ли число совпадений от настроек?<span>+</span></button>
-            <div class="faq-content hidden px-4 pb-4 text-[14px] text-[#6E7380]">Да. Количество совпадений зависит от выбранного региона, фраз и доступных источников. Мы не обещаем фиксированный объём результатов.</div>
+            <button class="faq-trigger flex w-full items-center justify-between p-4 text-left font-bold">Does the number of matches depend on settings?<span>+</span></button>
+            <div class="faq-content hidden px-4 pb-4 text-[14px] text-[#6E7380]">Yes — volume depends on region, phrases and available sources. We do not guarantee a fixed number of results.</div>
           </article>
           <article class="faq-item glass overflow-hidden rounded-[14px]">
-            <button class="faq-trigger flex w-full items-center justify-between p-4 text-left font-bold">Как обрабатываются платежи?<span>+</span></button>
-            <div class="faq-content hidden px-4 pb-4 text-[14px] text-[#6E7380]">На текущем этапе оплата принимается в USDT TRC20 через NOWPayments. Sendy не хранит и не обрабатывает платёжные данные банковских карт. Комиссии сети и провайдера могут применяться отдельно.</div>
+            <button class="faq-trigger flex w-full items-center justify-between p-4 text-left font-bold">How are payments processed?<span>+</span></button>
+            <div class="faq-content hidden px-4 pb-4 text-[14px] text-[#6E7380]">Payments are accepted in USDT TRC20 via NOWPayments. Sendy does not store or process bank card details. Network and provider fees may apply separately.</div>
           </article>
           <article class="faq-item glass overflow-hidden rounded-[14px]">
-            <button class="faq-trigger flex w-full items-center justify-between p-4 text-left font-bold">Как сообщить о незаконном контенте или злоупотреблении?<span>+</span></button>
-            <div class="faq-content hidden px-4 pb-4 text-[14px] text-[#6E7380]">Используйте страницу <a href="/ru/report-abuse.html" class="font-medium text-violet hover:underline">сообщения о нарушении</a> или напишите на <a href="mailto:legal@sendy.direct" class="font-medium text-violet hover:underline">legal@sendy.direct</a>. Подробности канала жалоб — в разделе <a href="/ru/legal-compliance.html" class="font-medium text-violet hover:underline">«Правовая информация и комплаенс»</a>.</div>
+            <button class="faq-trigger flex w-full items-center justify-between p-4 text-left font-bold">How do I report illegal content or abuse?<span>+</span></button>
+            <div class="faq-content hidden px-4 pb-4 text-[14px] text-[#6E7380]">Use the <a href="/en/report-abuse.html" class="font-medium text-violet hover:underline">report abuse</a> page or email <a href="mailto:legal@sendy.direct" class="font-medium text-violet hover:underline">legal@sendy.direct</a>. See <a href="/legal-compliance.html" class="font-medium text-violet hover:underline">Legal &amp; Compliance</a> for more.</div>
           </article>
           <article class="faq-item glass overflow-hidden rounded-[14px]">
-            <button class="faq-trigger flex w-full items-center justify-between p-4 text-left font-bold">Есть ли пробный период?<span>+</span></button>
-            <div class="faq-content hidden px-4 pb-4 text-[14px] text-[#6E7380]">Да, доступен пробный период на 3 дня без обязательств и без ввода платёжных данных.</div>
+            <button class="faq-trigger flex w-full items-center justify-between p-4 text-left font-bold">Is there a trial?<span>+</span></button>
+            <div class="faq-content hidden px-4 pb-4 text-[14px] text-[#6E7380]">Yes — a 3-day free trial with no commitment and no payment details required.</div>
           </article>
         </div>
       </div>
@@ -1348,10 +1351,10 @@
     
     <section class="relative z-20 mt-12 pb-10">
       <div class="mx-auto max-w-[980px] rounded-[22px] bg-[#0F172A] p-6 text-center text-white sm:p-8">
-        <h2 class="text-[28px] font-black leading-[1.15] tracking-[-.03em] sm:text-[36px]">Начните получать лиды из Telegram уже сегодня</h2>
+        <h2 class="text-[28px] font-black leading-[1.15] tracking-[-.03em] sm:text-[36px]">Start capturing Telegram leads today</h2>
         <div class="mt-6 flex flex-col justify-center gap-3 sm:flex-row">
-          <a href="https://t.me/sendybotio" class="inline-flex h-12 items-center justify-center rounded-[12px] bg-violet px-5 text-[14px] font-semibold transition hover:bg-[#4F3DEC]">Запустить в Telegram</a>
-          <a href="https://t.me/sendybotio" class="inline-flex h-12 items-center justify-center rounded-[12px] bg-white px-5 text-[14px] font-semibold text-[#0F172A] transition hover:bg-slate-100">Попробовать Sendy</a>
+          <a href="https://t.me/sendybotio" class="inline-flex h-12 items-center justify-center rounded-[12px] bg-violet px-5 text-[14px] font-semibold transition hover:bg-[#4F3DEC]">Start in Telegram</a>
+          <a href="https://t.me/sendybotio" class="inline-flex h-12 items-center justify-center rounded-[12px] bg-white px-5 text-[14px] font-semibold text-[#0F172A] transition hover:bg-slate-100">Try Sendy free</a>
         </div>
       </div>
     </section>
@@ -1363,68 +1366,68 @@
       <div class="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-5">
         <div class="lg:col-span-1">
           <a href="#" class="text-[24px] font-black tracking-[-.05em] text-[#0F172A]" aria-label="Sendy">sendy</a>
-          <p class="mt-3 max-w-[260px] text-[13px] leading-[1.6] text-[#6E7380]">Клиентские запросы, лиды и релевантные совпадения в Telegram в реальном времени.</p>
+          <p class="mt-3 max-w-[260px] text-[13px] leading-[1.6] text-[#6E7380]">Customer intent, leads and relevant matches from Telegram in real time.</p>
         </div>
         <div>
-          <p class="text-[14px] font-bold text-[#0F172A]">Продукт</p>
+          <p class="text-[14px] font-bold text-[#0F172A]">Product</p>
           <ul class="mt-4 space-y-3 text-[13px] text-[#6E7380]">
-            <li><a href="#how" class="transition hover:text-violet">Как это работает</a></li>
-            <li><a href="#pricing" class="transition hover:text-violet">Тарифы</a></li>
-            <li><a href="#private" class="transition hover:text-violet">Private-режим</a></li>
-            <li><a href="#faq" class="transition hover:text-violet">Вопросы</a></li>
+            <li><a href="#how" class="transition hover:text-violet">How it works</a></li>
+            <li><a href="#pricing" class="transition hover:text-violet">Pricing</a></li>
+            <li><a href="#private" class="transition hover:text-violet">Private mode</a></li>
+            <li><a href="#faq" class="transition hover:text-violet">FAQ</a></li>
           </ul>
         </div>
         <div>
-          <p class="text-[14px] font-bold text-[#0F172A]">Сценарии</p>
+          <p class="text-[14px] font-bold text-[#0F172A]">Use cases</p>
           <ul class="mt-4 space-y-3 text-[13px] text-[#6E7380]">
-            <li><a href="#audience" class="transition hover:text-violet">Поиск клиентов</a></li>
-            <li><a href="#audience" class="transition hover:text-violet">Мониторинг бренда</a></li>
-            <li><a href="#audience" class="transition hover:text-violet">Конкуренты</a></li>
-            <li><a href="#audience" class="transition hover:text-violet">B2B-продажи</a></li>
+            <li><a href="#audience" class="transition hover:text-violet">Customer acquisition</a></li>
+            <li><a href="#audience" class="transition hover:text-violet">Brand monitoring</a></li>
+            <li><a href="#audience" class="transition hover:text-violet">Competitors</a></li>
+            <li><a href="#audience" class="transition hover:text-violet">B2B sales</a></li>
           </ul>
         </div>
         <div>
-          <p class="text-[14px] font-bold text-[#0F172A]">Компания</p>
+          <p class="text-[14px] font-bold text-[#0F172A]">Company</p>
           <ul class="mt-4 space-y-3 text-[13px] text-[#6E7380]">
-            <li><a href="mailto:support@sendy.direct" class="transition hover:text-violet">Поддержка</a></li>
-            <li><a href="mailto:legal@sendy.direct" class="transition hover:text-violet">Юридические вопросы</a></li>
-            <li><a href="mailto:billing@sendy.direct" class="transition hover:text-violet">Оплата</a></li>
-            <li><a href="/ru/report-abuse.html" class="transition hover:text-violet">Сообщить о нарушении</a></li>
+            <li><a href="mailto:support@sendy.direct" class="transition hover:text-violet">Support</a></li>
+            <li><a href="mailto:legal@sendy.direct" class="transition hover:text-violet">Legal</a></li>
+            <li><a href="mailto:billing@sendy.direct" class="transition hover:text-violet">Billing</a></li>
+            <li><a href="/en/report-abuse.html" class="transition hover:text-violet">Report abuse</a></li>
           </ul>
         </div>
         <div>
-          <p class="text-[14px] font-bold text-[#0F172A]">Документы</p>
+          <p class="text-[14px] font-bold text-[#0F172A]">Legal</p>
           <ul class="mt-4 space-y-3 text-[13px] text-[#6E7380]">
-            <li><a href="/ru/terms.html" class="transition hover:text-violet">Условия использования</a></li>
-            <li><a href="/ru/privacy.html" class="transition hover:text-violet">Политика конфиденциальности</a></li>
-            <li><a href="/ru/refund-policy.html" class="transition hover:text-violet">Возвраты и оплата</a></li>
-            <li><a href="/ru/legal-compliance.html" class="transition hover:text-violet">Правовая информация и комплаенс</a></li>
+            <li><a href="/terms.html" class="transition hover:text-violet">Terms of Use</a></li>
+            <li><a href="/privacy.html" class="transition hover:text-violet">Privacy Policy</a></li>
+            <li><a href="/refund-policy.html" class="transition hover:text-violet">Refund &amp; Billing Policy</a></li>
+            <li><a href="/legal-compliance.html" class="transition hover:text-violet">Legal &amp; Compliance</a></li>
           </ul>
         </div>
       </div>
 
       <div class="mt-10 space-y-3 border-t border-[#E9EBF3] pt-8 text-[12px] leading-[1.55] text-[#6E7380]">
         <p class="font-semibold text-[#0F172A]">SENTO TRADE s.r.o.</p>
-        <p>Компания зарегистрирована в Чешской Республике · IČO: 24279706</p>
-        <p>Адрес: U půjčovny 953/4, Nové Město, 110 00 Praha 1, Чехия</p>
+        <p>Registered in the Czech Republic · IČO: 24279706</p>
+        <p>Address: U půjčovny 953/4, Nové Město, 110 00 Praha 1, Czech Republic</p>
         <p>
-          Поддержка:
+          Support:
           <a href="mailto:support@sendy.direct" class="text-violet transition hover:underline">support@sendy.direct</a>
         </p>
         <p>
-          Юридические вопросы:
+          Legal:
           <a href="mailto:legal@sendy.direct" class="text-violet transition hover:underline">legal@sendy.direct</a>
         </p>
         <p>
-          Оплата:
+          Billing:
           <a href="mailto:billing@sendy.direct" class="text-violet transition hover:underline">billing@sendy.direct</a>
         </p>
-        <p class="text-[#9CA3AF]">Sendy — SaaS‑продукт компании SENTO TRADE s.r.o.</p>
-        <p class="max-w-[920px] text-[11px] leading-relaxed text-[#9CA3AF]">Sendy не является официальным продуктом Telegram и не связан с Telegram. Telegram является товарным знаком соответствующего правообладателя.</p>
+        <p class="text-[#9CA3AF]">Sendy is a SaaS product operated by SENTO TRADE s.r.o.</p>
+        <p class="max-w-[920px] text-[11px] leading-relaxed text-[#9CA3AF]">Sendy is not an official Telegram product and is not affiliated with Telegram. Telegram is a trademark of its respective owner.</p>
       </div>
 
       <div class="mt-8 flex flex-col items-start justify-between gap-4 border-t border-[#E9EBF3] pt-6 sm:flex-row sm:items-center">
-        <p class="text-[11px] text-[#9CA3AF]">© 2026 Sendy. Все права защищены.</p>
+        <p class="text-[11px] text-[#9CA3AF]">© 2026 Sendy. All rights reserved.</p>
         <div class="flex items-center gap-3">
           <a href="https://t.me/sendybotio" aria-label="Telegram" class="grid h-8 w-8 place-items-center rounded-full border border-[#E2E5F0] text-[#6E7380] transition hover:border-violet hover:text-violet">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M21.75 3.8 18.4 20.12c-.25 1.15-.93 1.43-1.88.89l-5.22-3.84-2.52 2.42c-.28.28-.51.51-1.05.51l.38-5.31 9.67-8.73c.42-.38-.09-.59-.65-.21L5.2 13.37.05 11.76c-1.12-.35-1.14-1.12.23-1.65L20.43 2.35c.93-.35 1.75.21 1.32 1.45Z"/></svg>
@@ -1439,9 +1442,9 @@
 
   <aside class="border-t border-[#E9EBF3] bg-[#FAFBFC] py-4 text-[10px] leading-relaxed text-[#9CA3AF] sm:py-5 sm:text-[11px]" aria-labelledby="privacy-compliance-heading">
     <div class="mx-auto max-w-[1180px] px-5 sm:px-8 lg:px-12">
-      <p id="privacy-compliance-heading" class="font-semibold text-[#9CA3AF]">Разработано с учётом требований GDPR</p>
-      <p class="mt-2 max-w-[920px]">Sendy управляется компанией SENTO TRADE s.r.o., зарегистрированной в Чешской Республике. Сервис работает по запросу пользователя: обработка инициируется вашими настройками, используется временная техническая обработка данных и минимизация объёма информации.</p>
-      <p class="mt-2 max-w-[920px]">Sendy обрабатывает данные от имени пользователя и на основании его инструкций. Содержимое сообщений обрабатывается временно только для обнаружения совпадений и не хранится постоянно.</p>
+      <p id="privacy-compliance-heading" class="font-semibold text-[#9CA3AF]">Designed with GDPR requirements in mind</p>
+      <p class="mt-2 max-w-[920px]">Sendy is operated by SENTO TRADE s.r.o., registered in the Czech Republic. Processing is initiated by your settings; we use ephemeral technical processing and data minimisation.</p>
+      <p class="mt-2 max-w-[920px]">Sendy processes data on behalf of the user and based on user instructions. Message content is processed temporarily only for match detection and is not permanently stored.</p>
     </div>
   </aside>
 
@@ -1449,17 +1452,17 @@
     <div class="w-full max-w-[520px] rounded-[26px] bg-white p-6 shadow-[0_30px_80px_rgba(7,18,37,.25)]">
       <div class="flex items-start justify-between gap-5">
         <div>
-          <h3 class="text-2xl font-black tracking-[-.04em]">Как работает Sendy</h3>
-          <p class="mt-2 text-sm leading-6 text-muted">Вы запускаете Telegram-бота Sendy, выбираете язык, активируете доступ к одному региону и добавляете ключевые фразы — совпадения приходят в бот в реальном времени. При необходимости подключаете свои чаты в Private или оформляете платный тариф.</p>
+          <h3 class="text-2xl font-black tracking-[-.04em]">How Sendy works</h3>
+          <p class="mt-2 text-sm leading-6 text-muted">Start the Sendy Telegram bot, choose your language, activate one region, add search phrases — matches arrive in real time. Connect your own chats on Private or upgrade to a paid plan when you are ready.</p>
         </div>
         <button id="closeModal" class="grid h-10 w-10 place-items-center rounded-full bg-[#F3F4F8] text-2xl leading-none">×</button>
       </div>
       <div class="mt-6 grid gap-3 text-sm font-semibold">
-        <div class="rounded-2xl bg-[#F7F7FF] p-4">1. Запустите Telegram-бота Sendy.</div>
-        <div class="rounded-2xl bg-[#F7F7FF] p-4">2. Выберите язык.</div>
-        <div class="rounded-2xl bg-[#F7F7FF] p-4">3. Активируйте доступ к одному выбранному региону.</div>
-        <div class="rounded-2xl bg-[#F7F7FF] p-4">4. Добавьте ключевые фразы и при необходимости фильтр длины сообщения.</div>
-        <div class="rounded-2xl bg-[#F7F7FF] p-4">5. Получайте релевантные совпадения в Telegram в реальном времени.</div>
+        <div class="rounded-2xl bg-[#F7F7FF] p-4">1. Start the Sendy Telegram bot.</div>
+        <div class="rounded-2xl bg-[#F7F7FF] p-4">2. Choose your language.</div>
+        <div class="rounded-2xl bg-[#F7F7FF] p-4">3. Activate access to one selected region.</div>
+        <div class="rounded-2xl bg-[#F7F7FF] p-4">4. Add search phrases and optional message length filters.</div>
+        <div class="rounded-2xl bg-[#F7F7FF] p-4">5. Receive relevant matches in Telegram in real time.</div>
       </div>
     </div>
   </div>
