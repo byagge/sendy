@@ -398,6 +398,20 @@ document.querySelectorAll('[data-reveal]').forEach((el) => {
   chatObserver.observe(liveChatDemo);
 })();
 
+const PHONE_TILT = 3;
+
+function setPhoneTransform(rotateY = 0, rotateX = 0) {
+  if (!phone) return;
+  if (window.innerWidth < 1024) {
+    phone.style.transform = `rotate(${PHONE_TILT}deg)`;
+    return;
+  }
+  phone.style.transform = `perspective(900px) rotate(${PHONE_TILT}deg) rotateY(${rotateY}deg) rotateX(${rotateX}deg)`;
+}
+
+setPhoneTransform();
+window.addEventListener('resize', () => setPhoneTransform());
+
 document.addEventListener('mousemove', (e) => {
   if (!phone || window.innerWidth < 1024) return;
   const rect = phone.getBoundingClientRect();
@@ -405,9 +419,7 @@ document.addEventListener('mousemove', (e) => {
   const cy = rect.top + rect.height / 2;
   const dx = (e.clientX - cx) / rect.width;
   const dy = (e.clientY - cy) / rect.height;
-  phone.style.transform = `perspective(900px) rotateY(${dx * 3}deg) rotateX(${-dy * 3}deg)`;
+  setPhoneTransform(dx * 3, -dy * 3);
 });
 
-document.addEventListener('mouseleave', () => {
-  if (phone) phone.style.transform = 'perspective(900px) rotateY(0) rotateX(0)';
-});
+document.addEventListener('mouseleave', () => setPhoneTransform());

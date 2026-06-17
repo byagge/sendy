@@ -123,3 +123,15 @@ body {
     margin-right: auto;
   }
 }
+#phone {
+  width: auto;
+  max-width: 520px;
+  transform: rotate(3deg);
+  transform-origin: center center;
+}
+@media (min-width: 640px) {
+  #phone { max-width: 580px; }
+}
+@media (min-width: 1024px) {
+  #phone { max-width: 680px; }
+}
