@@ -1,50 +1,80 @@
 const menuBtn = document.getElementById('menuBtn');
 const mobileMenu = document.getElementById('mobileMenu');
-const playDemo = document.getElementById('playDemo');
-const demoModal = document.getElementById('demoModal');
+const header = document.getElementById('siteHeader');
+const contactModal = document.getElementById('contactModal');
 const closeModal = document.getElementById('closeModal');
-const phone = document.getElementById('phone');
 
-menuBtn?.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+const VICTORIA_TG = 'https://t.me/genpet32?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%BE%D0%B1%D1%81%D1%83%D0%B4%D0%B8%D1%82%D1%8C%20%D0%BF%D1%80%D0%BE%D0%B4%D0%B2%D0%B8%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5%20%D1%81%20TextCheck.';
 
-document.querySelectorAll('#mobileMenu a').forEach(link => {
-  link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+menuBtn?.addEventListener('click', () => {
+  const open = mobileMenu.classList.toggle('hidden') === false;
+  menuBtn.setAttribute('aria-expanded', String(open));
 });
 
-playDemo?.addEventListener('click', () => {
-  demoModal.classList.remove('hidden');
-  demoModal.classList.add('flex');
+document.querySelectorAll('#mobileMenu a').forEach((link) => {
+  link.addEventListener('click', () => {
+    mobileMenu.classList.add('hidden');
+    menuBtn?.setAttribute('aria-expanded', 'false');
+  });
 });
 
-closeModal?.addEventListener('click', () => {
-  demoModal.classList.add('hidden');
-  demoModal.classList.remove('flex');
+const openContact = () => {
+  if (!contactModal) return;
+  contactModal.classList.remove('hidden');
+  contactModal.classList.add('flex');
+  document.body.style.overflow = 'hidden';
+};
+
+const closeContact = () => {
+  if (!contactModal) return;
+  contactModal.classList.add('hidden');
+  contactModal.classList.remove('flex');
+  document.body.style.overflow = '';
+};
+
+document.querySelectorAll('[data-open-contact]').forEach((el) => {
+  el.addEventListener('click', (e) => {
+    e.preventDefault();
+    openContact();
+  });
 });
 
-demoModal?.addEventListener('click', (e) => {
-  if (e.target === demoModal) {
-    demoModal.classList.add('hidden');
-    demoModal.classList.remove('flex');
-  }
+closeModal?.addEventListener('click', closeContact);
+
+contactModal?.addEventListener('click', (e) => {
+  if (e.target === contactModal) closeContact();
 });
 
 window.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') {
-    demoModal.classList.add('hidden');
-    demoModal.classList.remove('flex');
-    mobileMenu.classList.add('hidden');
+    closeContact();
+    closeVacancyClosed();
+    mobileMenu?.classList.add('hidden');
+    menuBtn?.setAttribute('aria-expanded', 'false');
   }
 });
+
+window.addEventListener('scroll', () => {
+  header?.classList.toggle('is-scrolled', window.scrollY > 12);
+}, { passive: true });
 
 document.querySelectorAll('.faq-item').forEach((item) => {
   const trigger = item.querySelector('.faq-trigger');
   const content = item.querySelector('.faq-content');
-  const sign = trigger?.querySelector('span');
+  const sign = trigger?.querySelector('[data-faq-sign]');
 
   trigger?.addEventListener('click', () => {
     const isOpen = !content.classList.contains('hidden');
+    document.querySelectorAll('.faq-item').forEach((other) => {
+      if (other === item) return;
+      other.querySelector('.faq-content')?.classList.add('hidden');
+      const otherSign = other.querySelector('[data-faq-sign]');
+      if (otherSign) otherSign.textContent = '+';
+      other.querySelector('.faq-trigger')?.setAttribute('aria-expanded', 'false');
+    });
     content.classList.toggle('hidden');
     if (sign) sign.textContent = isOpen ? '+' : '−';
+    trigger.setAttribute('aria-expanded', String(!isOpen));
   });
 });
 
@@ -55,371 +85,124 @@ const revealObserver = new IntersectionObserver((entries) => {
       revealObserver.unobserve(entry.target);
     }
   });
-}, { threshold: 0.2, rootMargin: '0px 0px -8% 0px' });
+}, { threshold: 0.16, rootMargin: '0px 0px -8% 0px' });
 
 document.querySelectorAll('[data-reveal]').forEach((el) => {
   revealObserver.observe(el);
 });
 
-(() => {
-  const liveChatDemo = document.getElementById('liveChatDemo');
-  if (!liveChatDemo) return;
+const animateCount = (el) => {
+  const target = Number(el.dataset.count || 0);
+  const suffix = el.dataset.suffix || '';
+  const prefix = el.dataset.prefix || '';
+  const duration = 1100;
+  const start = performance.now();
 
-  const LANG = document.documentElement.lang === 'en' ? 'en' : 'ru';
+  const tick = (now) => {
+    const p = Math.min((now - start) / duration, 1);
+    const eased = 1 - Math.pow(1 - p, 3);
+    el.textContent = `${prefix}${Math.round(target * eased)}${suffix}`;
+    if (p < 1) requestAnimationFrame(tick);
+  };
+  requestAnimationFrame(tick);
+};
 
-  const UI = LANG === 'en'
-    ? {
-        newMatch: 'New match',
-        phrase: 'Phrase:',
-        region: 'Region:',
-        message: 'Snippet:',
-        chat: 'Source:',
-        author: 'Author',
-        openChat: 'Open chat',
-        thisChat: 'this chat',
-        defaultRegion: 'Kazakhstan',
-      }
-    : {
-        newMatch: 'Новое совпадение',
-        phrase: 'Фраза:',
-        region: 'Регион:',
-        message: 'Запрос:',
-        chat: 'Источник:',
-        author: 'Автор',
-        openChat: 'Открыть чат',
-        thisChat: 'этот чат',
-        defaultRegion: 'Казахстан',
-      };
-
-  const chatListEl    = document.getElementById('chatListItems');
-  const chatMsgsEl    = document.getElementById('chatMessages');
-  const typingEl      = document.getElementById('typingIndicator');
-  const typingAvEl    = document.getElementById('typingAvatar');
-  const headerAv      = document.getElementById('chatHeaderAvatar');
-  const headerName    = document.getElementById('chatHeaderName');
-  const headerSub     = document.getElementById('chatHeaderSub');
-  const matchCardsEl  = document.getElementById('matchCards');
-  const matchCardsMob = document.getElementById('matchCardsMob');
-  const matchBadge    = document.getElementById('matchBadge');
-  const matchBadgeMob = document.getElementById('matchBadgeMob');
-  const mobileTabs    = document.getElementById('mobileTabs');
-  const chatInput     = document.getElementById('chatInput');
-  const chatSend      = document.getElementById('chatSend');
-
-  const CHATS_RU = [
-    {
-      id: 0, initials: 'DC', color: '#5B49F6', name: 'Дизайн-чат', sub: '23 участника · 10 в сети', online: true, preview: 'Ищу UX дизайнера...',
-      msgs: [
-        { av: 'JL', c: '#EC4899', n: 'Жасмин Л.', t: 'Всем привет! Кто занимается UI/UX для SaaS?', match: null },
-        { av: 'AH', c: '#3B82F6', n: 'Алекс Х.',   t: 'Ищу UX дизайнера для fintech, бюджет обсуждается.', match: { phrase:'ищу дизайнера', flag:'fi-kz', region:'Казахстан', chat:'публичная группа', msg:'Ищу UX дизайнера для fintech, бюджет обсуждается.', time:'09:41' } },
-        { av: 'OC', c: '#10B981', n: 'Осман Ч.',  t: 'Я работал с несколькими финтех стартапами, могу помочь.', match: null },
-        { av: 'JC', c: '#F59E0B', n: 'Джейден Ч.', t: 'Кто может сделать редизайн мобильного приложения?', match: null },
-      ]
-    },
-    {
-      id: 1, initials: 'FG', color: '#3B82F6', name: 'Сообщество основателей', sub: '41 участник · 8 в сети', online: true, preview: 'Нужен маркетолог B2B',
-      msgs: [
-        { av: 'ZM', c: '#6366F1', n: 'Заид М.',   t: 'Есть кто из маркетологов в B2B?', match: null },
-        { av: 'AC', c: '#F59E0B', n: 'Антон Ч.', t: 'Нужен маркетолог B2B, стартап серии A.', match: { phrase:'нужен маркетолог', flag:'fi-de', region:'Германия', chat:'Telegram-чат', msg:'Нужен маркетолог B2B, стартап серии A.', time:'09:43' } },
-        { av: 'CG', c: '#EC4899', n: 'Коннор Г.',  t: 'Можно написать в личку, у меня есть контакты.', match: null },
-      ]
-    },
-    {
-      id: 2, initials: 'DH', color: '#10B981', name: 'Хаб разработчиков', sub: '89 участников · 22 в сети', online: false, preview: 'Ищу React-разработчика',
-      msgs: [
-        { av: 'VC', c: '#8B5CF6', n: 'Ванесса Ч.', t: 'Ищу React-разработчика на удалёнку, срочно.', match: { phrase:'ищу разработчика React', flag:'fi-us', region:'США', chat:'группа стартапов', msg:'Ищу React-разработчика на удалёнку, срочно.', time:'09:45' } },
-        { av: 'JM', c: '#3B82F6', n: 'Яков М.',   t: 'Опыт с React 4 года, какой у вас стек?', match: null },
-        { av: 'VC', c: '#8B5CF6', n: 'Ванесса Ч.', t: 'Next.js, TypeScript, Supabase — напишите в личку.', match: null },
-      ]
-    },
-    {
-      id: 3, initials: 'SK', color: '#F59E0B', name: 'Стартапы KZ', sub: '18 участников · 5 в сети', online: false, preview: 'Ищу CRM интегратора', badge: 3,
-      msgs: [
-        { av: 'NK', c: '#F59E0B', n: 'Nurgul K.',  t: 'Ищу CRM интегратора для Bitrix24, Алматы.', match: { phrase:'ищу CRM интегратора', flag:'fi-kz', region:'Казахстан', chat:'бизнес-чат', msg:'Ищу CRM интегратора для Bitrix24, Алматы.', time:'09:50' } },
-        { av: 'BK', c: '#10B981', n: 'Bekzat K.',  t: 'У нас есть опыт с Bitrix в Казахстане, напиши.', match: null },
-      ]
-    },
-  ];
-
-  const CHATS_EN = [
-    {
-      id: 0, initials: 'DC', color: '#5B49F6', name: 'Design chat', sub: '23 members · 10 online', online: true, preview: 'Looking for a UX designer…',
-      msgs: [
-        { av: 'JL', c: '#EC4899', n: 'Jasmine L.', t: 'Hey everyone — anyone here doing UI/UX for SaaS?', match: null },
-        { av: 'AH', c: '#3B82F6', n: 'Alex H.', t: 'Looking for a UX designer for fintech — budget flexible.', match: { phrase:'looking for designer', flag:'fi-kz', region:'Kazakhstan', chat:'public group', msg:'Looking for a UX designer for fintech — budget flexible.', time:'09:41' } },
-        { av: 'OC', c: '#10B981', n: 'Osmond C.', t: 'I’ve worked with several fintech startups — happy to help.', match: null },
-        { av: 'JC', c: '#F59E0B', n: 'Jayden C.', t: 'Who can redesign a mobile app?', match: null },
-      ]
-    },
-    {
-      id: 1, initials: 'FG', color: '#3B82F6', name: 'Founders circle', sub: '41 members · 8 online', online: true, preview: 'Need a B2B marketer',
-      msgs: [
-        { av: 'ZM', c: '#6366F1', n: 'Zaid M.', t: 'Any B2B marketers here?', match: null },
-        { av: 'AC', c: '#F59E0B', n: 'Anton C.', t: 'Need a B2B marketer — Series A startup.', match: { phrase:'need marketer', flag:'fi-de', region:'Germany', chat:'Telegram chat', msg:'Need a B2B marketer — Series A startup.', time:'09:43' } },
-        { av: 'CG', c: '#EC4899', n: 'Connor G.', t: 'DM me — I have a few contacts.', match: null },
-      ]
-    },
-    {
-      id: 2, initials: 'DH', color: '#10B981', name: 'Developer hub', sub: '89 members · 22 online', online: false, preview: 'Hiring React dev',
-      msgs: [
-        { av: 'VC', c: '#8B5CF6', n: 'Vanessa C.', t: 'Looking for a React developer remotely — urgent.', match: { phrase:'looking for React developer', flag:'fi-us', region:'United States', chat:'startup group', msg:'Looking for a React developer remotely — urgent.', time:'09:45' } },
-        { av: 'JM', c: '#3B82F6', n: 'Jacob M.', t: '4 years with React — what’s your stack?', match: null },
-        { av: 'VC', c: '#8B5CF6', n: 'Vanessa C.', t: 'Next.js, TypeScript, Supabase — ping me.', match: null },
-      ]
-    },
-    {
-      id: 3, initials: 'SK', color: '#F59E0B', name: 'Startups KZ', sub: '18 members · 5 online', online: false, preview: 'Need CRM integrator', badge: 3,
-      msgs: [
-        { av: 'NK', c: '#F59E0B', n: 'Nurgul K.', t: 'Looking for a Bitrix24 CRM integrator in Almaty.', match: { phrase:'CRM integrator', flag:'fi-kz', region:'Kazakhstan', chat:'business chat', msg:'Looking for a Bitrix24 CRM integrator in Almaty.', time:'09:50' } },
-        { av: 'BK', c: '#10B981', n: 'Bekzat K.', t: 'We’ve shipped Bitrix projects in KZ — DM me.', match: null },
-      ]
-    },
-  ];
-
-  const CHATS = LANG === 'en' ? CHATS_EN : CHATS_RU;
-
-  const KEYWORD_RULES_RU = [
-    { words: ['дизайнер', 'designer', 'ux', 'ui', 'figma', 'дизайн'],     label: 'дизайнер',    score: 96, flag: 'fi-kz', region: 'Казахстан' },
-    { words: ['маркетолог', 'маркетинг', 'marketing', 'smm', 'таргет'],   label: 'маркетолог',  score: 88, flag: 'fi-de', region: 'Германия' },
-    { words: ['разработчик', 'developer', 'react', 'backend', 'frontend'], label: 'разработчик', score: 92, flag: 'fi-us', region: 'США' },
-    { words: ['юрист', 'адвокат', 'lawyer', 'договор', 'legal'],          label: 'юрист',        score: 81, flag: 'fi-ru', region: 'Россия' },
-    { words: ['квартира', 'аренда', 'сниму', 'недвижимость', 'rent'],     label: 'квартира',     score: 84, flag: 'fi-kz', region: 'Казахстан' },
-    { words: ['crm', 'интегратор', 'битрикс', 'bitrix', 'amocRM'],        label: 'CRM интегратор', score: 79, flag: 'fi-kz', region: 'Казахстан' },
-  ];
-
-  const KEYWORD_RULES_EN = [
-    { words: ['дизайнер', 'designer', 'ux', 'ui', 'figma', 'дизайн'],     label: 'designer',    score: 96, flag: 'fi-kz', region: 'Kazakhstan' },
-    { words: ['маркетолог', 'маркетинг', 'marketing', 'smm', 'таргет'],   label: 'marketer',  score: 88, flag: 'fi-de', region: 'Germany' },
-    { words: ['разработчик', 'developer', 'react', 'backend', 'frontend'], label: 'developer', score: 92, flag: 'fi-us', region: 'United States' },
-    { words: ['юрист', 'адвокат', 'lawyer', 'договор', 'legal'],          label: 'lawyer',        score: 81, flag: 'fi-ru', region: 'Russia' },
-    { words: ['квартира', 'аренда', 'сниму', 'недвижимость', 'rent', 'apartment'], label: 'apartment', score: 84, flag: 'fi-kz', region: 'Kazakhstan' },
-    { words: ['crm', 'интегратор', 'битрикс', 'bitrix', 'amocRM', 'integrator'], label: 'CRM integrator', score: 79, flag: 'fi-kz', region: 'Kazakhstan' },
-  ];
-
-  const KEYWORD_RULES = LANG === 'en' ? KEYWORD_RULES_EN : KEYWORD_RULES_RU;
-  const KEYWORDS = ['ищу', 'нужен', 'нужна', 'looking for', 'wanted', 'search', 'требуется', 'find', 'хочу', 'подберите', 'need', 'hire', 'hiring'];
-
-  let matchCount = 0;
-
-  const addMatchCard = (m) => {
-    matchCount++;
-    matchBadge.textContent = matchCount;
-    if (matchBadgeMob) matchBadgeMob.textContent = matchCount;
-    const chatLabel = m.chat || m.src || '';
-    const msgText = m.msg || '';
-    const card = document.createElement('article');
-    card.className = 'relative glass rounded-[14px] p-4 shadow-card';
-    card.style.cssText = 'opacity:0;transform:translateY(10px);transition:opacity .55s ease,transform .55s ease';
-    card.innerHTML = `
-          <div class="flex items-center justify-between">
-            <div class="flex items-center gap-[5px] text-[12px] font-extrabold text-violet"><span>🔥</span> ${UI.newMatch}</div>
-            <div class="text-[11px] text-[#8A90A2]">${m.time}</div>
-          </div>
-          <div class="mt-2 space-y-1 text-[11.5px] leading-[1.4] text-[#141926]">
-            <p><b>${UI.phrase}</b> ${m.phrase}</p>
-            <p><b>${UI.region}</b> <span class="fi ${m.flag} mr-1"></span>${m.region}</p>
-            ${msgText ? `<p><b>${UI.message}</b> ${msgText}</p>` : ''}
-            <p class="text-[#737A8D]"><b class="text-[#555C70]">${UI.chat}</b> ${chatLabel}</p>
-          </div>
-          <div class="mt-3 grid grid-cols-2 gap-2">
-            <button type="button" class="rounded-[10px] border border-[#E2E5F0] bg-white py-2 text-[11px] font-semibold text-[#374151]">${UI.author}</button>
-            <button type="button" class="rounded-[10px] bg-violet py-2 text-[11px] font-semibold text-white">${UI.openChat}</button>
-          </div>`;
-    matchCardsEl.prepend(card);
-    requestAnimationFrame(() => { card.style.opacity = '1'; card.style.transform = 'translateY(0)'; });
-    if (matchCardsMob) {
-      const card2 = card.cloneNode(true);
-      card2.style.cssText = 'opacity:0;transform:translateY(8px);transition:opacity .5s ease,transform .5s ease';
-      matchCardsMob.prepend(card2);
-      requestAnimationFrame(() => { card2.style.opacity = '1'; card2.style.transform = 'translateY(0)'; });
+const countObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      animateCount(entry.target);
+      countObserver.unobserve(entry.target);
     }
-  };
+  });
+}, { threshold: 0.5 });
 
-  const addMsg = (item, cb) => {
-    const wrap = document.createElement('div');
-    wrap.className = 'flex items-end gap-2';
-    wrap.style.cssText = 'opacity:0;transform:translateY(8px);transition:opacity .5s ease,transform .5s ease';
-    wrap.innerHTML = `
-          <div class="grid h-7 w-7 shrink-0 place-items-center rounded-full text-[10px] font-bold text-white" style="background:${item.c}">${item.av}</div>
-          <div class="max-w-[75%]">
-            <p class="mb-0.5 text-[10px] text-[#A0A5B4]">${item.n}</p>
-            <div class="rounded-[14px] bg-white px-3 py-2 shadow-[0_4px_14px_rgba(30,39,68,.07)]">
-              <p class="text-[12.5px] text-[#20283B]">${item.t}</p>
-            </div>
-          </div>`;
-    chatMsgsEl.appendChild(wrap);
-    requestAnimationFrame(() => { wrap.style.opacity = '1'; wrap.style.transform = 'translateY(0)'; });
-    chatMsgsEl.scrollTo({ top: chatMsgsEl.scrollHeight, behavior: 'smooth' });
-    if (cb) setTimeout(cb, 0);
-  };
+document.querySelectorAll('[data-count]').forEach((el) => countObserver.observe(el));
 
-  const addUserMsg = (text) => {
-    const wrap = document.createElement('div');
-    wrap.className = 'flex justify-end';
-    wrap.style.cssText = 'opacity:0;transform:translateY(8px);transition:opacity .45s ease,transform .45s ease';
-    wrap.innerHTML = `<div class="max-w-[74%] rounded-[14px] bg-[#5B49F6] px-3 py-2 text-white shadow-[0_6px_18px_rgba(91,73,246,.28)]"><p class="text-[12.5px]">${text}</p></div>`;
-    chatMsgsEl.appendChild(wrap);
-    requestAnimationFrame(() => { wrap.style.opacity = '1'; wrap.style.transform = 'translateY(0)'; });
-    chatMsgsEl.scrollTo({ top: chatMsgsEl.scrollHeight, behavior: 'smooth' });
-  };
+document.querySelectorAll('[data-year]').forEach((el) => {
+  el.textContent = String(new Date().getFullYear());
+});
 
-  const showTyping = (av, c) => {
-    typingAvEl.textContent = av;
-    typingAvEl.style.background = c;
-    typingEl.classList.remove('hidden');
-    typingEl.classList.add('flex');
-  };
-  const hideTyping = () => { typingEl.classList.add('hidden'); typingEl.classList.remove('flex'); };
+document.getElementById('seeAllContacts')?.addEventListener('click', closeContact);
 
-  let activeChat = -1;
-  let animTimer = null;
+const vacancyModal = document.getElementById('vacancyModal');
+const closeVacancyBtn = document.getElementById('closeVacancyModal');
 
-  const loadChat = (idx) => {
-    if (activeChat === idx) return;
-    activeChat = idx;
-    if (animTimer) clearTimeout(animTimer);
-    chatMsgsEl.innerHTML = '';
-    hideTyping();
+const openVacancyClosed = () => {
+  if (!vacancyModal) return;
+  vacancyModal.classList.remove('hidden');
+  vacancyModal.classList.add('flex');
+  document.body.style.overflow = 'hidden';
+};
 
-    const chat = CHATS[idx];
-    headerAv.textContent = chat.initials;
-    headerAv.style.background = chat.color;
-    headerName.textContent = chat.name;
-    headerSub.textContent = chat.sub;
+const closeVacancyClosed = () => {
+  if (!vacancyModal) return;
+  vacancyModal.classList.add('hidden');
+  vacancyModal.classList.remove('flex');
+  document.body.style.overflow = '';
+};
 
-    document.querySelectorAll('.chat-list-row').forEach((r, i) => {
-      r.classList.toggle('bg-[#F4F3FF]', i === idx);
-    });
-    document.querySelectorAll('.mobile-tab').forEach((t, i) => {
-      t.classList.toggle('bg-violet', i === idx);
-      t.classList.toggle('text-white', i === idx);
-      t.classList.toggle('border-violet', i === idx);
-      t.classList.toggle('bg-white', i !== idx);
-      t.classList.toggle('text-[#4A5268]', i !== idx);
-      t.classList.toggle('border-[#E2E5F0]', i !== idx);
+document.querySelectorAll('[data-vacancy-closed]').forEach((el) => {
+  el.addEventListener('click', (e) => {
+    e.preventDefault();
+    openVacancyClosed();
+  });
+});
+
+closeVacancyBtn?.addEventListener('click', closeVacancyClosed);
+document.getElementById('closeVacancyModalBtn')?.addEventListener('click', closeVacancyClosed);
+vacancyModal?.addEventListener('click', (e) => {
+  if (e.target === vacancyModal) closeVacancyClosed();
+});
+
+const guideButtons = document.querySelectorAll('[data-guide]');
+const guidePanels = document.querySelectorAll('.guide-panel');
+
+guideButtons.forEach((btn) => {
+  btn.addEventListener('click', () => {
+    const id = btn.getAttribute('data-guide');
+    const panel = document.getElementById(`guide-${id}`);
+    const alreadyOpen = panel && !panel.hasAttribute('hidden');
+
+    guidePanels.forEach((el) => el.setAttribute('hidden', ''));
+    guideButtons.forEach((b) => {
+      b.classList.remove('is-open');
+      b.setAttribute('aria-expanded', 'false');
     });
 
-    let delay = 300;
-    chat.msgs.forEach((msg) => {
-      const td = delay;
-      animTimer = setTimeout(() => {
-        showTyping(msg.av, msg.c);
-        animTimer = setTimeout(() => {
-          hideTyping();
-          addMsg(msg, null);
-          if (msg.match) setTimeout(() => addMatchCard(msg.match), 600);
-        }, 900);
-      }, td);
-      delay += 1800;
-    });
-  };
-
-  const buildList = () => {
-    chatListEl.innerHTML = '';
-    if (mobileTabs) mobileTabs.innerHTML = '';
-    CHATS.forEach((chat, idx) => {
-      const row = document.createElement('div');
-      row.className = `chat-list-row flex cursor-pointer items-center gap-3 px-4 py-3 transition hover:bg-[#F4F3FF] ${idx === 0 ? 'bg-[#F4F3FF]' : ''}`;
-      row.innerHTML = `
-            <div class="relative shrink-0">
-              <div class="grid h-10 w-10 place-items-center rounded-full text-[13px] font-bold text-white" style="background:${chat.color}">${chat.initials}</div>
-              ${chat.online ? '<span class="absolute -bottom-0.5 -right-0.5 h-3 w-3 rounded-full border-2 border-white bg-emerald-400"></span>' : ''}
-            </div>
-            <div class="min-w-0 flex-1">
-              <div class="flex items-center justify-between">
-                <p class="text-[13px] font-semibold text-[#1E2537]">${chat.name}</p>
-                ${chat.badge ? `<span class="grid h-4 w-4 place-items-center rounded-full bg-violet text-[10px] font-bold text-white">${chat.badge}</span>` : ''}
-              </div>
-              <p class="truncate text-[12px] text-[#7D8396]">${chat.preview}</p>
-            </div>`;
-      row.addEventListener('click', () => loadChat(idx));
-      chatListEl.appendChild(row);
-
-      if (mobileTabs) {
-        const tab = document.createElement('button');
-        tab.className = `mobile-tab shrink-0 flex items-center gap-1.5 rounded-full border px-3 py-1 text-[12px] font-semibold transition ${idx === 0 ? 'border-violet bg-violet text-white' : 'border-[#E2E5F0] bg-white text-[#4A5268]'}`;
-        tab.innerHTML = `<span class="grid h-5 w-5 place-items-center rounded-full text-[9px] font-bold text-white" style="background:${chat.color}">${chat.initials}</span>${chat.name}`;
-        tab.addEventListener('click', () => loadChat(idx));
-        mobileTabs.appendChild(tab);
-      }
-    });
-  };
-
-  const addUserMatchCard = (val, rule) => {
-    const now = new Date();
-    const time = `${String(now.getHours()).padStart(2,'0')}:${String(now.getMinutes()).padStart(2,'0')}`;
-    matchCount++;
-    matchBadge.textContent = matchCount;
-    const card = document.createElement('article');
-    card.className = 'relative glass rounded-[14px] p-4 shadow-card ring-1 ring-violet/20';
-    card.style.cssText = 'opacity:0;transform:translateY(10px);transition:opacity .55s ease,transform .55s ease';
-    card.innerHTML = `
-          <div class="flex items-center justify-between">
-            <div class="flex items-center gap-[5px] text-[12px] font-extrabold text-violet"><span>🔥</span> ${UI.newMatch}</div>
-            <div class="text-[11px] text-[#8A90A2]">${time}</div>
-          </div>
-          <div class="mt-2 space-y-1 text-[11.5px] leading-[1.4] text-[#141926]">
-            <p><b>${UI.phrase}</b> ${rule ? rule.label : val.slice(0, 28)}</p>
-            <p><b>${UI.region}</b> <span class="fi ${rule ? rule.flag : 'fi-kz'} mr-1"></span>${rule ? rule.region : UI.defaultRegion}</p>
-            <p><b>${UI.message}</b> ${val.slice(0, 120)}${val.length > 120 ? '…' : ''}</p>
-            <p class="text-[#737A8D]"><b class="text-[#555C70]">${UI.chat}</b> ${UI.thisChat}</p>
-          </div>
-          <div class="mt-3 grid grid-cols-2 gap-2">
-            <button type="button" class="rounded-[10px] border border-[#E2E5F0] bg-white py-2 text-[11px] font-semibold text-[#374151]">${UI.author}</button>
-            <button type="button" class="rounded-[10px] bg-violet py-2 text-[11px] font-semibold text-white">${UI.openChat}</button>
-          </div>`;
-    matchCardsEl.prepend(card);
-    requestAnimationFrame(() => { card.style.opacity = '1'; card.style.transform = 'translateY(0)'; });
-  };
-
-  const sendUserMsg = () => {
-    const val = chatInput.value.trim();
-    if (!val) return;
-    addUserMsg(val);
-    chatInput.value = '';
-    const low = val.toLowerCase();
-    const hasIntent = KEYWORDS.some(k => low.includes(k));
-    const matchedRule = KEYWORD_RULES.find(r => r.words.some(w => low.includes(w)));
-    if (hasIntent || matchedRule) {
-      setTimeout(() => addUserMatchCard(val, matchedRule || null), 1100);
+    if (!alreadyOpen && panel) {
+      panel.removeAttribute('hidden');
+      btn.classList.add('is-open');
+      btn.setAttribute('aria-expanded', 'true');
+      panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     }
-  };
+  });
+});
 
-  chatSend?.addEventListener('click', sendUserMsg);
-  chatInput?.addEventListener('keydown', (e) => { if (e.key === 'Enter') sendUserMsg(); });
+const laptop = document.getElementById('laptop');
+const LAPTOP_TILT = 3;
 
-  buildList();
-
-  const chatObserver = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) { loadChat(0); chatObserver.disconnect(); }
-    });
-  }, { threshold: 0.25 });
-  chatObserver.observe(liveChatDemo);
-})();
-
-const PHONE_TILT = 3;
-
-function setPhoneTransform(rotateY = 0, rotateX = 0) {
-  if (!phone) return;
+function setLaptopTransform(rotateY = 0, rotateX = 0) {
+  if (!laptop) return;
   if (window.innerWidth < 1024) {
-    phone.style.transform = `rotate(${PHONE_TILT}deg)`;
+    laptop.style.transform = `rotate(${LAPTOP_TILT}deg)`;
     return;
   }
-  phone.style.transform = `perspective(900px) rotate(${PHONE_TILT}deg) rotateY(${rotateY}deg) rotateX(${rotateX}deg)`;
+  laptop.style.transform = `perspective(900px) rotate(${LAPTOP_TILT}deg) rotateY(${rotateY}deg) rotateX(${rotateX}deg)`;
 }
 
-setPhoneTransform();
-window.addEventListener('resize', () => setPhoneTransform());
+setLaptopTransform();
+window.addEventListener('resize', () => setLaptopTransform());
 
 document.addEventListener('mousemove', (e) => {
-  if (!phone || window.innerWidth < 1024) return;
-  const rect = phone.getBoundingClientRect();
+  if (!laptop || window.innerWidth < 1024) return;
+  const rect = laptop.getBoundingClientRect();
   const cx = rect.left + rect.width / 2;
   const cy = rect.top + rect.height / 2;
   const dx = (e.clientX - cx) / rect.width;
   const dy = (e.clientY - cy) / rect.height;
-  setPhoneTransform(dx * 3, -dy * 3);
+  setLaptopTransform(dx * 8, -dy * 6);
 });
 
-document.addEventListener('mouseleave', () => setPhoneTransform());
+document.addEventListener('mouseleave', () => setLaptopTransform());
+
+window.TextCheckContacts = { victoriaTelegram: VICTORIA_TG };

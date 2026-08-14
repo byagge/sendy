@@ -2,20 +2,24 @@ tailwind.config = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Inter', 'Manrope', 'system-ui', 'sans-serif'],
+        sans: ['Plus Jakarta Sans', 'Manrope', 'system-ui', 'sans-serif'],
+        display: ['Fraunces', 'Georgia', 'serif'],
       },
       colors: {
-        ink: '#0B1220',
-        muted: '#6E7380',
-        violet: '#5B49F6',
-        violet2: '#735CFF',
-        soft: '#F4F3FF',
+        ink: '#161310',
+        muted: '#6B645C',
+        pine: '#0F4F46',
+        pine2: '#167A6F',
+        glow: '#2BB5A5',
+        sand: '#F3EDE3',
+        mist: '#FAF7F2',
+        gold: '#C7923A',
       },
       boxShadow: {
-        soft: '0 22px 60px rgba(56, 54, 125, .10)',
-        button: '0 18px 32px rgba(91, 73, 246, .30)',
-        card: '0 20px 40px rgba(46, 43, 96, .10)',
-        phone: '0 40px 80px rgba(15, 23, 42, .22)',
+        soft: '0 22px 60px rgba(22, 19, 16, .08)',
+        button: '0 16px 34px rgba(15, 79, 70, .28)',
+        card: '0 18px 44px rgba(22, 19, 16, .08)',
+        lift: '0 28px 64px rgba(15, 79, 70, .14)',
       },
       keyframes: {
         floaty: {
@@ -24,22 +28,27 @@ tailwind.config = {
         },
         pulseRing: {
           '0%': { transform: 'scale(.9)', opacity: '.65' },
-          '100%': { transform: 'scale(1.35)', opacity: '0' },
+          '100%': { transform: 'scale(1.4)', opacity: '0' },
         },
         fadeUp: {
-          '0%': { transform: 'translateY(18px)', opacity: '0' },
+          '0%': { transform: 'translateY(22px)', opacity: '0' },
           '100%': { transform: 'translateY(0)', opacity: '1' },
+        },
+        marquee: {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-50%)' },
         },
         dash: {
           '0%': { strokeDashoffset: '80' },
           '100%': { strokeDashoffset: '0' },
-        }
+        },
       },
       animation: {
-        floaty: 'floaty 4.5s ease-in-out infinite',
-        fadeUp: 'fadeUp .85s ease both',
+        floaty: 'floaty 5s ease-in-out infinite',
+        fadeUp: 'fadeUp .9s ease both',
+        marquee: 'marquee 28s linear infinite',
         dash: 'dash 2.8s linear infinite',
-      }
-    }
-  }
+      },
+    },
+  },
 };

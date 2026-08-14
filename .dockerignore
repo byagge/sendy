@@ -7,3 +7,6 @@ Dockerfile
 # Dev-only (not needed in static image)
 *.py
 legal-bodies/
+sow.md
+new.md
+

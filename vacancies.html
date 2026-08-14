@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Вакансии — TextCheck</title>
+  <meta name="description" content="Открытые вакансии TextCheck: редактор текстов и другие позиции в команде продвижения." />
+  <meta name="theme-color" content="#0F4F46" />
+  <link rel="icon" type="image/png" href="/media/favicon.png" />
+  <link rel="icon" type="image/svg+xml" href="/media/logo.svg" />
+  <link rel="apple-touch-icon" href="/media/favicon.png" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="/assets/js/tailwind-config.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;1,9..144,500&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/main.css">
+</head>
+<body class="noise min-h-screen text-ink">
+  <header id="siteHeader" class="site-header sticky top-0 z-40 border-b border-pine/10 bg-mist/86 backdrop-blur-md">
+    <div class="mx-auto flex max-w-[1280px] items-center justify-between gap-6 px-5 py-4 sm:px-8 lg:px-12">
+      <a href="/" class="flex items-center gap-2.5" aria-label="TextCheck">
+        <img src="/media/logo.svg" alt="" class="h-9 w-9" width="36" height="36" />
+        <span class="text-[22px] font-extrabold tracking-[-.04em] text-ink">TextCheck</span>
+      </a>
+
+      <nav class="hidden items-center gap-6 text-[14px] font-semibold text-ink xl:gap-8 lg:flex" aria-label="Основная навигация">
+        <a class="transition hover:text-pine" href="/#about">О компании</a>
+        <a class="transition hover:text-pine" href="/#services">Услуги</a>
+        <a class="transition hover:text-pine" href="/#why">Почему мы</a>
+        <a class="transition hover:text-pine" href="/#process">Как работаем</a>
+        <a class="transition hover:text-pine" href="/#contacts">Контакты</a>
+        <a class="nav-current transition hover:text-pine" href="/vacancies.html" aria-current="page">Вакансии</a>
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <a href="https://t.me/genpet32?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%9E%D1%82%D0%BA%D0%BB%D0%B8%D0%BA%D0%B0%D1%8E%D1%81%D1%8C%20%D0%BD%D0%B0%20%D0%B2%D0%B0%D0%BA%D0%B0%D0%BD%D1%81%D0%B8%D1%8E%20%C2%AB%D0%A0%D0%B5%D0%B4%D0%B0%D0%BA%D1%82%D0%BE%D1%80%20%D1%82%D0%B5%D0%BA%D1%81%D1%82%D0%BE%D0%B2%C2%BB." class="btn-primary hidden rounded-[12px] px-5 py-3 text-[14px] font-semibold sm:inline-flex">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.75 3.8 18.4 20.12c-.25 1.15-.93 1.43-1.88.89l-5.22-3.84-2.52 2.42c-.28.28-.51.51-1.05.51l.38-5.31 9.67-8.73c.42-.38-.09-.59-.65-.21L5.2 13.37.05 11.76c-1.12-.35-1.14-1.12.23-1.65L20.43 2.35c.93-.35 1.75.21 1.32 1.45Z"/></svg>
+          Откликнуться
+        </a>
+        <button id="menuBtn" class="grid h-11 w-11 place-items-center rounded-xl bg-white shadow-soft ring-1 ring-black/5 lg:hidden" aria-label="Открыть меню" aria-expanded="false" aria-controls="mobileMenu">
+          <span class="relative block h-[2px] w-5 bg-ink before:absolute before:-top-2 before:left-0 before:h-[2px] before:w-5 before:bg-ink before:content-[''] after:absolute after:left-0 after:top-2 after:h-[2px] after:w-5 after:bg-ink after:content-['']"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div id="mobileMenu" class="fixed left-4 right-4 top-[76px] z-50 hidden rounded-3xl border border-pine/10 bg-white/92 p-5 shadow-soft backdrop-blur-xl lg:hidden">
+    <nav class="grid gap-2 text-[15px] font-semibold" aria-label="Мобильная навигация">
+      <a class="rounded-2xl px-3 py-2.5 hover:bg-pine/5" href="/#about">О компании</a>
+      <a class="rounded-2xl px-3 py-2.5 hover:bg-pine/5" href="/#services">Услуги</a>
+      <a class="rounded-2xl px-3 py-2.5 hover:bg-pine/5" href="/#why">Почему мы</a>
+      <a class="rounded-2xl px-3 py-2.5 hover:bg-pine/5" href="/#process">Как работаем</a>
+      <a class="rounded-2xl px-3 py-2.5 hover:bg-pine/5" href="/#contacts">Контакты</a>
+      <a class="rounded-2xl bg-pine/5 px-3 py-2.5 text-pine" href="/vacancies.html" aria-current="page">Вакансии</a>
+    </nav>
+  </div>
+
+  <main class="relative z-10 mx-auto max-w-[1280px] px-5 pb-20 pt-10 sm:px-8 lg:px-12 lg:pt-14">
+    <p class="text-[13px] font-medium text-muted"><a href="/" class="text-pine hover:underline">Главная</a> · Вакансии</p>
+    <p class="mt-6 text-[12px] font-bold uppercase tracking-[.12em] text-pine2">Команда</p>
+    <h1 class="mt-3 max-w-[640px] text-[36px] font-extrabold leading-[1.1] tracking-[-.04em] sm:text-[48px]">Вакансии TextCheck</h1>
+    <p class="mt-4 max-w-[560px] text-[16px] leading-relaxed text-muted">Сейчас открыта одна позиция. Остальные направления пока без набора — можно посмотреть описание и вернуться позже.</p>
+
+    <div class="mt-10 grid gap-4 md:grid-cols-2">
+      <a href="#editor" class="vacancy-card rounded-[24px] border border-pine/20 bg-white p-6 shadow-card ring-1 ring-pine/10 md:p-7">
+        <span class="inline-flex rounded-full bg-pine/10 px-3 py-1 text-[11px] font-bold uppercase tracking-[.08em] text-pine">Открыта</span>
+        <h2 class="mt-4 text-[22px] font-extrabold tracking-[-.03em]">Редактор текстов</h2>
+        <p class="mt-3 text-[15px] leading-relaxed text-muted">Редактирование и корректировка текстовых материалов, исправление грамматических, стилистических и орфографических ошибок.</p>
+        <span class="mt-5 inline-flex items-center gap-1 text-[14px] font-bold text-pine">Смотреть вакансию →</span>
+      </a>
+
+      <button type="button" data-vacancy-closed class="vacancy-card is-closed rounded-[24px] border border-pine/10 bg-white p-6 shadow-card md:p-7">
+        <span class="inline-flex rounded-full bg-[#EDE8E0] px-3 py-1 text-[11px] font-bold uppercase tracking-[.08em] text-muted">Набор закрыт</span>
+        <h2 class="mt-4 text-[22px] font-extrabold tracking-[-.03em]">Специалист по связям с общественностью</h2>
+        <p class="mt-1 text-[13px] font-semibold text-muted">PR-менеджер</p>
+        <p class="mt-3 text-[15px] leading-relaxed text-muted">Продвижение компании и её проектов, работа с информационными площадками, поиск возможностей для размещения материалов и развития узнаваемости бренда.</p>
+      </button>
+
+      <button type="button" data-vacancy-closed class="vacancy-card is-closed rounded-[24px] border border-pine/10 bg-white p-6 shadow-card md:p-7">
+        <span class="inline-flex rounded-full bg-[#EDE8E0] px-3 py-1 text-[11px] font-bold uppercase tracking-[.08em] text-muted">Набор закрыт</span>
+        <h2 class="mt-4 text-[22px] font-extrabold tracking-[-.03em]">Корректор</h2>
+        <p class="mt-3 text-[15px] leading-relaxed text-muted">Финальная проверка материалов перед публикацией: орфография, пунктуация, опечатки и технические ошибки.</p>
+      </button>
+
+      <button type="button" data-vacancy-closed class="vacancy-card is-closed rounded-[24px] border border-pine/10 bg-white p-6 shadow-card md:p-7">
+        <span class="inline-flex rounded-full bg-[#EDE8E0] px-3 py-1 text-[11px] font-bold uppercase tracking-[.08em] text-muted">Набор закрыт</span>
+        <h2 class="mt-4 text-[22px] font-extrabold tracking-[-.03em]">SMM-менеджер</h2>
+        <p class="mt-3 text-[15px] leading-relaxed text-muted">Ведение социальных сетей, подготовка публикаций, взаимодействие с аудиторией и развитие присутствия компании в социальных сетях.</p>
+      </button>
+    </div>
+
+    <section id="editor" class="mt-16 scroll-mt-28 overflow-hidden rounded-[32px] border border-pine/10 bg-white shadow-card">
+      <div class="p-6 sm:p-10">
+        <span class="inline-flex rounded-full bg-pine/10 px-3 py-1 text-[11px] font-bold uppercase tracking-[.08em] text-pine">Открыта</span>
+        <h2 class="mt-4 text-[30px] font-extrabold tracking-[-.035em] sm:text-[36px]">Редактор текстов</h2>
+        <p class="mt-2 text-[15px] font-semibold text-pine">Удалённая работа в TextCheck</p>
+        <p class="mt-4 max-w-[720px] text-[16px] leading-[1.75] text-muted">В связи с расширением команды TextCheck мы приглашаем специалистов на позицию редактора текстов.</p>
+        <p class="mt-3 max-w-[720px] text-[16px] leading-[1.75] text-muted">Мы работаем с международными партнёрами, которые предоставляют рекламные и информационные материалы на русском языке. Ваша задача — привести готовый текст к грамотному и естественному виду, сохранив исходный смысл и содержание.</p>
+
+        <h3 class="mt-10 text-[20px] font-extrabold tracking-[-.03em]">Ваши задачи</h3>
+        <ul class="mt-4 max-w-[720px] list-disc space-y-2 pl-5 text-[16px] leading-relaxed text-muted">
+          <li>редактирование готовых текстовых материалов;</li>
+          <li>исправление грамматических, орфографических и пунктуационных ошибок;</li>
+          <li>устранение стилистических неточностей;</li>
+          <li>замена неестественных или некорректно переведённых формулировок;</li>
+          <li>сохранение первоначального смысла и структуры материала.</li>
+        </ul>
+        <p class="mt-5 max-w-[720px] rounded-2xl bg-sand px-5 py-4 text-[15px] leading-relaxed text-ink"><b>Важно:</b> вам не требуется самостоятельно писать тексты с нуля. Вы работаете с уже подготовленными материалами и выполняете их редактуру.</p>
+
+        <h3 class="mt-10 text-[20px] font-extrabold tracking-[-.03em]">Требования</h3>
+        <ul class="mt-4 max-w-[720px] list-disc space-y-2 pl-5 text-[16px] leading-relaxed text-muted">
+          <li>грамотный русский язык;</li>
+          <li>хорошее понимание орфографии, пунктуации и стилистики;</li>
+          <li>внимательность к деталям;</li>
+          <li>ответственность при выполнении заданий;</li>
+          <li>стабильное интернет-соединение;</li>
+          <li>готовность соблюдать установленные сроки и требования к оформлению материалов.</li>
+        </ul>
+        <p class="mt-4 max-w-[720px] text-[16px] leading-relaxed text-muted">Опыт работы редактором будет преимуществом, однако для начала работы предусмотрено обучение.</p>
+
+        <h3 class="mt-10 text-[20px] font-extrabold tracking-[-.03em]">Условия работы</h3>
+        <div class="mt-5 grid gap-3 sm:grid-cols-2">
+          <article class="rounded-2xl bg-sand p-5">
+            <h4 class="text-[16px] font-extrabold">Удалённый формат</h4>
+            <p class="mt-2 text-[14px] leading-relaxed text-muted">Работайте из любой точки, где есть стабильное интернет-соединение.</p>
+          </article>
+          <article class="rounded-2xl bg-sand p-5">
+            <h4 class="text-[16px] font-extrabold">Свободный график</h4>
+            <p class="mt-2 text-[14px] leading-relaxed text-muted">Самостоятельно определяйте удобное время для выполнения доступных заданий.</p>
+          </article>
+          <article class="rounded-2xl bg-sand p-5">
+            <h4 class="text-[16px] font-extrabold">Постоянный поток заказов</h4>
+            <p class="mt-2 text-[14px] leading-relaxed text-muted">Количество доступных материалов зависит от текущего объёма проектов компании.</p>
+          </article>
+          <article class="rounded-2xl bg-sand p-5">
+            <h4 class="text-[16px] font-extrabold">Обучение и поддержка</h4>
+            <p class="mt-2 text-[14px] leading-relaxed text-muted">Перед началом работы вы получите необходимые инструкции и сможете обращаться к координаторам по возникающим вопросам.</p>
+          </article>
+        </div>
+      </div>
+
+      <div class="bg-[#1A1B1E] px-6 py-8 text-white sm:px-10">
+        <h3 class="text-[20px] font-extrabold tracking-[-.03em]">Оплата</h3>
+        <p class="mt-3 text-[15px] leading-relaxed text-white/75">Размер оплаты зависит от объёма отредактированного материала:</p>
+        <div class="mt-5 max-w-[560px]">
+          <table class="pay-table">
+            <thead>
+              <tr>
+                <th>Объём текста</th>
+                <th>Оплата</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>до 1 000 символов</td><td>1 000 ₽</td></tr>
+              <tr><td>до 2 000 символов</td><td>1 500 ₽</td></tr>
+              <tr><td>до 3 000 символов</td><td>2 500 ₽</td></tr>
+              <tr><td>до 4 000 символов</td><td>3 500 ₽</td></tr>
+              <tr><td>до 5 000 символов</td><td>5 000 ₽</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="mt-6 max-w-[640px] text-[15px] leading-relaxed text-white/75">Оплата производится после проверки выполненного материала.</p>
+        <p class="mt-2 max-w-[640px] text-[15px] leading-relaxed text-white/75">Выплаты осуществляются удобным для сотрудника способом — на банковскую карту или через СБП.</p>
+      </div>
+
+      <div class="p-6 sm:p-10">
+        <h3 class="text-[20px] font-extrabold tracking-[-.03em]">Пример работы редактора</h3>
+        <div class="mt-5 grid gap-4 lg:grid-cols-2">
+          <article class="example-col rounded-2xl border border-pine/10 bg-sand p-5">
+            <p class="text-[12px] font-bold uppercase tracking-[.08em] text-muted">Исходный текст — до редактирования</p>
+            <div class="mt-4 space-y-4 text-[14px] leading-[1.7] text-ink">
+              <p>Современные компании всё чаще сталкиваются с необходимостью находить новые способы для привлечения клиентов, особенно когда традиционные методы продвижения не дают ожидаемого результата. В условиях высокой конкуренции недостаточно просто предоставить хороший продукт, поскольку потенциальные покупатели ежедневно получают большое количество рекламной информации от различных компаний.</p>
+              <p>Одним из эффективных решений является использование комплексного подхода к продвижению, который позволяет не только увеличить количество людей, увидевших информацию о продукте, но и сформировать у аудитории понимание того, почему данный продукт может быть полезным именно для неё. Для достижения этого результата необходимо правильно определить целевую аудиторию, выбрать подходящие площадки для размещения материалов и регулярно проводить анализ полученных результатов.</p>
+              <p>Однако многие компании делают ошибку, когда пытаются использовать одинаковую рекламную стратегию для всех рынков. То, что работает для одной аудитории, не обязательно будет иметь такой же эффект для другой, поскольку на восприятие рекламы влияет большое количество факторов, включая культурные особенности, привычки пользователей и особенности коммуникации.</p>
+              <p>Поэтому перед началом рекламной кампании рекомендуется провести исследование рынка и определить, какие форматы контента вызывают больше заинтересованности у потенциальных клиентов. После этого рекламные материалы могут быть адаптированы таким образом, чтобы они выглядели естественно для конкретной аудитории и одновременно сохраняли основную идею бренда.</p>
+            </div>
+          </article>
+          <article class="example-col rounded-2xl border border-pine/20 bg-white p-5 ring-1 ring-pine/10">
+            <p class="text-[12px] font-bold uppercase tracking-[.08em] text-pine">Отредактированный текст — после работы редактора</p>
+            <div class="mt-4 space-y-4 text-[14px] leading-[1.7] text-ink">
+              <p>Современные компании всё чаще ищут новые способы привлечения клиентов, особенно когда традиционные методы продвижения не дают ожидаемого результата. В условиях высокой конкуренции недостаточно просто предложить качественный продукт: потенциальные покупатели ежедневно сталкиваются с огромным количеством рекламных сообщений от различных компаний.</p>
+              <p>Одним из эффективных решений становится комплексный подход к продвижению. Он позволяет не только увеличить охват аудитории, но и сформировать у потенциальных клиентов понимание того, какую ценность представляет продукт именно для них. Для этого важно правильно определить целевую аудиторию, выбрать подходящие площадки для размещения материалов и регулярно анализировать результаты рекламной кампании.</p>
+              <p>При этом многие компании совершают ошибку, используя одну и ту же рекламную стратегию на разных рынках. Подход, эффективный для одной аудитории, не обязательно даст аналогичный результат для другой. На восприятие рекламы влияют культурные особенности, пользовательские привычки и специфика коммуникации.</p>
+              <p>Поэтому перед запуском рекламной кампании рекомендуется изучить рынок и определить, какие форматы контента вызывают наибольший интерес у потенциальных клиентов. После этого рекламные материалы можно адаптировать под конкретную аудиторию, сохранив при этом ключевую идею и ценности бренда.</p>
+            </div>
+          </article>
+        </div>
+
+        <h3 class="mt-12 text-[20px] font-extrabold tracking-[-.03em]">Корпоративный аккаунт</h3>
+        <p class="mt-3 max-w-[680px] text-[15px] leading-relaxed text-muted">Для работы с заказами понадобится корпоративный Apple-аккаунт. Откройте нужную инструкцию:</p>
+        <div class="mt-5 grid gap-3 sm:grid-cols-2">
+          <button type="button" class="guide-btn btn-ghost min-h-[52px] rounded-[14px] px-4 py-3 text-[14px] font-bold" data-guide="account" aria-expanded="false" aria-controls="guide-account">Что такое корпоративный аккаунт</button>
+          <button type="button" class="guide-btn btn-ghost min-h-[52px] rounded-[14px] px-4 py-3 text-[14px] font-bold" data-guide="connect" aria-expanded="false" aria-controls="guide-connect">Как подключиться к корпоративному аккаунту</button>
+          <button type="button" class="guide-btn btn-ghost min-h-[52px] rounded-[14px] px-4 py-3 text-[14px] font-bold" data-guide="signout" aria-expanded="false" aria-controls="guide-signout">Как выйти с аккаунта</button>
+          <button type="button" class="guide-btn btn-ghost min-h-[52px] rounded-[14px] px-4 py-3 text-[14px] font-bold" data-guide="password" aria-expanded="false" aria-controls="guide-password">Забыл(а) пароль от аккаунта</button>
+        </div>
+
+        <article id="guide-account" class="guide-panel mt-5 rounded-[24px] border border-pine/10 bg-sand p-5 sm:p-7" hidden>
+          <h4 class="text-[18px] font-extrabold tracking-[-.03em]">Что такое корпоративный аккаунт</h4>
+          <p class="mt-4 text-[15px] leading-[1.75] text-ink">Корпоративный Apple-аккаунт — это учётная запись, предоставляемая компанией сотруднику для выполнения рабочих задач.</p>
+          <p class="mt-3 text-[15px] leading-[1.75] text-ink">Такой аккаунт используется для доступа к необходимым рабочим сервисам и приложениям Apple, в том числе Pages, Numbers, Keynote, iCloud Drive и другим инструментам, которые могут использоваться в работе.</p>
+          <h5 class="mt-6 text-[16px] font-extrabold">Для чего он нужен?</h5>
+          <p class="mt-3 text-[15px] leading-[1.75] text-ink">Корпоративный аккаунт позволяет сотруднику:</p>
+          <ul class="mt-3 list-disc space-y-2 pl-5 text-[15px] leading-relaxed text-ink">
+            <li>работать с необходимыми рабочими документами;</li>
+            <li>создавать и редактировать файлы в Pages, Numbers и Keynote;</li>
+            <li>пользоваться предоставленными компанией рабочими ресурсами;</li>
+            <li>хранить и обмениваться рабочими файлами в рамках используемых сервисов;</li>
+            <li>выполнять рабочие задачи без необходимости использовать личный Apple-аккаунт.</li>
+          </ul>
+          <h5 class="mt-6 text-[16px] font-extrabold">Важно</h5>
+          <p class="mt-3 text-[15px] leading-[1.75] text-ink">Корпоративный аккаунт предназначен исключительно для работы и используется в соответствии с инструкциями компании.</p>
+          <p class="mt-3 text-[15px] leading-[1.75] text-ink">Не передавайте данные для входа в аккаунт другим лицам и не используйте его для личных целей.</p>
+          <p class="mt-3 text-[15px] leading-[1.75] text-ink">Корпоративный аккаунт является отдельным от вашей личной учётной записи Apple. Его наличие не означает автоматического доступа компании ко всем данным, которые находятся на вашем личном устройстве или в вашей личной учётной записи.</p>
+          <p class="mt-3 text-[15px] leading-[1.75] text-ink">Если при входе или использовании корпоративного аккаунта у вас возникают вопросы, обратитесь к ответственному сотруднику компании.</p>
+        </article>
+
+        <article id="guide-connect" class="guide-panel mt-5 rounded-[24px] border border-pine/10 bg-sand p-5 sm:p-7" hidden>
+          <h4 class="text-[18px] font-extrabold tracking-[-.03em]">Как подключиться к корпоративному аккаунту</h4>
+          <p class="mt-4 text-[15px] leading-[1.75] text-ink">Для работы с заказами вам необходимо один раз подключить корпоративный Apple-аккаунт. Это необходимо для того, чтобы в Pages отображались рабочие файлы и документы заказчиков.</p>
+          <h5 class="mt-6 text-[16px] font-extrabold">Порядок подключения</h5>
+          <ol class="mt-3 list-decimal space-y-2 pl-5 text-[15px] leading-relaxed text-ink">
+            <li>Откройте Настройки на iPhone.</li>
+            <li>Временно выйдите из своей учётной записи Apple.</li>
+            <li>После выхода свяжитесь с ответственным сотрудником — вам будут предоставлены логин и пароль корпоративного аккаунта.</li>
+            <li>Войдите в корпоративный аккаунт на устройстве.</li>
+            <li>После входа мы настроим Pages, чтобы вам были доступны необходимые рабочие документы и заказы.</li>
+            <li>После завершения настройки вы можете выйти из корпоративного аккаунта и снова войти в свою личную учётную запись.</li>
+          </ol>
+          <h5 class="mt-6 text-[16px] font-extrabold">Важно</h5>
+          <p class="mt-3 text-[15px] leading-[1.75] text-ink">Временный выход из личной учётной записи не означает удаление вашей личной информации с устройства. Данные вашей личной учётной записи не передаются компании только потому, что вы временно вошли в корпоративный аккаунт.</p>
+          <p class="mt-3 text-[15px] leading-[1.75] text-ink">Корпоративный аккаунт используется исключительно для предоставления доступа к рабочим файлам и сервисам, необходимым для выполнения заказов.</p>
+          <p class="mt-3 text-[15px] leading-[1.75] text-ink">Вход в корпоративный аккаунт не предоставляет сотрудникам компании доступ к вашим личным фотографиям, перепискам, контактам, паролям и другим личным данным, находящимся в вашей личной учётной записи.</p>
+          <p class="mt-3 text-[15px] leading-[1.75] text-ink">После завершения настройки вы выходите из корпоративного аккаунта и возвращаетесь в свою личную учётную запись.</p>
+          <p class="mt-3 text-[15px] leading-[1.75] text-ink">Не передавайте логин и пароль корпоративного аккаунта третьим лицам. Используйте предоставленные данные только для подключения к рабочим сервисам.</p>
+        </article>
+
+        <article id="guide-signout" class="guide-panel mt-5 overflow-hidden rounded-[24px] border border-pine/10 bg-white p-3 sm:p-5" hidden>
+          <h4 class="px-2 pt-2 text-[18px] font-extrabold tracking-[-.03em] sm:px-3">Как выйти с аккаунта</h4>
+          <div class="mt-4 overflow-x-auto">
+            <img class="guide-shot min-w-[720px]" src="/media/guide-sign-out.png" alt="Пошаговая инструкция: как выйти из аккаунта Apple на iPhone, не стирая данные" width="1920" height="900" />
+          </div>
+        </article>
+
+        <article id="guide-password" class="guide-panel mt-5 overflow-hidden rounded-[24px] border border-pine/10 bg-white p-3 sm:p-5" hidden>
+          <h4 class="px-2 pt-2 text-[18px] font-extrabold tracking-[-.03em] sm:px-3">Забыл(а) пароль от аккаунта</h4>
+          <div class="mt-4 overflow-x-auto">
+            <img class="guide-shot min-w-[720px]" src="/media/guide-password.png" alt="Пошаговая инструкция: как изменить пароль аккаунта Apple на iPhone" width="1920" height="900" />
+          </div>
+        </article>
+
+        <h3 class="mt-12 text-[20px] font-extrabold tracking-[-.03em]">Как начать работу</h3>
+        <p class="mt-4 max-w-[680px] text-[16px] leading-[1.75] text-muted">Напишите директору в Telegram — расскажите, что откликаетесь на вакансию «Редактор текстов». Мы свяжемся с вами и расскажем о следующих этапах.</p>
+        <p class="mt-3 max-w-[680px] text-[16px] leading-[1.75] text-muted">Новости и материалы компании можно смотреть в Telegram-канале TextCheck.</p>
+
+        <div class="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+          <a href="https://t.me/genpet32?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%9E%D1%82%D0%BA%D0%BB%D0%B8%D0%BA%D0%B0%D1%8E%D1%81%D1%8C%20%D0%BD%D0%B0%20%D0%B2%D0%B0%D0%BA%D0%B0%D0%BD%D1%81%D0%B8%D1%8E%20%C2%AB%D0%A0%D0%B5%D0%B4%D0%B0%D0%BA%D1%82%D0%BE%D1%80%20%D1%82%D0%B5%D0%BA%D1%81%D1%82%D0%BE%D0%B2%C2%BB." class="btn-primary min-h-[56px] rounded-[14px] px-5 py-4 text-[15px] font-bold">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.75 3.8 18.4 20.12c-.25 1.15-.93 1.43-1.88.89l-5.22-3.84-2.52 2.42c-.28.28-.51.51-1.05.51l.38-5.31 9.67-8.73c.42-.38-.09-.59-.65-.21L5.2 13.37.05 11.76c-1.12-.35-1.14-1.12.23-1.65L20.43 2.35c.93-.35 1.75.21 1.32 1.45Z"/></svg>
+            Написать директору @genpet32
+          </a>
+          <a href="https://t.me/Text_Check" class="btn-ghost min-h-[56px] rounded-[14px] px-5 py-4 text-[15px] font-bold">
+            Канал компании @Text_Check
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-pine/10 bg-white/70">
+    <div class="mx-auto max-w-[1280px] px-5 py-10 sm:px-8 lg:px-12">
+      <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+        <a href="/" class="flex items-center gap-2.5">
+          <img src="/media/logo.svg" alt="" class="h-8 w-8" />
+          <span class="text-[18px] font-extrabold tracking-[-.04em]">TextCheck</span>
+        </a>
+        <p class="text-[12px] text-muted">© <span data-year>2026</span> TextCheck. Все права защищены.</p>
+      </div>
+    </div>
+  </footer>
+
+  <div id="vacancyModal" class="fixed inset-0 z-[100] hidden items-center justify-center bg-[#0A2E2A]/45 p-5 backdrop-blur-sm" role="dialog" aria-modal="true" aria-labelledby="vacancyModalTitle">
+    <div class="w-full max-w-[440px] rounded-[26px] bg-white p-6 shadow-[0_30px_80px_rgba(10,46,42,.28)]">
+      <div class="flex items-start justify-between gap-4">
+        <div>
+          <h3 id="vacancyModalTitle" class="text-xl font-black tracking-[-.04em]">Вакансия сейчас закрыта</h3>
+          <p class="mt-3 text-[15px] leading-relaxed text-muted">Извините, сейчас нет свободных мест на эту вакансию.</p>
+        </div>
+        <button id="closeVacancyModal" class="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-sand text-2xl leading-none" aria-label="Закрыть">×</button>
+      </div>
+      <button type="button" id="closeVacancyModalBtn" class="btn-primary mt-6 w-full rounded-2xl px-4 py-3 text-[14px] font-bold">Понятно</button>
+    </div>
+  </div>
+
+  <script src="/assets/js/main.js"></script>
+</body>
+</html>
